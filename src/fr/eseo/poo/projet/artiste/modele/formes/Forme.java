@@ -72,14 +72,25 @@ public abstract class Forme {
      * 
      * @see {@link #getAbscisse()}
      * @see {@link #getOrdonnee()}
-     * @see ({@value Coordonnees#DEFAULT_COORD_X},
-     *      {@value Coordinates#DEFAULT_COORD_Y})
+     * @see ({@value Coordonnees#ABSCISSE_PAR_DEFAUT},
+     *      {@value Coordinates#ORDONNEE_PAR_DEFAUT})
      * 
      * @since 0.3.2.3
      */
     private Coordonnees position;
 
+    /***
+     * Value of type {@code double}, for comparison between two points.
+     * <p>
+     * The precision of the comparison is {@value #EPSILON}.
+     * 
+     * @since 0.3.2.5
+     */
+    public final static double EPSILON = 0.01;
+
+    /*************************************************************************/
     /****************************** Constructs *******************************/
+    /*************************************************************************/
 
     /**
      * Construct a new {@code Forme} from a point, a height and a width.
@@ -161,10 +172,12 @@ public abstract class Forme {
      * @since 0.3.2.3
      */
     public Forme() {
-        this(LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
+        this(new Coordonnees(), LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
     }
 
-    /*********************** Accessors and Mutators *************************/
+    /*************************************************************************/
+    /*********************** Accessors and Mutators **************************/
+    /*************************************************************************/
 
     /**
      * Accessor of the {@code largeur} of the rectangle enclosing the shape.
@@ -333,7 +346,9 @@ public abstract class Forme {
      */
     public abstract double aire();
 
+    /*************************************************************************/
     /******************************* Functions *******************************/
+    /*************************************************************************/
 
     /**
      * Mutator of the 2 coordinates of the point from a new abscissa and a new
@@ -381,7 +396,7 @@ public abstract class Forme {
      */
     @Override
     public String toString() {
-        return this.getClass().getName() + ", [pos : " + this.position + ", largeur : " + this.largeur + ", HAUTEUR : "
-                + this.hauteur + "]";
+        return this.getClass().getSimpleName() + ", [pos : " + this.position + ", largeur : " + this.largeur
+                + ", HAUTEUR : " + this.hauteur + "]";
     }
 }
