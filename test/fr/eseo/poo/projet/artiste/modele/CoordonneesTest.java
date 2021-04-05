@@ -64,4 +64,5 @@ public class CoordonneesTest {
 
 		assertEquals("Test de l'affichage des coordonnées", "(0,0 , 0,0)", point.toString());
 	}
+
 }

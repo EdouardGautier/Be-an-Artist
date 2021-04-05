@@ -80,7 +80,9 @@ public class Coordonnees {
 	 */
 	public static final double EPSILON = 0.01;
 
+	/*************************************************************************/
 	/****************************** Constructs *******************************/
+	/*************************************************************************/
 
 	/**
 	 * Construct a new {@code Coordonnees} from an abscissa and an ordinate passed
@@ -107,11 +109,12 @@ public class Coordonnees {
 	 * @since 0.3.2.1
 	 */
 	public Coordonnees() {
-		this.x = ABSCISSE_PAR_DEFAUT;
-		this.y = ORDONNEE_PAR_DEFAUT;
+		this(ABSCISSE_PAR_DEFAUT, ORDONNEE_PAR_DEFAUT);
 	}
 
-	/*********************** Accessors and Mutators *************************/
+	/*************************************************************************/
+	/*********************** Accessors and Mutators **************************/
+	/*************************************************************************/
 
 	/**
 	 * Accessor of the {@code abscissa} of the rectangle enclosing the point.
@@ -165,8 +168,9 @@ public class Coordonnees {
 		this.y = p_y;
 	}
 
+	/*************************************************************************/
 	/******************************* Functions *******************************/
-
+	/*************************************************************************/
 	/**
 	 * Mutator of the 2 coordinates of the point from a new abscissa and a new
 	 * ordinate.
@@ -223,8 +227,8 @@ public class Coordonnees {
 	 * The value returned is in <i>radian</i>.
 	 * </p>
 	 * 
-	 * @param coord A {@code Coordonnees} corresponding to the other point with
-	 *              which we want to know the angle.
+	 * @param p_coord A {@code Coordonnees} corresponding to the other point with
+	 *                which we want to know the angle.
 	 * 
 	 * @return A {@code double} corresponding to the angle between the two points
 	 *         (in <i>radian</i>).
@@ -233,8 +237,8 @@ public class Coordonnees {
 	 * 
 	 * @since 0.3.2.1
 	 */
-	public double angleVers(Coordonnees coord) {
-		return Math.atan2(coord.getOrdonnee() - this.getOrdonnee(), coord.getAbscisse() - this.getAbscisse());
+	public double angleVers(Coordonnees p_coord) {
+		return Math.atan2(p_coord.getOrdonnee() - this.getOrdonnee(), p_coord.getAbscisse() - this.getAbscisse());
 	}
 
 	/**
@@ -244,7 +248,7 @@ public class Coordonnees {
 	 * 
 	 * @return A {@code String}, corresponding to the description of the
 	 *         {@code Coordonnees}.
-	 *         </p>
+	 * 
 	 * 
 	 * @since 0.3.2.1
 	 */
@@ -253,5 +257,40 @@ public class Coordonnees {
 		final DecimalFormat formater = new DecimalFormat("0.0#");
 
 		return "(" + formater.format(this.getAbscisse()) + " , " + formater.format(this.getOrdonnee()) + ")";
+	}
+
+	/**
+	 * Function to compare if two {@code Coordinates} are identical at
+	 * {@value #EPSILON} loans.
+	 * <p>
+	 * <li>if the two points have the same {@code abscissa} and the same
+	 * {@code ordinate}.</li>
+	 * 
+	 * @param p_other The instance with which the point is compared
+	 * 
+	 * @return {@code true} if two points are equal, {@code false} otherwise.
+	 * 
+	 * @since 0.3.2.4
+	 */
+	@Override
+	public boolean equals(final Object p_other) {
+		final Coordonnees point = (Coordonnees) p_other;
+		return Math.abs(this.getAbscisse() - point.getAbscisse()) <= Coordonnees.EPSILON
+				&& Math.abs(this.getOrdonnee() - point.getOrdonnee()) <= Coordonnees.EPSILON;
+	}
+
+	/**
+	 * Function to obtain the hashCode of a {@code Coordonnees}.
+	 * 
+	 * @return An {@code int} corresponding to the hashCode of the
+	 *         {@code Coordonnees}.
+	 * 
+	 * @see Double#hashCode(double)
+	 * 
+	 * @since 0.3.2.4
+	 */
+	@Override
+	public int hashCode() {
+		return Double.hashCode(this.getAbscisse()) + Double.hashCode(this.getOrdonnee());
 	}
 }
