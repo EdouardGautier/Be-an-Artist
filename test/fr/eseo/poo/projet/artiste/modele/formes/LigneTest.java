@@ -6,8 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Base test class (with asserts and not parameterized) of the
- * {@link Ligne}
+ * Base test class of the {@link Ligne}
  * 
  * @author EdouardGautier
  * 
@@ -88,7 +87,6 @@ public class LigneTest {
         final Ligne ligne = new Ligne();
 
         assertEquals("Test de l'aire de la ligne", 0, ligne.aire(), Ligne.EPSILON);
-        assertEquals("Test du périmètre de la ligne", 5.385, ligne.perimetre(), Ligne.EPSILON);
     }
 
     /**
@@ -100,7 +98,7 @@ public class LigneTest {
     public void testPerimetre() {
         final Ligne ligne = new Ligne();
 
-        assertEquals("Test du périmètre de la ligne", 5.385, ligne.perimetre(), Ligne.EPSILON);
+        assertEquals("Test du périmètre de la ligne", 14.14, ligne.perimetre(), Ligne.EPSILON);
     }
 
     /**
@@ -110,10 +108,9 @@ public class LigneTest {
      */
     @Test
     public void testToString() {
-        final Ligne ligne = new Ligne(0, 0);
+        final Ligne ligne = new Ligne(new Coordonnees(10, 10), -5, 20);
 
-        String description = "[Ligne] c1 : " + ligne.getC1().toString() + " c2 : " + ligne.getC2().toString()
-                + " longueur : 0,0 angle : 0,0°";
+        String description = "[Ligne] c1 : (10,0 , 10,0) c2 : (5,0 , 30,0) longueur : 20,62 angle : 104,04°";
         assertEquals("Test de la representation de la ligne", description, ligne.toString());
     }
 }

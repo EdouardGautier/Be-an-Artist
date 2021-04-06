@@ -28,7 +28,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  * 
  * @since 0.3.2.3
  * 
- * @version 0.1
+ * @version 0.3.2.8
  */
 public abstract class Forme {
     /**
@@ -41,8 +41,8 @@ public abstract class Forme {
      * 
      * @since 0.3.2.3
      */
-    public static final double LARGEUR_PAR_DEFAUT = 5;
-    public static final double HAUTEUR_PAR_DEFAUT = 2;
+    public static final double LARGEUR_PAR_DEFAUT = 10;
+    public static final double HAUTEUR_PAR_DEFAUT = 10;
 
     /**
      * Attribute representing the length of the rectangle enclosing the shape.
@@ -324,8 +324,12 @@ public abstract class Forme {
         return Math.min(this.getPosition().getOrdonnee(), this.getPosition().getOrdonnee() + this.getHauteur());
     }
 
+    /*************************************************************************/
+    /******************************* Functions *******************************/
+    /*************************************************************************/
+
     /**
-     * Accessor of the perimeter of the shape.
+     * Calculates the perimeter of the shape.
      * 
      * @return A {@code double} corresponding to the perimeter of the shape.
      * 
@@ -336,7 +340,7 @@ public abstract class Forme {
     public abstract double perimetre();
 
     /**
-     * Accessor of the surface of the form.
+     * Calculates the surface of the form.
      * 
      * @return A {@code double} corresponding to the surface of the shape.
      * 
@@ -346,9 +350,17 @@ public abstract class Forme {
      */
     public abstract double aire();
 
-    /*************************************************************************/
-    /******************************* Functions *******************************/
-    /*************************************************************************/
+    /**
+     * Function to know if a point is inside the shape.
+     *
+     * @param p_point A {@code Coordonnees} corresponding to the point of which we
+     *                want to know to know if it is in the shape.
+     * 
+     * @return {@code true} if the point is in the form, {@code false} otherwise.
+     * 
+     * @since 0.3.2.8
+     */
+    public abstract boolean contient(Coordonnees p_point);
 
     /**
      * Mutator of the 2 coordinates of the point from a new abscissa and a new
