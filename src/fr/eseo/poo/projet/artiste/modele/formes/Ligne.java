@@ -42,8 +42,19 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  * @author EdouardGautier
  * 
  * @since 0.3.2.4
+ * 
+ * @version 0.3.2.8
  */
 public class Ligne extends Forme {
+
+    /***
+     * Value of type {@code double}, for comparison between two points.
+     * <p>
+     * The precision of the comparison is {@value #EPSILON}.
+     * 
+     * @since 0.3.2.8
+     */
+    public final static double EPSILON = 0.01;
 
     /*************************************************************************/
     /****************************** Constructs *******************************/
@@ -231,6 +242,23 @@ public class Ligne extends Forme {
     }
 
     /**
+     * {@inheritDoc}
+     * <p>
+     * A point is considered to be on the line if it is located at a distance less
+     * than {@value Ligne#EPSILON}.
+     * 
+     * The sum of the distance between points C1 and C2 must be equal to the length
+     * of the line. To the nearest EPSILON.
+     * 
+     * @since 0.3.2.8
+     */
+    @Override
+    public boolean contient(final Coordonnees p_point) {
+        return (p_point.distanceVers(this.getC1()) + p_point.distanceVers(this.getC2()))
+                - (this.perimetre()) <= Ligne.EPSILON;
+    }
+
+    /**
      * Function returning a description of the line in the form :
      * <p>
      * {@code [Ligne] c1 : (<abscissa>) , <ordinate>) c2 : (<abscissa>) , 
@@ -246,7 +274,7 @@ public class Ligne extends Forme {
     @Override
     public String toString() {
         final DecimalFormat formater = new DecimalFormat("0.0#");
-        double angle = this.getC1().angleVers(this.getC2());
+        double angle = Math.toDegrees(this.getC1().angleVers(this.getC2()));
         angle = angle < 0 ? angle + 360 : angle;
         return '[' + getClass().getSimpleName() + "] c1 : " + this.getC1().toString() + " c2 : "
                 + this.getC2().toString() + " longueur : " + formater.format(this.perimetre()) + " angle : "
