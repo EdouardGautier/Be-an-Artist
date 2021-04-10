@@ -1,9 +1,10 @@
 package fr.eseo.poo.projet.artiste.modele.formes;
 
-import fr.eseo.poo.projet.artiste.modele.Coordonnees;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+
+import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 /**
  * Base test class of the {@link Ligne}
@@ -110,7 +111,7 @@ public class LigneTest {
     public void testToString() {
         final Ligne ligne = new Ligne(new Coordonnees(10, 10), -5, 20);
 
-        String description = "[Ligne] c1 : (10,0 , 10,0) c2 : (5,0 , 30,0) longueur : 20,62 angle : 104,04°";
+        String description = "[Ligne] c1 : (10,0 , 10,0) c2 : (5,0 , 30,0) longueur : 20,62 angle : 104,04 degrée";
         assertEquals("Test de la representation de la ligne", description, ligne.toString());
     }
 }

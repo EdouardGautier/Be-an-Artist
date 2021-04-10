@@ -262,7 +262,7 @@ public class Ligne extends Forme {
      * Function returning a description of the line in the form :
      * <p>
      * {@code [Ligne] c1 : (<abscissa>) , <ordinate>) c2 : (<abscissa>) , 
-     * <ordinate>) longueur : <length> angle : <angle>}.
+     * <ordinate>) longueur : <length> angle : <angle> degrée}.
      * 
      * @return A {@code String}, corresponding to the description of the
      *         {@code Line}.
@@ -278,6 +278,6 @@ public class Ligne extends Forme {
         angle = angle < 0 ? angle + 360 : angle;
         return '[' + getClass().getSimpleName() + "] c1 : " + this.getC1().toString() + " c2 : "
                 + this.getC2().toString() + " longueur : " + formater.format(this.perimetre()) + " angle : "
-                + formater.format(angle) + '°';
+                + formater.format(angle) + " degrée";
     }
 }
