@@ -44,7 +44,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  * 
  * @since 0.3.2.6
  * 
- * @version 0.3.2.8 
+ * @version 0.3.2.8
  */
 public class Ellipse extends Forme {
 
@@ -277,10 +277,6 @@ public class Ellipse extends Forme {
 	 * ellipse.</li></ul>
 	 * 
 	 * @param p_point the point to evaluate
-	 * 
-	 * @see <a href=
-	 *      "https://fr.wikipedia.org/wiki/Ellipse_(math%C3%A9matiques)#%C3%89quation_cart%C3%A9sienne">Wikipédia
-	 *      les Ellipses - Équation cartésienne</a>
 	 * 
 	 * @since 0.3.2.8
 	 */

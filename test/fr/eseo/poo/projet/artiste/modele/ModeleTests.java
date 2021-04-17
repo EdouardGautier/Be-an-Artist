@@ -18,7 +18,9 @@ import fr.eseo.poo.projet.artiste.modele.formes.LigneTestAll;
  * 
  * @author EdouardGautier
  * 
- * @since 0.3.2.8
+ * @since 0.3.2.2
+ * 
+ * @version 0.3.2.8
  */
 @RunWith(Suite.class)
 @SuiteClasses({ CoordonneesTestAll.class, LigneTestAll.class, EllipseTestAll.class, CercleTestAll.class })
