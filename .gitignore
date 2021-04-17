@@ -1,7 +1,11 @@
 *.pdf
 .classpath
 .project
-.Back-up/
+Back-up/
+doc/
+bin/
+.vscode/
+/coverage
 
 # Compiled class file
 *.class

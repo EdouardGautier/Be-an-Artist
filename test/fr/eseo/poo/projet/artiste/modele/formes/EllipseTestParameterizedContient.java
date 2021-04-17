@@ -63,8 +63,6 @@ public class EllipseTestParameterizedContient {
     public static Collection<Object[]> dt() {
         final Object[][] data = new Object[][] {
                 // It is not on the ellipse.
-                // Test in the case where width > height
-                // The point is in the frame but outside the ellipse
                 // Test 0
                 { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(20, 40), false },
                 // Test 1
@@ -73,42 +71,20 @@ public class EllipseTestParameterizedContient {
                 { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(76.54, 5.39), false },
                 // Test 3
                 { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(12.35, 9.51), false },
-                // Test in the case where width < height
-                // The point is in the frame but outside the ellipse
                 // Test 4
                 { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(46.99, 47.30), false },
-                // Test 5
-                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(15.25, 48.75), false },
-                // Test 6
-                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(12.83, 8.30), false },
-                // Test 7
-                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(46.50, 4.18), false },
                 // It is on the ellipse.
-                // Test in the case where width > height
                 // The point is in the ellipse
-                // Test 8
+                // Test 5
                 { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(41.17, 32.52), true},
-                // Test 9
+                // Test 6
                 { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(20, 20), true},
-                // Test 10
+                // Test 7
                 { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(65.16, 13.38), true},
                 // The point is on the outline of the ellipse
-                // Test 11
-                { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(71.41, 37.27), true},
-                // Test 12
-                { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(18.70, 35.40), true},
-                // Test in the case where width < height
-                // The point is in the ellipse
-                // Test 13
-                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(26.40, 39.79), true},
-                // Test 14
-                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(30.08, 26.83), true},
-                // Test 15
-                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(23.01, 16.05), true},
-                // The point is on the outline of the ellipse
-                // Test 16
+                // Test 8
                 { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(42.84, 46.29), true},
-                // Test 17
+                // Test 9
                 { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(50.12, 27.06), true}
             };
         return Arrays.asList(data);

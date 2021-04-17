@@ -134,9 +134,7 @@ public abstract class Forme {
      * @since 0.3.2.3
      */
     public Forme(double p_largeur, double p_hauteur) {
-        this.largeur = p_largeur;
-        this.hauteur = p_hauteur;
-        this.position = new Coordonnees(0, 0);
+        this(new Coordonnees(0, 0), p_largeur, p_hauteur);
     }
 
     /**

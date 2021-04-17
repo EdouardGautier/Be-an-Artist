@@ -87,7 +87,7 @@ public class CoordonneesTestParameterizedDistanceVers {
 	@Test
 	public void testDistanceVers() {
 
-		assertEquals("Test de distanceVers(): ", this.distanceReference,
-				this.c1.distanceVers(this.c2), Coordonnees.EPSILON);
+		assertEquals("Test de distanceVers(): ", this.distanceReference, this.c1.distanceVers(this.c2),
+				Coordonnees.EPSILON);
 	}
 }
