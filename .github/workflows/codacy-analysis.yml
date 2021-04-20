@@ -52,3 +52,4 @@ jobs:
         with:
           # API account token to retrieve your remote Codacy configuration for the project being analyzed
           api-token: ${{ secrets.CODACY_API_TOKEN }}
+          coverage-reports: coverage.xml
