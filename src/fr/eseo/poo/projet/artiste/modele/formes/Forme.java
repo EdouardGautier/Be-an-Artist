@@ -409,4 +409,43 @@ public abstract class Forme {
         return this.getClass().getSimpleName() + ", [pos : " + this.position + ", largeur : " + this.largeur
                 + ", HAUTEUR : " + this.hauteur + "]";
     }
+
+    /**
+     * Function to compare whether two {@code Formes} are identical, to within
+     * {@value #EPSILON}.
+     * 
+     * @param other The instance with which the form is compared.
+     * 
+     * @return {@code true} if two {@code Forms} are identical, {@code false}
+     *         otherwise.
+     * 
+     * @since 0.3.3.6
+     */
+    @Override
+    public boolean equals(final Object other) {
+        if (other == this)
+            return true;
+        if (!(other instanceof Forme)) {
+            return false;
+        }
+        final Forme forme = (Forme) other;
+        return Math.abs(this.getLargeur() - forme.getLargeur()) <= Forme.EPSILON
+                && Math.abs(this.getHauteur() - forme.getHauteur()) <= Forme.EPSILON
+                && this.getPosition().equals(forme.getPosition());
+    }
+
+    /**
+     * Function to obtain the hashCode of a {@code Forme}.
+     * 
+     * @return An {@code int} corresponding to the hashCode of the {@code Forme}.
+     * 
+     * @see Double#hashCode(double)
+     * @see Coordonnees#hashCode()
+     * 
+     * @since 0.3.4.4
+     */
+    @Override
+    public int hashCode() {
+        return this.getPosition().hashCode() + Double.hashCode(this.getLargeur()) + Double.hashCode(this.getHauteur());
+    }
 }

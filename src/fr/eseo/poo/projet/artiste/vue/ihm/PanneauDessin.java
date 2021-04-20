@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import fr.eseo.poo.projet.artiste.controleur.outils.Outil;
 import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
 
 /**
@@ -21,7 +22,7 @@ import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
  * 
  * @since 0.3.3.2
  * 
- * @version 0.3.3.5
+ * @version 0.3.4.1
  */
 public class PanneauDessin extends JPanel {
 
@@ -55,6 +56,13 @@ public class PanneauDessin extends JPanel {
      * @since 0.3.3.5
      */
     private final List<VueForme> vueFormes = new ArrayList<VueForme>();
+
+    /**
+     * {@code Outil} associated as the current tool.
+     * 
+     * @since 0.3.4.1
+     */
+    private Outil outilCourant;
 
     /*************************************************************************/
     /****************************** Constructs *******************************/
@@ -107,6 +115,32 @@ public class PanneauDessin extends JPanel {
         return this.vueFormes;
     }
 
+    /**
+     * Accessor of the tool.
+     * 
+     * @return {@code Outil} which is currently the tool.
+     * 
+     * @see #setOutilCourant(Outil)
+     * 
+     * @since 0.3.4.1
+     */
+    public Outil getOutilCourant() {
+        return this.outilCourant;
+    }
+
+    /**
+     * Mutator of {@code outil}.
+     * 
+     * @param p_outil The new {@code Outil} that you want to associate as a tool.
+     * 
+     * @see #getOutilCourant()
+     * 
+     * @since 0.3.4.1
+     */
+    private void setOutilCourant(final Outil p_outil) {
+        this.outilCourant = p_outil;
+    }
+
     /*************************************************************************/
     /******************************* Functions *******************************/
     /*************************************************************************/
@@ -136,10 +170,52 @@ public class PanneauDessin extends JPanel {
     protected void paintComponent(final Graphics g2d) {
         super.paintComponent(g2d);
         final Graphics2D g2D = (Graphics2D) g2d.create();
-
+        // We display all forms
         for (final VueForme vueForme : this.getVueFormes()) {
             vueForme.affiche(g2D);
         }
         g2D.dispose();
+    }
+
+    /**
+     * Method that deletes {@code Outil} already associated.
+     * 
+     * @see associerOutil(Outil)
+     * 
+     * @since 0.3.4.1
+     */
+    private void dissocierOutil() {
+        if (this.getOutilCourant() != null) {
+            // We remove the current
+            removeMouseListener(this.getOutilCourant());
+            removeMouseMotionListener(this.getOutilCourant());
+            // We replace with nothing
+            this.getOutilCourant().setPanneauDessin(null);
+            this.setOutilCourant(null);
+        }
+    }
+
+    /**
+     * Method that associates {@code Outil} given in parameter.
+     * <p>
+     * Only one tool can be associated at a time. Associating a new {@code Outil}
+     * deletes the old one.
+     * 
+     * @param p_outil {@code Outil} that we want to associate.
+     * 
+     * @see dissocierOutil()
+     * 
+     * @since 0.3.4.1
+     */
+    public void associerOutil(final Outil p_outil) {
+        if (p_outil != null) {
+            this.dissocierOutil();
+            this.setOutilCourant(p_outil);
+            // We listen to this new tool.
+            addMouseListener(this.getOutilCourant());
+            addMouseMotionListener(this.getOutilCourant());
+
+            this.getOutilCourant().setPanneauDessin(this);
+        }
     }
 }
