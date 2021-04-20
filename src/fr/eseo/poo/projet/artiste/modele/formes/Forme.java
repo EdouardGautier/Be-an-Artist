@@ -32,16 +32,22 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  */
 public abstract class Forme {
     /**
-     * Default {@code double} value of the width and length of the rectangle
-     * enclosing the shape.
+     * Default {@code double} value of the width the rectangle enclosing the shape.
      * <p>
-     * Of value {@value #LARGEUR_PAR_DEFAUT} for <B>width</B> and of value
-     * {@value #HAUTEUR_PAR_DEFAUT} For the <B>length</B>.
-     * </p>
+     * Of value {@value #LARGEUR_PAR_DEFAUT} for <B>width</B>
      * 
      * @since 0.3.2.3
      */
     public static final double LARGEUR_PAR_DEFAUT = 10;
+
+    /**
+     * Default {@code double} value of the length of the rectangle enclosing the
+     * shape.
+     * <p>
+     * Of value {@value #HAUTEUR_PAR_DEFAUT} For the <B>length</B>.
+     * 
+     * @since 0.3.2.3
+     */
     public static final double HAUTEUR_PAR_DEFAUT = 10;
 
     /**
@@ -70,10 +76,10 @@ public abstract class Forme {
      * Attribute representing the upper left corner of the rectangle enclosing the
      * shape.
      * 
-     * @see {@link #getAbscisse()}
-     * @see {@link #getOrdonnee()}
-     * @see ({@value Coordonnees#ABSCISSE_PAR_DEFAUT},
-     *      {@value Coordinates#ORDONNEE_PAR_DEFAUT})
+     * @see #getAbscisse()
+     * @see #getOrdonnee()
+     * @see {@value Coordonnees#ABSCISSE_PAR_DEFAUT}
+     * @see {@value Coordonnees#ORDONNEE_PAR_DEFAUT}
      * 
      * @since 0.3.2.3
      */

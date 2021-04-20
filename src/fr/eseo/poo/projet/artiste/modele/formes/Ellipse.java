@@ -233,12 +233,11 @@ public class Ellipse extends Forme {
 	 * <p>
 	 * The calculation is based on the formula : {@code π x a x b}.
 	 * <p>
-	 * Où:
+	 * Where:
 	 * <ul>
 	 * <li><i>a</i> is the small radius of the ellipse</li>
 	 * <li><i>b</i> is the large radius of the ellipse</li>
-	 * <ul>
-	 * <p>
+	 * </ul>
 	 * 
 	 * @see #perimetre()
 	 * 
@@ -261,7 +260,7 @@ public class Ellipse extends Forme {
 	 * <ul>
 	 * <li><i>A</i> is the radius of the ellipse parallel to the height.</li>
 	 * <li><i>B</i> is the radius of the ellipse parallel to the height.</li>
-	 * <li><i>(X, Y)<i> is the center of the ellipse.</li>
+	 * <li><i>(X, Y)</i> is the center of the ellipse.</li>
 	 * </ul>
 	 * <p>
 	 * the point (x, y) must verify :

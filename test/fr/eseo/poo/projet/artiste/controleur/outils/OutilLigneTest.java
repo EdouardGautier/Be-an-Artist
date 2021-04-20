@@ -129,9 +129,9 @@ public class OutilLigneTest {
 	 */
 	private void dessinFormeClick(final int debutX, final int debutY, final int finX, final int finY) {
 		this.outil.mousePressed(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_PRESSED, 0,
-				MouseEvent.BUTTON1_DOWN_MASK , debutX, debutY, 1, false, MouseEvent.BUTTON1));
+				MouseEvent.BUTTON1_DOWN_MASK, debutX, debutY, 1, false, MouseEvent.BUTTON1));
 		this.outil.mouseReleased(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_RELEASED, 0,
-				MouseEvent.BUTTON1_DOWN_MASK , finX, finY, 1, false, MouseEvent.BUTTON1));
+				MouseEvent.BUTTON1_DOWN_MASK, finX, finY, 1, false, MouseEvent.BUTTON1));
 	}
 
 	/**
@@ -146,7 +146,7 @@ public class OutilLigneTest {
 	private void dessinFormeClick(final int x, final int y) {
 		this.dessinFormeClick(x, y, x, y); // Nécessaire pour bien donner des valeurs à début et fin de Outil.
 		this.outil.mouseClicked(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_CLICKED, 0,
-				MouseEvent.BUTTON1_DOWN_MASK , x, y, 2, false, MouseEvent.BUTTON1));
+				MouseEvent.BUTTON1_DOWN_MASK, x, y, 2, false, MouseEvent.BUTTON1));
 	}
 
 	public static void main(final String[] args) {
