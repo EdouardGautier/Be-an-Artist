@@ -270,7 +270,7 @@ public class Coordonnees {
 	 * 
 	 * @return {@code true} if two points are equal, {@code false} otherwise.
 	 * 
-	 * @since 0.3.2.4
+	 * @since 0.3.3.4
 	 */
 	@Override
 	public boolean equals(final Object p_other) {

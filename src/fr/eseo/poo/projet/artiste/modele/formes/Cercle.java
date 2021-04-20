@@ -41,7 +41,7 @@ public class Cercle extends Ellipse {
      */
     public Cercle(Coordonnees p_position, double p_largeur) {
         if (p_largeur <= 0) {
-            throw new IllegalArgumentException("La largeur et " + getClass().getSimpleName() + " doit être positive");
+            throw new IllegalArgumentException("La largeur " + getClass().getSimpleName() + " doit être positive");
         } else {
             this.largeur = p_largeur;
             this.hauteur = p_largeur;
@@ -70,7 +70,7 @@ public class Cercle extends Ellipse {
     public Cercle(double p_largeur) {
         if (p_largeur <= 0) {
             throw new IllegalArgumentException(
-                    "La largeur et la hauteur de " + getClass().getSimpleName() + " doit être positive");
+                    "La largeur et la hauteur de " + getClass().getSimpleName() + " doivent être positive");
         } else {
             this.largeur = p_largeur;
             this.hauteur = p_largeur;

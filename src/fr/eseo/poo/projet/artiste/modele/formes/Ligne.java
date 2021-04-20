@@ -43,7 +43,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  * 
  * @since 0.3.2.4
  * 
- * @version 0.3.2.8
+ * @version 0.3.4.4
  */
 public class Ligne extends Forme {
 
@@ -262,14 +262,14 @@ public class Ligne extends Forme {
      * Function returning a description of the line in the form :
      * <p>
      * {@code [Ligne] c1 : (<abscissa>) , <ordinate>) c2 : (<abscissa>) , 
-     * <ordinate>) longueur : <length> angle : <angle> degrée}.
+     * <ordinate>) longueur : <length> angle : <angle>°}.
      * 
      * @return A {@code String}, corresponding to the description of the
      *         {@code Line}.
      * 
      * @see Coordonnees#toString()
      * 
-     * @since 0.3.2.4
+     * @since 0.3.4.4
      */
     @Override
     public String toString() {
@@ -278,6 +278,38 @@ public class Ligne extends Forme {
         angle = angle < 0 ? angle + 360 : angle;
         return '[' + getClass().getSimpleName() + "] c1 : " + this.getC1().toString() + " c2 : "
                 + this.getC2().toString() + " longueur : " + formater.format(this.perimetre()) + " angle : "
-                + formater.format(angle) + " degrée";
+                + formater.format(angle) + "°";
+    }
+
+    /**
+     * {@inheritDoc}
+     * 
+     * @see Forme#equals(Object)
+     * 
+     * @since 0.3.4.4
+     */
+    @Override
+    public boolean equals(final Object other) {
+        if (other == this)
+            return true;
+        if (!(other instanceof Ligne)) {
+            return false;
+        }
+        final Ligne ligne = (Ligne) other;
+        return super.equals(ligne);
+    }
+
+    /**
+     * Function to obtain the hashCode of {@code Ligne}.
+     * 
+     * @return An {@code int} corresponding to the hashCode of the {@code Ligne}.
+     * 
+     * @see Forme#hashCode()
+     * 
+     * @since 0.3.4.4
+     */
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

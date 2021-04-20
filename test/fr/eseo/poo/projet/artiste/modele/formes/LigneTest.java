@@ -111,7 +111,7 @@ public class LigneTest {
     public void testToString() {
         final Ligne ligne = new Ligne(new Coordonnees(10, 10), -5, 20);
 
-        String description = "[Ligne] c1 : (10,0 , 10,0) c2 : (5,0 , 30,0) longueur : 20,62 angle : 104,04 degrée";
+        String description = "[Ligne] c1 : (10,0 , 10,0) c2 : (5,0 , 30,0) longueur : 20,62 angle : 104,04°";
         assertEquals("Test de la representation de la ligne", description, ligne.toString());
     }
 }
