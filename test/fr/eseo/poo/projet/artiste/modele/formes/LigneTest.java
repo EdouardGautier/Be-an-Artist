@@ -79,7 +79,7 @@ public class LigneTest {
     }
 
     /**
-     * Test of {@link Ligne#aire())}.
+     * Test of {@link Ligne#aire()}.
      * 
      * @since 0.3.2.4
      */

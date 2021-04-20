@@ -180,7 +180,7 @@ public class PanneauDessin extends JPanel {
     /**
      * Method that deletes {@code Outil} already associated.
      * 
-     * @see associerOutil(Outil)
+     * @see #associerOutil(Outil)
      * 
      * @since 0.3.4.1
      */
@@ -203,7 +203,7 @@ public class PanneauDessin extends JPanel {
      * 
      * @param p_outil {@code Outil} that we want to associate.
      * 
-     * @see dissocierOutil()
+     * @see #dissocierOutil()
      * 
      * @since 0.3.4.1
      */

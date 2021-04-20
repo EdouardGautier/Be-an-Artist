@@ -149,7 +149,7 @@ public abstract class Outil implements MouseInputListener {
      */
     @Override
     public void mouseClicked(final MouseEvent event) {
-
+        // We ignore voluntarily
     }
 
     /**
@@ -162,7 +162,7 @@ public abstract class Outil implements MouseInputListener {
      */
     @Override
     public void mouseDragged(final MouseEvent event) {
-
+        // We ignore voluntarily
     }
 
     /**
@@ -175,7 +175,7 @@ public abstract class Outil implements MouseInputListener {
      */
     @Override
     public void mouseEntered(final MouseEvent event) {
-
+        // We ignore voluntarily
     }
 
     /**
@@ -188,7 +188,7 @@ public abstract class Outil implements MouseInputListener {
      */
     @Override
     public void mouseExited(final MouseEvent event) {
-
+        // We ignore voluntarily
     }
 
     /**
@@ -201,7 +201,7 @@ public abstract class Outil implements MouseInputListener {
      */
     @Override
     public void mouseMoved(final MouseEvent event) {
-
+        // We ignore voluntarily
     }
 
     /**
