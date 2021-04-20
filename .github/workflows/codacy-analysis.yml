@@ -11,8 +11,6 @@ name: Codacy Security Scan
 on:
   push:
   pull_request:
-  schedule:
-    - cron: '0 18 * * *'
 
 jobs:
   codacy-security-scan:
