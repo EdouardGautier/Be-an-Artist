@@ -285,8 +285,6 @@ public class Coordonnees {
 	 * @return An {@code int} corresponding to the hashCode of the
 	 *         {@code Coordonnees}.
 	 * 
-	 * @see Double#hashCode(double)
-	 * 
 	 * @since 0.3.2.4
 	 */
 	@Override

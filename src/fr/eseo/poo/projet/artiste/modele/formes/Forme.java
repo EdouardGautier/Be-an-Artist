@@ -78,8 +78,8 @@ public abstract class Forme {
      * 
      * @see #getAbscisse()
      * @see #getOrdonnee()
-     * @see {@value Coordonnees#ABSCISSE_PAR_DEFAUT}
-     * @see {@value Coordonnees#ORDONNEE_PAR_DEFAUT}
+     * @see Coordonnees#ABSCISSE_PAR_DEFAUT
+     * @see Coordonnees#ORDONNEE_PAR_DEFAUT
      * 
      * @since 0.3.2.3
      */
@@ -444,9 +444,6 @@ public abstract class Forme {
      * Function to obtain the hashCode of a {@code Forme}.
      * 
      * @return An {@code int} corresponding to the hashCode of the {@code Forme}.
-     * 
-     * @see Double#hashCode(double)
-     * @see Coordonnees#hashCode()
      * 
      * @since 0.3.4.4
      */

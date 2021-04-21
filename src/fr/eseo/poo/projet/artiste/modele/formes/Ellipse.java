@@ -273,7 +273,8 @@ public class Ellipse extends Forme {
 	 * <li>the result is equal to 1, then the point is on the contour of the
 	 * ellipse.</li>
 	 * <li>the result is greater than 1, then the point is outside the the
-	 * ellipse.</li></ul>
+	 * ellipse.</li>
+	 * </ul>
 	 * 
 	 * @param p_point the point to evaluate
 	 * 
@@ -297,8 +298,6 @@ public class Ellipse extends Forme {
 	 * 
 	 * @return A {@code String}, ccorresponding to the description of the
 	 * {@code Ellipse}.
-	 * 
-	 * @see Coordonnees#toString()
 	 * 
 	 * @since 0.3.2.6
 	 */
