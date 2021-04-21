@@ -267,8 +267,6 @@ public class Ligne extends Forme {
      * @return A {@code String}, corresponding to the description of the
      *         {@code Line}.
      * 
-     * @see Coordonnees#toString()
-     * 
      * @since 0.3.4.4
      */
     @Override
