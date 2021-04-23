@@ -48,7 +48,7 @@ public class PanneauDessin extends JPanel {
      * 
      * @since 0.3.3.2
      */
-    public static final Color COULEUR_FOND_PAR_DEFAUT = new Color(233, 234, 234);
+    public static final Color COULEUR_FOND_PAR_DEFAUT = new Color(255, 255, 255);
 
     /**
      * {@code List} of {@code formes} display in the panel.

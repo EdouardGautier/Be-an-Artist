@@ -6,13 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 /**
- * Base test class (with asserts and not parameterized) of the
- * {@linkplain PanneauDessin}.
+ * Base test class of the {@linkplain PanneauDessin}.
  * 
  * @author EdouardGautier
  * 
  * @since 0.3.3.2
- * 
  */
 public class PanneauDessinTest {
     public static void main(final String[] args) {
@@ -52,8 +50,8 @@ public class PanneauDessinTest {
     /**
      * Test of {@linkplain PanneauDessin#PanneauDessin(int, int, Color)}.
      * <p>
-     * We created a main window with the title {@code  Blues du Businessman}, then we
-     * change the size of the window.
+     * We created a main window with the title {@code  Blues du Businessman}, then
+     * we change the size of the window.
      * <p>
      * Closing the window will stop the application.
      */
