@@ -14,19 +14,19 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
-import fr.eseo.poo.projet.artiste.modele.formes.Ligne;
+import fr.eseo.poo.projet.artiste.modele.formes.Ellipse;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
 //TODO : Revoir la tabulation 
 /**
- * Base test class parameterized of the {@link OutilLigne}
+ * Base test class parameterized of the {@link OutilEllipse}
  * 
  * @author EdouardGautier
  * 
- * @since 0.3.4.4
+ * @since 0.3.4.8
  */
 @RunWith(Parameterized.class)
-public class OutilLigneTest {
+public class OutilEllipseTest {
         /**
          * Frame where the drawing area will be placed.
          */
@@ -40,17 +40,17 @@ public class OutilLigneTest {
         /**
          * Tool tested.
          */
-        private final OutilLigne outil;
+        private final OutilEllipse outil;
 
         /**
-         * Reference line for double click
+         * Reference ellipse for double click
          */
-        private final Ligne ligneReferenceDouble;
+        private final Ellipse ellipseReferenceDouble;
 
         /**
-         * Reference line for the click and drag
+         * Reference ellipse for the click and drag
          */
-        private final Ligne ligneReferenceDrag;
+        private final Ellipse ellipseReferenceDrag;
 
         /**
          * Number of π for drag
@@ -60,21 +60,21 @@ public class OutilLigneTest {
         /**
          * Builder for each test for OutilLigne.
          * 
-         * @param p_ligneReferenceDouble line for double click
-         * @param p_ligneReferenceDrag   line for the click and drag
-         * @param p_nbPie                number of π for drag
+         * @param p_ellipseReferenceDouble ellipse for double click
+         * @param p_ellipseReferenceDrag   ellipse for the click and drag
+         * @param p_nbPie                  number of π for drag
          */
-        public OutilLigneTest(Ligne p_ligneReferenceDouble, Ligne p_ligneReferenceDrag, int p_nbPie) {
+        public OutilEllipseTest(Ellipse p_ellipseReferenceDouble, Ellipse p_ellipseReferenceDrag, int p_nbPie) {
                 this.frame = new JFrame();
                 this.panneau = new PanneauDessin();
-                this.outil = new OutilLigne();
+                this.outil = new OutilEllipse();
                 this.panneau.associerOutil(this.outil);
-                this.ligneReferenceDouble = p_ligneReferenceDouble;
-                this.ligneReferenceDrag = p_ligneReferenceDrag;
+                this.ellipseReferenceDouble = p_ellipseReferenceDouble;
+                this.ellipseReferenceDrag = p_ellipseReferenceDrag;
                 this.nbPie = p_nbPie;
 
                 this.frame.getContentPane().add(panneau);
-                this.frame.setTitle("OutilLigneTest");
+                this.frame.setTitle("OutilEllipseTest");
                 this.frame.setSize(this.panneau.getPreferredSize());
                 this.frame.setLocationRelativeTo(null);
                 this.frame.setVisible(true);
@@ -84,8 +84,8 @@ public class OutilLigneTest {
         /**
          * Creation of the test list.
          * 
-         * {0} the first line for double click. {1} the second line for the click and
-         * drag. {2} the number of π
+         * {0} the first ellipse for double click. {1} the second ellipse for the click
+         * and drag. {2} the number of π
          * 
          * @return all the tests.
          */
@@ -93,28 +93,27 @@ public class OutilLigneTest {
         public static Collection<Object[]> dt() {
                 final Object[][] data = new Object[][] {
                                 // Test 0
-                                { new Ligne(new Coordonnees(0, 30)), new Ligne(new Coordonnees(100, 90), 71, 81), 1 },
+                                { new Ellipse(new Coordonnees(0, 30)), new Ellipse(new Coordonnees(100, 90), 71, 81),
+                                                1 },
                                 // Test 1
-                                { new Ligne(new Coordonnees(30, 30)), new Ligne(new Coordonnees(100, 90), 0, 110), 2 },
-                                // Test 2
-                                { new Ligne(new Coordonnees(60, 30)), new Ligne(new Coordonnees(100, 90), -71, 81),
+                                { new Ellipse(new Coordonnees(60, 30)), new Ellipse(new Coordonnees(100, 90), 71, 81),
                                                 3 },
-                                // Test 3
-                                { new Ligne(new Coordonnees(90, 30)), new Ligne(new Coordonnees(100, 90), -100, 10),
+                                // Test 2
+                                { new Ellipse(new Coordonnees(90, 30)), new Ellipse(new Coordonnees(100, 90), 100, 10),
                                                 4 },
-                                // Test 4
-                                { new Ligne(new Coordonnees(120, 30)), new Ligne(new Coordonnees(100, 90), -71, -61),
+                                // Test 3
+                                { new Ellipse(new Coordonnees(120, 30)), new Ellipse(new Coordonnees(100, 90), 71, 81),
                                                 5 } };
                 return Arrays.asList(data);
         }
 
         /**
-         * Test of {@link OutilLigne#creerVueForme()}
+         * Test of {@link OutilEllipse#creerVueForme()}
          */
         @Test
-        public void testOutilLigneDoubleClick() {
-                int x = (int) this.ligneReferenceDouble.getC1().getAbscisse();
-                int y = (int) this.ligneReferenceDouble.getC1().getOrdonnee();
+        public void testOutilEllipseDoubleClick() {
+                int x = (int) this.ellipseReferenceDouble.getPosition().getAbscisse();
+                int y = (int) this.ellipseReferenceDouble.getPosition().getOrdonnee();
                 // We simulate the double click
                 this.outil.mousePressed(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_PRESSED, 0,
                                 MouseEvent.BUTTON1_DOWN_MASK, x, y, 1, false, MouseEvent.BUTTON1));
@@ -123,24 +122,24 @@ public class OutilLigneTest {
                 this.outil.mouseClicked(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_CLICKED, 0,
                                 MouseEvent.BUTTON1_DOWN_MASK, x, y, 2, false, MouseEvent.BUTTON1));
 
-                Ligne ligneActual = (Ligne) this.panneau.getVueFormes().get(0).getForme();
-                assertEquals("Test du double clic", this.ligneReferenceDouble, ligneActual);
+                Ellipse ellipseActual = (Ellipse) this.panneau.getVueFormes().get(0).getForme();
+                assertEquals("Test du double clic", this.ellipseReferenceDouble, ellipseActual);
         }
 
         /**
-         * Test of {@link OutilLigne#creerVueForme()}
+         * Test of {@link OutilEllipse#creerVueForme()}
          */
         @Test
-        public void testOutilLigneGlisseClick() {
-                final int largeur = (int) Math.round((100 * Math.cos(this.nbPie * Math.PI / 4)));
-                final int hauteur = (int) Math.round((100 * Math.sin(this.nbPie * Math.PI / 4)));
+        public void testOutilEllipseGlisseClick() {
+                final int largeur = (int) Math.abs(Math.round((100 * Math.cos(this.nbPie * Math.PI / 4))));
+                final int hauteur = (int) Math.abs(Math.round((100 * Math.sin(this.nbPie * Math.PI / 4))));
                 this.outil.mousePressed(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_PRESSED, 0,
                                 MouseEvent.BUTTON1_DOWN_MASK, 100, 100 - 10, 1, false, MouseEvent.BUTTON1));
                 this.outil.mouseReleased(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_RELEASED, 0,
                                 MouseEvent.BUTTON1_DOWN_MASK, 100 + largeur, 100 + hauteur, 1, false,
                                 MouseEvent.BUTTON1));
 
-                Ligne ligneActual = (Ligne) this.panneau.getVueFormes().get(0).getForme();
-                assertEquals("Test du clic glissé", this.ligneReferenceDrag, ligneActual);
+                Ellipse ellipseActual = (Ellipse) this.panneau.getVueFormes().get(0).getForme();
+                assertEquals("Test du clic glissé", this.ellipseReferenceDrag, ellipseActual);
         }
 }

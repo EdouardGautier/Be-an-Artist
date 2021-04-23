@@ -1,7 +1,6 @@
 package fr.eseo.poo.projet.artiste.controleur.outils;
 
 import fr.eseo.poo.projet.artiste.modele.formes.Ligne;
-import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
 import fr.eseo.poo.projet.artiste.vue.formes.VueLigne;
 
 /**
@@ -21,12 +20,10 @@ public class OutilLigne extends OutilForme {
      * {@inheritDoc}
      * 
      * @since 0.3.4.3
-     * 
-     * @version 0.4.4.2
      */
     @Override
-    protected VueForme creerVueForme() {
-        final Ligne ligne = new Ligne(super.getDebut());
+    protected VueLigne creerVueForme() {
+        final Ligne ligne = new Ligne(super.getDebut()); // Default size if double clicked
         if (!super.getDebut().equals(super.getFin())) {
             ligne.setC2(super.getFin());
         }
