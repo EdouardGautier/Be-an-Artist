@@ -118,8 +118,8 @@ public class OutilCercleTest {
                 this.outil.mouseClicked(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_CLICKED, 0,
                                 MouseEvent.BUTTON1_DOWN_MASK, x, y, 2, false, MouseEvent.BUTTON1));
 
-                Cercle CercleActual = (Cercle) this.panneau.getVueFormes().get(0).getForme();
-                assertEquals("Test du double clic", this.cercleReferenceDouble, CercleActual);
+                Cercle cercleActual = (Cercle) this.panneau.getVueFormes().get(0).getForme();
+                assertEquals("Test du double clic", this.cercleReferenceDouble, cercleActual);
         }
 
         /**

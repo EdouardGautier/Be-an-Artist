@@ -3,6 +3,7 @@ package fr.eseo.poo.projet.artiste.modele.formes;
 import java.text.DecimalFormat;
 
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
+import fr.eseo.poo.projet.artiste.modele.Remplissable;
 
 /**
  * Class {@code Ellipse} representing an ellipse.
@@ -39,14 +40,22 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  * 
  * @see Forme
  * @see Coordonnees
+ * @see Remplissable
  * 
  * @author EdouardGautier
  * 
  * @since 0.3.2.6
  * 
- * @version 0.3.2.8
+ * @version 0.3.6.1
  */
-public class Ellipse extends Forme {
+public class Ellipse extends Forme implements Remplissable {
+
+	/**
+	 * Attribute allowing to save the filling state of the {@code Ellipse}.
+	 * 
+	 * @since 0.3.6.1
+	 */
+	private boolean estRempli;
 
 	/*************************************************************************/
 	/****************************** Constructs *******************************/
@@ -197,6 +206,16 @@ public class Ellipse extends Forme {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @since 0.3.6.1
+	 */
+	@Override
+	public void setRempli(final boolean p_estRempli) {
+		this.estRempli = p_estRempli;
+	}
+
 	/*************************************************************************/
 	/******************************* Functions *******************************/
 	/*************************************************************************/
@@ -291,21 +310,49 @@ public class Ellipse extends Forme {
 	}
 
 	/**
+	 * {@inheritDoc}
+	 * 
+	 * @since 0.3.6.1
+	 */
+	@Override
+	public boolean estRempli() {
+		return this.estRempli;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @return {@code -Rempli"} if the ellipse is filled, "" otherwise.
+	 * 
+	 * @since 0.3.6.1
+	 */
+	@Override
+	public String descriptionRemplissage() {
+		if (this.estRempli) {
+			return "-Rempli";
+		} else {
+			return "";
+		}
+	}
+
+	/**
 	 * Function returning a description of the ellipse in the form :
 	 * <p>
-	 * {@code [Ellipse] pos : (abscissa , ordinate) dim width x hauteur 
-	 * périmètre : <perimetre> aire : <aire>
+	 * {@code [Ellipse<-Rempli>] pos : (abscissa , ordinate) dim width x hauteur 
+	 * périmètre : <perimetre> aire : <aire> couleur = R<color code red>,
+	 * G<green color code>,B<blue color code>
 	 * 
 	 * @return A {@code String}, ccorresponding to the description of the
 	 * {@code Ellipse}.
 	 * 
-	 * @since 0.3.2.6
+	 * @since 0.3.5.1
 	 */
 	@Override
 	public String toString() {
 		final DecimalFormat formater = new DecimalFormat("0.0#");
-		return "[" + this.getClass().getSimpleName() + "] : pos " + this.getPosition().toString() + " dim "
-				+ formater.format(this.getLargeur()) + " x " + formater.format(this.getHauteur()) + " périmètre : "
-				+ formater.format(this.perimetre()) + " aire : " + formater.format(this.aire());
+		return "[" + this.getClass().getSimpleName() + this.descriptionRemplissage() + "] : pos "
+				+ this.getPosition().toString() + " dim " + formater.format(this.getLargeur()) + " x "
+				+ formater.format(this.getHauteur()) + " périmètre : " + formater.format(this.perimetre()) + " aire : "
+				+ formater.format(this.aire()) + this.descriptionCouleur();
 	}
 }

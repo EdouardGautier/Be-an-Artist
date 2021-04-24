@@ -14,20 +14,19 @@ import fr.eseo.poo.projet.artiste.vue.formes.VueEllipse;
  * 
  * @since 0.3.4.7
  * 
- * @version 0.3.4.10
+ * @version 0.3.6.3
  */
 public class OutilEllipse extends OutilForme {
 
     /**
      * {@inheritDoc}
-     * 
-     * @since 0.3.4.7
-     * 
-     * @version 0.3.4.10
      */
     @Override
     protected VueEllipse creerVueForme() {
         final Ellipse ellipse = new Ellipse(super.getDebut()); // Default size if double clicked
+
+        ellipse.setCouleur(this.getPanneauDessin().getCouleurCourante());
+        ellipse.setRempli(this.getPanneauDessin().getModeRemplissage());
 
         if (!super.getDebut().equals(super.getFin())) {
             double largeur = super.getFin().getAbscisse() - super.getDebut().getAbscisse();

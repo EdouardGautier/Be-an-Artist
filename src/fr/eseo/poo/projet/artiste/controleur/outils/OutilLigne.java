@@ -24,6 +24,7 @@ public class OutilLigne extends OutilForme {
     @Override
     protected VueLigne creerVueForme() {
         final Ligne ligne = new Ligne(super.getDebut()); // Default size if double clicked
+        ligne.setCouleur(this.getPanneauDessin().getCouleurCourante());
         if (!super.getDebut().equals(super.getFin())) {
             ligne.setC2(super.getFin());
         }

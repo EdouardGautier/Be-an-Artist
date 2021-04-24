@@ -1,5 +1,6 @@
 package fr.eseo.poo.projet.artiste.vue.formes;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import fr.eseo.poo.projet.artiste.modele.formes.Forme;
@@ -15,6 +16,8 @@ import fr.eseo.poo.projet.artiste.modele.formes.Ligne;
  * @author EdouardGautier
  * 
  * @since 0.3.3.5
+ * 
+ * @version 0.3.5.2
  */
 public class VueLigne extends VueForme {
     /*************************************************************************/
@@ -44,12 +47,20 @@ public class VueLigne extends VueForme {
      * @param g2d The graphical context in which you want the view to be displayed.
      * 
      * @since 0.3.3.5
+     * 
+     * @version 0.3.5.2
      */
     @Override
     public void affiche(final Graphics2D g2d) {
-        g2d.drawLine((int) super.getForme().getPosition().getAbscisse(),
-                (int) super.getForme().getPosition().getOrdonnee(),
-                (int) (super.getForme().getPosition().getAbscisse() + super.getForme().getLargeur()),
-                (int) (super.getForme().getPosition().getOrdonnee() + super.getForme().getHauteur()));
+        final Ligne ligne = (Ligne) super.getForme();
+        final Color colorOld = g2d.getColor(); // Save the current color
+
+        g2d.setColor(ligne.getCouleur()); // Use of the VueForme cast
+
+        g2d.drawLine((int) ligne.getPosition().getAbscisse(), (int) ligne.getPosition().getOrdonnee(),
+                (int) (ligne.getPosition().getAbscisse() + ligne.getLargeur()),
+                (int) (ligne.getPosition().getOrdonnee() + ligne.getHauteur()));
+
+        g2d.setColor(colorOld); // We restore the color save
     }
 }

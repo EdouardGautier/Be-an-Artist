@@ -24,7 +24,7 @@ import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
  * 
  * @since 0.3.4.10
  */
-public class OutilSelectionner extends OutilForme {
+public class OutilSelectionner extends Outil {
 
     /**
      * Saves the selected {@code VueForme}.
@@ -114,11 +114,5 @@ public class OutilSelectionner extends OutilForme {
      */
     public void mouseReleased(final MouseEvent event) {
         // We ignore voluntarily
-    }
-
-    @Override
-    protected VueForme creerVueForme() {
-        // TODO Auto-generated method stub
-        return null;
     }
 }

@@ -1,5 +1,11 @@
 package fr.eseo.poo.projet.artiste.modele.formes;
 
+import java.awt.Color;
+import java.util.Locale;
+
+import javax.swing.UIManager;
+
+import fr.eseo.poo.projet.artiste.modele.Coloriable;
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 /**
@@ -28,9 +34,9 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  * 
  * @since 0.3.2.3
  * 
- * @version 0.3.2.8
+ * @version 0.3.5.1
  */
-public abstract class Forme {
+public abstract class Forme implements Coloriable {
     /**
      * Default {@code double} value of the width the rectangle enclosing the shape.
      * <p>
@@ -49,6 +55,24 @@ public abstract class Forme {
      * @since 0.3.2.3
      */
     public static final double HAUTEUR_PAR_DEFAUT = 10;
+
+    /**
+     * Default {@code Coloriage} value of the shape.
+     * <p>
+     * Of value {@value #COULEUR_PAR_DEFAUT}.
+     * 
+     * @since 0.3.5.1
+     */
+    public static final Color COULEUR_PAR_DEFAUT = UIManager.getColor("Panel.foreground");
+
+    /***
+     * Value of type {@code double}, for comparison between two points.
+     * <p>
+     * The precision of the comparison is {@value #EPSILON}.
+     * 
+     * @since 0.3.2.5
+     */
+    public final static double EPSILON = 0.01;
 
     /**
      * Attribute representing the length of the rectangle enclosing the shape.
@@ -85,14 +109,20 @@ public abstract class Forme {
      */
     private Coordonnees position;
 
-    /***
-     * Value of type {@code double}, for comparison between two points.
+    /**
+     * Attribut représentant la couleur de la forme.
      * <p>
-     * The precision of the comparison is {@value #EPSILON}.
+     * Cette couleur est modifiable.
+     * <p>
+     * Initialisé par défaut à {@value #COULEUR_PAR_DEFAUT}.
      * 
-     * @since 0.3.2.5
+     * @see #COULEUR_PAR_DEFAUT
+     * @see Coloriable#getCouleur()
+     * @see Coloriable#setCouleur(Color)
+     * 
+     * @since 0.3.5.1
      */
-    public final static double EPSILON = 0.01;
+    private Color couleur;
 
     /*************************************************************************/
     /****************************** Constructs *******************************/
@@ -120,6 +150,7 @@ public abstract class Forme {
         this.largeur = p_largeur;
         this.hauteur = p_hauteur;
         this.position = p_point;
+        this.couleur = COULEUR_PAR_DEFAUT;
     }
 
     /**
@@ -328,6 +359,30 @@ public abstract class Forme {
         return Math.min(this.getPosition().getOrdonnee(), this.getPosition().getOrdonnee() + this.getHauteur());
     }
 
+    /**
+     * Accessor of the color of the shape.
+     * 
+     * @return A {@code Color} corresponding to the color of the shape.
+     * 
+     * @since 0.3.5.1
+     */
+    @Override
+    public Color getCouleur() {
+        return this.couleur;
+    }
+
+    /**
+     * Mutator of the color of the shape.
+     * 
+     * @param p_couleur {@code Color} corresponding to the new color of the shape
+     * 
+     * @since 0.3.5.1
+     */
+    @Override
+    public void setCouleur(final Color p_couleur) {
+        this.couleur = p_couleur;
+    }
+
     /*************************************************************************/
     /******************************* Functions *******************************/
     /*************************************************************************/
@@ -401,9 +456,33 @@ public abstract class Forme {
     }
 
     /**
+     * Gives the description of the color of the shape
+     * <p>
+     * {@code  couleur = R<color code red>,G<green color code>,B<blue color code>}
+     * <p>
+     * In case the {@code Locale} of the computer is French, then the {@code G} will
+     * be replaced by {@code V}.
+     * 
+     * @return {@code String}, description of the color of the shape
+     * 
+     * @since 0.3.5.1
+     */
+    @Override
+    public String descriptionCouleur() {
+        char lettreColorGreen;
+        if (Locale.getDefault().getLanguage().equals("fr")) {
+            lettreColorGreen = 'V';
+        } else {
+            lettreColorGreen = 'G';
+        }
+        return " couleur = R" + this.getCouleur().getRed() + ',' + lettreColorGreen + this.getCouleur().getGreen()
+                + ",B" + this.getCouleur().getBlue();
+    }
+
+    /**
      * Function returning a description of the point in the form:
      * <p>
-     * {@code Class, [pos : Coordonnees, largeur : double, HAUTEUR : double]"}.
+     * {@code Class, [pos : Coordonnees, largeur : double, HAUTEUR : double] couleur = R<color code red>,G<green color code>,B<blue color code>"}.
      * 
      * @return A {@code String}, corresponding to the description of the
      *         {@code Forme}.
@@ -413,7 +492,7 @@ public abstract class Forme {
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + ", [pos : " + this.position + ", largeur : " + this.largeur
-                + ", HAUTEUR : " + this.hauteur + "]";
+                + ", HAUTEUR : " + this.hauteur + "]" + this.descriptionCouleur();
     }
 
     /**

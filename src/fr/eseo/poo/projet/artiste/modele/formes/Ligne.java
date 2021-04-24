@@ -43,7 +43,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  * 
  * @since 0.3.2.4
  * 
- * @version 0.3.4.4
+ * @version 0.3.5.1
  */
 public class Ligne extends Forme {
 
@@ -262,12 +262,13 @@ public class Ligne extends Forme {
      * Function returning a description of the line in the form :
      * <p>
      * {@code [Ligne] c1 : (<abscissa>) , <ordinate>) c2 : (<abscissa>) , 
-     * <ordinate>) longueur : <length> angle : <angle>°}.
+     * <ordinate>) longueur : <length> angle : <angle>° couleur = R<color code red>,
+     * G<green color code>,B<blue color code>}.
      * 
      * @return A {@code String}, corresponding to the description of the
      *         {@code Line}.
      * 
-     * @since 0.3.4.4
+     * @since 0.3.5.1
      */
     @Override
     public String toString() {
@@ -276,7 +277,7 @@ public class Ligne extends Forme {
         angle = angle < 0 ? angle + 360 : angle;
         return '[' + getClass().getSimpleName() + "] c1 : " + this.getC1().toString() + " c2 : "
                 + this.getC2().toString() + " longueur : " + formater.format(this.perimetre()) + " angle : "
-                + formater.format(angle) + "°";
+                + formater.format(angle) + "°" + this.descriptionCouleur();
     }
 
     /**

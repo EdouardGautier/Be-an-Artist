@@ -20,6 +20,8 @@ public class CercleTest {
      * Test of {@link Cercle#Cercle()}.
      * 
      * @since 0.3.2.8
+     * 
+     * @version 0.3.6.1
      */
     @Test
     public void testConstructeurVide() {
@@ -102,4 +104,21 @@ public class CercleTest {
         assertThrows(IllegalArgumentException.class, () -> cercle.setLargeur(0));
     }
 
+    /**
+     * Test of {@link Cercle#toString()}.
+     * 
+     * @since 0.3.6.1
+     */
+    @Test
+    public void testToString() {
+        Cercle cercle = new Cercle(new Coordonnees(10, 10), 5);
+
+        String description = "[Cercle] : pos (10,0 , 10,0) dim 5,0 x 5,0 périmètre : 15,71 aire : 19,63 couleur = R51,V51,B51";
+        assertEquals("Test de la representation de la ligne", description, cercle.toString());
+
+        cercle.setRempli(true);
+
+        description = "[Cercle-Rempli] : pos (10,0 , 10,0) dim 5,0 x 5,0 périmètre : 15,71 aire : 19,63 couleur = R51,V51,B51";
+        assertEquals("Test de la representation de la ligne", description, cercle.toString());
+    }
 }

@@ -16,6 +16,8 @@ import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
  * @author EdouardGautier
  * 
  * @since 0.3.3.8
+ * 
+ * @version 0.3.6.2
  */
 public class VueEllipseTest {
     public static void main(final String[] args) {
@@ -32,6 +34,8 @@ public class VueEllipseTest {
      * for a visual test.
      * 
      * @since 0.3.3.8
+     * 
+     * @version 0.3.6.2
      */
     public VueEllipseTest() {
         final JFrame frame = new JFrame();
@@ -51,5 +55,11 @@ public class VueEllipseTest {
         panneau.ajouterVueForme(ellipse1);
         panneau.ajouterVueForme(ellipse2);
         panneau.ajouterVueForme(ellipse3);
+
+        final Ellipse ellipse = new Ellipse(new Coordonnees(50, 80));
+        ellipse.setRempli(true);
+        final VueEllipse ellipse4 = new VueEllipse(ellipse);
+
+        panneau.ajouterVueForme(ellipse4);
     }
 }
