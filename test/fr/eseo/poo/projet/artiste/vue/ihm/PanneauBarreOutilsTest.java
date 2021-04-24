@@ -1,15 +1,9 @@
 package fr.eseo.poo.projet.artiste.vue.ihm;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-
-import fr.eseo.poo.projet.artiste.controleur.actions.ActionEffacer;
-import fr.eseo.poo.projet.artiste.controleur.actions.ActionSelectionner;
-import fr.eseo.poo.projet.artiste.controleur.outils.OutilCercle;
-import fr.eseo.poo.projet.artiste.controleur.outils.OutilEllipse;
-import fr.eseo.poo.projet.artiste.controleur.outils.OutilLigne;
-
-import java.awt.BorderLayout;
 
 /**
  * Base test class of the {@linkplain PanneauBarreOutils}.
@@ -48,19 +42,9 @@ public class PanneauBarreOutilsTest {
         frame.getContentPane().add(panneauDessin);
         frame.setTitle("Etre un Artiste");
         frame.setSize(panneauDessin.getPreferredSize());
-        frame.setLocation(250, 50);
+        // frame.setLocation(250, 50);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.add(panneauOutils, BorderLayout.EAST);
-
-        OutilLigne outilLigne = new OutilLigne();
-        OutilEllipse outilEllipse = new OutilEllipse();
-        OutilCercle outilCercle = new OutilCercle();
-        new ActionEffacer(panneauDessin);
-        new ActionSelectionner(panneauDessin);
-
-        panneauDessin.associerOutil(outilLigne);
-        panneauDessin.associerOutil(outilEllipse);
-        panneauDessin.associerOutil(outilCercle);
     }
 }

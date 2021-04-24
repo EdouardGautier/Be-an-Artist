@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import fr.eseo.poo.projet.artiste.controleur.outils.Outil;
+import fr.eseo.poo.projet.artiste.modele.formes.Forme;
 import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
 
 /**
@@ -22,7 +23,7 @@ import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
  * 
  * @since 0.3.3.2
  * 
- * @version 0.3.4.1
+ * @version 0.3.6.2
  */
 public class PanneauDessin extends JPanel {
 
@@ -42,7 +43,7 @@ public class PanneauDessin extends JPanel {
 
     /**
      * The default value of type {@code Color} of the background color of the
-     * drawing, default value: {@code (255, 228, 245)}.
+     * drawing, default value: {@code (255, 255, 255)}.
      * 
      * @see Color
      * 
@@ -64,6 +65,20 @@ public class PanneauDessin extends JPanel {
      */
     private Outil outilCourant;
 
+    /**
+     * {@code Color} to store the color that will be used.
+     * 
+     * @since 0.3.5.2
+     */
+    private Color couleurCourante = Forme.COULEUR_PAR_DEFAUT;
+
+    /**
+     * The {@code boolean} to save whether to fill the forms.
+     * 
+     * @since 0.3.6.2
+     */
+    private boolean estRempli = false;
+
     /*************************************************************************/
     /****************************** Constructs *******************************/
     /*************************************************************************/
@@ -82,6 +97,8 @@ public class PanneauDessin extends JPanel {
      * @see #PanneauDessin()
      * 
      * @since 0.3.3.2
+     * 
+     * @version 0.3.5.2
      */
     public PanneauDessin(int p_largeur, int p_hauteur, Color p_fondColor) {
         super.setBackground(p_fondColor);
@@ -139,6 +156,60 @@ public class PanneauDessin extends JPanel {
      */
     private void setOutilCourant(final Outil p_outil) {
         this.outilCourant = p_outil;
+    }
+
+    /**
+     * Accessor of the current {@code Color} used to draw the shapes.
+     * 
+     * @return {@code Color} used to draw the shapes.
+     * 
+     * @see #setCouleurCourante(Color)
+     * 
+     * @since 0.3.5.2
+     */
+    public Color getCouleurCourante() {
+        return this.couleurCourante;
+    }
+
+    /**
+     * Common {@code Color} mutator used to draw shapes.
+     * 
+     * @param p_couleurCourante {@code Color} to be used to draw the
+     * 
+     * @see #getCouleurCourante()
+     * 
+     * @since 0.3.5.2
+     */
+    public void setCouleurCourante(final Color p_couleurCourante) {
+        this.couleurCourante = p_couleurCourante;
+    }
+
+    /**
+     * Accessor allowing to know if the forms are filled or not.
+     * 
+     * @return {@code true} if the user wants to fill the forms, {@code false} if
+     *         not.
+     * 
+     * @see #setModeRemplissage(boolean)
+     * 
+     * @since 0.3.6.2
+     */
+    public boolean getModeRemplissage() {
+        return this.estRempli;
+    }
+
+    /**
+     * Mutator of the filling or not the forms.
+     * 
+     * @param p_estRempli {@code boolean} indicating whether or not you want to fill
+     *                    in the shapes you draw
+     * 
+     * @see #getModeRemplissage()
+     * 
+     * @since 0.3.6.2
+     */
+    public void setModeRemplissage(final boolean p_estRempli) {
+        this.estRempli = p_estRempli;
     }
 
     /*************************************************************************/

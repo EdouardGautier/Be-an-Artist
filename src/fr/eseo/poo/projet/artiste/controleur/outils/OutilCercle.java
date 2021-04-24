@@ -14,20 +14,19 @@ import fr.eseo.poo.projet.artiste.vue.formes.VueCercle;
  * 
  * @since 0.3.4.7
  * 
- * @version 0.3.4.10
+ * @version 0.3.6.3
  */
 public class OutilCercle extends OutilForme {
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @since 0.3.4.7
-	 * 
-	 * @version 0.3.4.10
 	 */
 	@Override
 	protected VueCercle creerVueForme() {
 		final Cercle cercle = new Cercle(super.getDebut()); // Default size if double clicked
+
+		cercle.setCouleur(this.getPanneauDessin().getCouleurCourante());
+		cercle.setRempli(this.getPanneauDessin().getModeRemplissage());
 
 		if (!super.getDebut().equals(super.getFin())) {
 			// The maximum between the width and height of the movement made with the mouse

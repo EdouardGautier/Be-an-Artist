@@ -11,7 +11,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
  * 
  * @author EdouardGautier
  * 
- * @since 0.3.2.4
+ * @since 0.3.5.1
  */
 public class LigneTest {
 
@@ -111,7 +111,7 @@ public class LigneTest {
     public void testToString() {
         final Ligne ligne = new Ligne(new Coordonnees(10, 10), -5, 20);
 
-        String description = "[Ligne] c1 : (10,0 , 10,0) c2 : (5,0 , 30,0) longueur : 20,62 angle : 104,04°";
+        final String description = "[Ligne] c1 : (10,0 , 10,0) c2 : (5,0 , 30,0) longueur : 20,62 angle : 104,04° couleur = R51,V51,B51";
         assertEquals("Test de la representation de la ligne", description, ligne.toString());
     }
 }

@@ -44,12 +44,18 @@ public class VueCercleTest {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        final VueEllipse cercle1 = new VueCercle(new Cercle());
-        final VueEllipse cercle2 = new VueCercle(new Cercle(new Coordonnees(50, 100)));
-        final VueEllipse cercle3 = new VueCercle(new Cercle(new Coordonnees(100, 100), 50));
+        final VueCercle cercle1 = new VueCercle(new Cercle());
+        final VueCercle cercle2 = new VueCercle(new Cercle(new Coordonnees(50, 100)));
+        final VueCercle cercle3 = new VueCercle(new Cercle(new Coordonnees(100, 100), 50));
 
         panneau.ajouterVueForme(cercle1);
         panneau.ajouterVueForme(cercle2);
         panneau.ajouterVueForme(cercle3);
+
+        final Cercle cercle = new Cercle(new Coordonnees(50, 80));
+        cercle.setRempli(true);
+        final VueCercle cercle4 = new VueCercle(cercle);
+
+        panneau.ajouterVueForme(cercle4);
     }
 }

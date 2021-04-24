@@ -20,6 +20,8 @@ public class EllipseTest {
      * Test of {@link Ellipse#Ellipse()}
      * 
      * @since 0.3.2.8
+     * 
+     * @version 0.3.6.1
      */
     @Test
     public void testConstructeurVide() {
@@ -103,5 +105,23 @@ public class EllipseTest {
         Ellipse ellipse = new Ellipse();
         assertThrows(IllegalArgumentException.class, () -> ellipse.setLargeur(-10));
         assertThrows(IllegalArgumentException.class, () -> ellipse.setLargeur(0));
+    }
+
+    /**
+     * Test of {@link Ellipse#toString()}.
+     * 
+     * @since 0.3.6.1
+     */
+    @Test
+    public void testToString() {
+        Ellipse ellipse = new Ellipse(new Coordonnees(10, 10), 5, 20);
+
+        String description = "[Ellipse] : pos (10,0 , 10,0) dim 5,0 x 20,0 périmètre : 42,89 aire : 78,54 couleur = R51,V51,B51";
+        assertEquals("Test de la representation de la ligne", description, ellipse.toString());
+
+        ellipse.setRempli(true);
+
+        description = "[Ellipse-Rempli] : pos (10,0 , 10,0) dim 5,0 x 20,0 périmètre : 42,89 aire : 78,54 couleur = R51,V51,B51";
+        assertEquals("Test de la representation de la ligne", description, ellipse.toString());
     }
 }
