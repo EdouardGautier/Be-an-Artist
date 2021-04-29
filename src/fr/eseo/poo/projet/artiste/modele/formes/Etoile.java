@@ -550,7 +550,7 @@ public class Etoile extends Forme implements Remplissable {
     /**
      * {@inheritDoc}
      * <p>
-     * The method used here is that of ray-casting. 
+     * The method used here is that of ray-casting.
      * 
      * @param point The{@code Coordonnees} which we want to know if it is in the
      *              star.

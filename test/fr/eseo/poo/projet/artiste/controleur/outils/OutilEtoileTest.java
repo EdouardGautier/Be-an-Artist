@@ -54,13 +54,6 @@ public class OutilEtoileTest {
         private final Etoile etoileReferenceDrag;
 
         /**
-         * /**
-	 * We get the information about the star to be
-	 * drawn
-         */
-        private final PanneauBarreOutils panneauOutils;
-
-        /**
          * Number of π for drag
          */
         private int nbPie;
@@ -75,7 +68,7 @@ public class OutilEtoileTest {
         public OutilEtoileTest(Etoile p_etoileReferenceDouble, Etoile p_etoileReferenceDrag, int p_nbPie) {
                 this.frame = new JFrame();
                 this.panneauDessin = new PanneauDessin();
-                this.panneauOutils = new PanneauBarreOutils(panneauDessin);
+                final PanneauBarreOutils panneauOutils = new PanneauBarreOutils(panneauDessin);
                 this.outil = new OutilEtoile(panneauOutils);
                 this.panneauDessin.associerOutil(this.outil);
                 this.etoileReferenceDouble = p_etoileReferenceDouble;
