@@ -38,20 +38,20 @@ public class VueEtoile extends VueForme {
     public void affiche(final Graphics2D g2d) {
         final Etoile etoile = (Etoile) super.getForme();
         final Color colorOld = g2d.getColor();
-        final int[] tab_x = new int[2 * etoile.getNombreBranches()];
-        final int[] tab_y = new int[2 * etoile.getNombreBranches()];
+        final int[] tabX = new int[2 * etoile.getNombreBranches()];
+        final int[] tabY = new int[2 * etoile.getNombreBranches()];
         g2d.setColor(etoile.getCouleur());        
         // We calculate the position of the points
         for (int i = 0; i < 2 * etoile.getNombreBranches(); i += 2) {
-            tab_x[i] = (int) Math.round(etoile.getCoordonneesPolygone().get(i / 2).getAbscisse());
-            tab_y[i] = (int) Math.round(etoile.getCoordonneesPolygone().get(i / 2).getOrdonnee());
-            tab_x[i + 1] = (int) Math.round(etoile.getCoordonnees().get(i / 2).getAbscisse());
-            tab_y[i + 1] = (int) Math.round(etoile.getCoordonnees().get(i / 2).getOrdonnee());
+            tabX[i] = (int) Math.round(etoile.getCoordonneesPolygone().get(i / 2).getAbscisse());
+            tabY[i] = (int) Math.round(etoile.getCoordonneesPolygone().get(i / 2).getOrdonnee());
+            tabX[i + 1] = (int) Math.round(etoile.getCoordonnees().get(i / 2).getAbscisse());
+            tabY[i + 1] = (int) Math.round(etoile.getCoordonnees().get(i / 2).getOrdonnee());
         }
         if (etoile.estRempli()) {
-            g2d.fillPolygon(tab_x, tab_y, etoile.getNombreBranches() * 2);
+            g2d.fillPolygon(tabX, tabY, etoile.getNombreBranches() * 2);
         }
-        g2d.drawPolygon(tab_x, tab_y, etoile.getNombreBranches() * 2);
+        g2d.drawPolygon(tabX, tabY, etoile.getNombreBranches() * 2);
         g2d.setColor(colorOld);
     }
 }

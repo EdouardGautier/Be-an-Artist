@@ -53,6 +53,11 @@ public class OutilEtoileTest {
          */
         private final Etoile etoileReferenceDrag;
 
+        /**
+         * /**
+	 * We get the information about the star to be
+	 * drawn
+         */
         private final PanneauBarreOutils panneauOutils;
 
         /**

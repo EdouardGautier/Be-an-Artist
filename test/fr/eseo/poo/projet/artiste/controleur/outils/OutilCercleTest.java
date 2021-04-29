@@ -135,7 +135,7 @@ public class OutilCercleTest {
                                 MouseEvent.BUTTON1_DOWN_MASK, 100 + largeur, 100 + hauteur, 1, false,
                                 MouseEvent.BUTTON1));
 
-                Cercle CercleActual = (Cercle) this.panneau.getVueFormes().get(0).getForme();
-                assertEquals("Test du clic glissé", this.cercleReferenceDrag, CercleActual);
+                Cercle cercleActual = (Cercle) this.panneau.getVueFormes().get(0).getForme();
+                assertEquals("Test du clic glissé", this.cercleReferenceDrag, cercleActual);
         }
 }

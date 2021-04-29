@@ -62,8 +62,18 @@ public class PanneauBarreOutils extends JPanel {
          */
         private double longueurBranche;
 
+        /**
+         * Default name of the spinner for the number of branches
+         * 
+         * @since 0.3.7.3
+         */
         public static final String BRANCHE_SPINNER_NOM = "Spinner branche";
 
+        /**
+         * Default spinner name for branch length
+         * 
+         * @since 0.3.7.3
+         */
         public static final String LONGUEUR_SPINNER_NOM = "Spinner longueur";
 
         /*************************************************************************/
@@ -233,6 +243,6 @@ public class PanneauBarreOutils extends JPanel {
                 conteneurEtoile.add(labelNombre);
                 conteneurEtoile.add(nombreBranchesEtoile);
                 conteneurEtoile.add(labelLongueur);
-                conteneurEtoile.add(longueurBrancheEtoile);                
+                conteneurEtoile.add(longueurBrancheEtoile);
         }
 }
