@@ -17,7 +17,7 @@ import org.junit.runners.Suite.SuiteClasses;
  * @since 0.3.2.8
  */
 @RunWith(Suite.class)
-@SuiteClasses({ EllipseTest.class, EllipseTestParameterizedContient.class,
+@SuiteClasses({ EllipseTest.class, EllipseTestParameterizedAire.class, EllipseTestParameterizedContient.class,
         EllipseTestParameterizedPerimetre.class })
 public class EllipseTestAll {
 }

@@ -46,6 +46,7 @@ public class ActionSelectionner extends AbstractAction {
      * @since 0.3.4.10
      */
     public ActionSelectionner(final PanneauDessin p_panneauDessin) {
+        super(NOM_ACTION);
         this.panneauDessin = p_panneauDessin;
     }
 

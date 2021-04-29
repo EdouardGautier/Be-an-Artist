@@ -55,7 +55,7 @@ public class OutilEllipseTest {
         /**
          * Number of π for drag
          */
-        private int nbPie;
+        private final int nbPie;
 
         /**
          * Builder for each test for OutilLigne.

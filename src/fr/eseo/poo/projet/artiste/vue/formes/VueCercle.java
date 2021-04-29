@@ -3,7 +3,7 @@ package fr.eseo.poo.projet.artiste.vue.formes;
 import fr.eseo.poo.projet.artiste.modele.formes.Cercle;
 
 /**
- * Class {@linkplain VueCercle} allowing the display of a line, from the class
+ * Class {@linkplain VueCercle} allowing the display of a circle, from the class
  * {@linkplain Cercle}.
  * 
  * @see Cercle

@@ -46,8 +46,6 @@ public class VueEllipse extends VueForme {
      * @param g2d The graphical context in which you want the view to be displayed.
      * 
      * @since 0.3.3.7
-     * 
-     * @version 0.3.5.2
      */
     @Override
     public void affiche(final Graphics2D g2d) {
@@ -57,12 +55,11 @@ public class VueEllipse extends VueForme {
         g2d.setColor(ellipse.getCouleur()); // Use of the VueForme cast
 
         if (ellipse.estRempli()) {
-			g2d.fillOval((int) forme.getCadreMinX(), (int) forme.getCadreMinY(), (int) forme.getLargeur(),
-					(int) forme.getHauteur());
-		} else {
+            g2d.fillOval((int) ellipse.getPosition().getAbscisse(), (int) ellipse.getPosition().getOrdonnee(), (int) ellipse.getLargeur(),
+                    (int) ellipse.getHauteur());
+        }
         g2d.drawOval((int) ellipse.getCadreMinX(), (int) ellipse.getCadreMinY(), (int) ellipse.getLargeur(),
                 (int) ellipse.getHauteur());
-        }
 
         g2d.setColor(colorOld); // We restore the color save
     }

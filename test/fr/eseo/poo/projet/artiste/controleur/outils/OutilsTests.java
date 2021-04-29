@@ -10,15 +10,16 @@ import org.junit.runners.Suite.SuiteClasses;
  * @see OutilLigneTest
  * @see OutilEllipseTest
  * @see OutilEllipseTest
+ * @see OutilEtoileTest
  * 
  * @author EdouardGautier
  * 
  * @since 0.3.4.4
  * 
- * @version 0.3.4.8
+ * @version 0.3.7.3
  */
 @RunWith(Suite.class)
-@SuiteClasses({ OutilLigneTest.class, OutilEllipseTest.class, OutilEllipseTest.class })
+@SuiteClasses({ OutilLigneTest.class, OutilEllipseTest.class, OutilEllipseTest.class, OutilEtoileTest.class })
 public class OutilsTests {
     
 }

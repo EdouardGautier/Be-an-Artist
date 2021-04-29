@@ -5,7 +5,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 
 import fr.eseo.poo.projet.artiste.controleur.actions.ActionSelectionner;
-import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 import fr.eseo.poo.projet.artiste.modele.formes.Forme;
 import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
 
@@ -29,7 +28,7 @@ public class OutilSelectionner extends Outil {
     /**
      * Saves the selected {@code VueForme}.
      */
-    private VueForme formeSelectionner = null;
+    private VueForme vueFormeSelectionner = null;
 
     /*************************************************************************/
     /*********************** Accessors and Mutators **************************/
@@ -45,7 +44,7 @@ public class OutilSelectionner extends Outil {
      * @since 0.3.4.10
      */
     public VueForme getVueFormeSelectionner() {
-        return this.formeSelectionner;
+        return this.vueFormeSelectionner;
     }
 
     /**
@@ -58,7 +57,7 @@ public class OutilSelectionner extends Outil {
      * @since 0.3.4.10
      */
     public void setVueFormeSelectionner(VueForme p_formeSelectionner) {
-        this.formeSelectionner = p_formeSelectionner;
+        this.vueFormeSelectionner = p_formeSelectionner;
     }
 
     /*************************************************************************/
@@ -75,31 +74,14 @@ public class OutilSelectionner extends Outil {
      */
     @Override
     public void mouseClicked(final MouseEvent event) {
-        if (event.getClickCount() == 2 && this.formeSelectionner != null) {
-            JOptionPane.showMessageDialog(super.getPanneauDessin(), this.formeSelectionner.getForme().toString(),
-                    ActionSelectionner.NOM_ACTION, JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
-
-    /**
-     * {@inheritDoc}
-     * <p>
-     * Pressing one of the mouse buttons will search for a {@code VueForme} under
-     * the mouse cursor.
-     * 
-     * @param event The {@code MouseEvent} associated with the button press.
-     * 
-     * @since 0.3.4.10
-     */
-    @Override
-    public void mousePressed(final MouseEvent event) {
-        Coordonnees coordonnees = new Coordonnees(event.getX(), event.getY());
         for (VueForme vueForme : super.getPanneauDessin().getVueFormes()) {
             // We browse the list of VueForme
-            if (vueForme.getForme().contient(coordonnees)) {
+            if (vueForme.getForme().contient(this.getDebut())) {
                 this.setVueFormeSelectionner(vueForme);
             }
         }
+        JOptionPane.showMessageDialog(super.getPanneauDessin(), this.vueFormeSelectionner.getForme().toString(),
+                ActionSelectionner.NOM_ACTION, JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**
@@ -112,6 +94,7 @@ public class OutilSelectionner extends Outil {
      * 
      * @since 0.3.4.10
      */
+    @Override
     public void mouseReleased(final MouseEvent event) {
         // We ignore voluntarily
     }
