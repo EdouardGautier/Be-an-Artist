@@ -61,21 +61,20 @@ public class Ligne extends Forme {
     /*************************************************************************/
 
     /**
-     * Construct a new {@line code} from a position, a height and a width. height
+     * Construct a new {@code Ligne} from a position, a height and a width. height
      * and width.
      * 
      * @param p_position A {@code Coordinates} corresponding to the upper corner of
      *                   the rectangle enclosing the line.
      * @param p_largeur  A {@code double} corresponding to the width of the
      *                   rectangle rectangle enclosing the line.
-     * @param p_hauteur  The {@doublecode} corresponding to the height of the
+     * @param p_hauteur  The {@code double} corresponding to the height of the
      *                   rectangle encompassing the line.
      * 
      * @see Forme#Forme(Coordonnees, double, double)
      * @see #Ligne()
      * @see #Ligne(Coordonnees)
      * @see #Ligne(double, double)
-     * 
      * 
      * @since 0.3.2.4
      */
@@ -84,12 +83,12 @@ public class Ligne extends Forme {
     }
 
     /**
-     * Construct a new {@line code} from a width and a height, the position being
+     * Construct a new {@code Ligne} from a width and a height, the position being
      * height, the position being initialized from the default values.
      * 
      * @param p_largeur The {@code double} corresponding to the width of the
      *                  rectangle rectangle enclosing the line.
-     * @param p_hauteur The {@double code} corresponding to the height of the
+     * @param p_hauteur The {@code double} corresponding to the height of the
      *                  rectangle encompassing the line.
      * 
      * @see Forme#Forme(double, double)
