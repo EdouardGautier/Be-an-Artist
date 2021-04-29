@@ -6,6 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import fr.eseo.poo.projet.artiste.modele.formes.CercleTestAll;
 import fr.eseo.poo.projet.artiste.modele.formes.EllipseTestAll;
+import fr.eseo.poo.projet.artiste.modele.formes.EtoileTestAll;
 import fr.eseo.poo.projet.artiste.modele.formes.LigneTestAll;
 
 /**
@@ -15,6 +16,7 @@ import fr.eseo.poo.projet.artiste.modele.formes.LigneTestAll;
  * @see LigneTestAll
  * @see EllipseTestAll
  * @see CercleTestAll
+ * @see EtoileTestAll
  * 
  * @author EdouardGautier
  * 
@@ -23,7 +25,8 @@ import fr.eseo.poo.projet.artiste.modele.formes.LigneTestAll;
  * @version 0.3.2.8
  */
 @RunWith(Suite.class)
-@SuiteClasses({ CoordonneesTestAll.class, LigneTestAll.class, EllipseTestAll.class, CercleTestAll.class })
+@SuiteClasses({ CoordonneesTestAll.class, LigneTestAll.class, EllipseTestAll.class, CercleTestAll.class,
+        EtoileTestAll.class })
 public class ModeleTests {
 
 }

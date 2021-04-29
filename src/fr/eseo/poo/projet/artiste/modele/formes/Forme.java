@@ -110,11 +110,11 @@ public abstract class Forme implements Coloriable {
     private Coordonnees position;
 
     /**
-     * Attribut représentant la couleur de la forme.
+     * Attribute representing the colour of the shape.
      * <p>
-     * Cette couleur est modifiable.
+     * This colour is changeable.
      * <p>
-     * Initialisé par défaut à {@value #COULEUR_PAR_DEFAUT}.
+     * Defaulted to {@value #COULEUR_PAR_DEFAUT}.
      * 
      * @see #COULEUR_PAR_DEFAUT
      * @see Coloriable#getCouleur()
@@ -143,8 +143,6 @@ public abstract class Forme implements Coloriable {
      * @see #Forme(double, double)
      * 
      * @since 0.3.2.3
-     * 
-     * @version 0.1
      */
     public Forme(Coordonnees p_point, double p_largeur, double p_hauteur) {
         this.largeur = p_largeur;

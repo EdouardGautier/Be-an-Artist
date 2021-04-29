@@ -6,8 +6,10 @@ import javax.swing.AbstractAction;
 
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilCercle;
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilEllipse;
+import fr.eseo.poo.projet.artiste.controleur.outils.OutilEtoile;
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilForme;
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilLigne;
+import fr.eseo.poo.projet.artiste.vue.ihm.PanneauBarreOutils;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
 /**
@@ -52,9 +54,23 @@ public class ActionChoisirForme extends AbstractAction {
     public static final String NOM_ACTION_CERCLE = "Cercle";
 
     /**
+     * Identifies the {@code actionCommand} of the form and will be used as a label
+     * for the associated {@code JButton}
+     * <p>
+     * Here it is the {@value} action.
+     */
+    public static final String NOM_ACTION_ETOILE = "Etoile";
+
+    /**
      * Allows you to memorize the {@code PanneauDessin} you are using.
      */
     private final PanneauDessin panneauDessin;
+
+    /**
+     * Attribute of the class allowing to memorize the {@code PanneauBarreOutils}
+     * that we use.
+     */
+    private final PanneauBarreOutils panneauOutils;
 
     /*************************************************************************/
     /****************************** Constructs *******************************/
@@ -69,9 +85,11 @@ public class ActionChoisirForme extends AbstractAction {
      * 
      * @since 0.3.4.9
      */
-    public ActionChoisirForme(final PanneauDessin p_panneauDessin, final String p_nomAction) {
+    public ActionChoisirForme(final PanneauDessin p_panneauDessin, final PanneauBarreOutils p_panneauOutils,
+            final String p_nomAction) {
         super(p_nomAction);
         this.panneauDessin = p_panneauDessin;
+        this.panneauOutils = p_panneauOutils;
     }
 
     /*************************************************************************/
@@ -98,6 +116,9 @@ public class ActionChoisirForme extends AbstractAction {
             break;
         case ActionChoisirForme.NOM_ACTION_LIGNE:
             this.panneauDessin.associerOutil(new OutilLigne());
+            break;
+        case ActionChoisirForme.NOM_ACTION_ETOILE:
+            this.panneauDessin.associerOutil(new OutilEtoile(this.panneauOutils));
             break;
         default:
         }

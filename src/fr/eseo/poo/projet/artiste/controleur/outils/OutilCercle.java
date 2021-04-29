@@ -2,6 +2,7 @@ package fr.eseo.poo.projet.artiste.controleur.outils;
 
 import fr.eseo.poo.projet.artiste.modele.formes.Cercle;
 import fr.eseo.poo.projet.artiste.vue.formes.VueCercle;
+import java.awt.event.MouseEvent;
 
 /**
  * Class {@code OutilCercle} allowing to create a representation of a
@@ -48,4 +49,16 @@ public class OutilCercle extends OutilForme {
 		cercle.setPosition(super.getDebut());
 		return new VueCercle(cercle);
 	}
+
+	/**
+     * {@inheritDoc}
+     * 
+     * @param event The {@code MouseEvent} associated with the click.
+     * 
+     * @since 0.3.4.7
+     */
+    @Override
+    public void mouseClicked(final MouseEvent event) {
+        super.mouseClicked(event);
+    }
 }

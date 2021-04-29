@@ -6,6 +6,7 @@ doc/
 bin/
 .vscode/
 /coverage
+*.acsm
 
 # Compiled class file
 *.class
