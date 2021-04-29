@@ -122,7 +122,7 @@ public class Etoile extends Forme implements Remplissable {
      * @param p_nombreBranches       A {@code int} corresponding to the number of
      *                               branches of the star
      * @param p_anglePremiereBranche A {@code double} corresponding to the angle in
-     *                               radiating angle</i> formed by the first branch
+     *                               radiating angle formed by the first branch
      * @param p_longueurBranche      A {@code double} corresponding to the ratio of
      *                               the length of the hollow between the branches
      *                               and the radius of the circle enclosing the
@@ -200,7 +200,7 @@ public class Etoile extends Forme implements Remplissable {
      *                 enclosing the star.
      * 
      * @throws IllegalArgumentException Si la taille est inférieurs ou égales à
-     *                                  <i>0<i/>.
+     *                                  <i>0</i>.
      * 
      * @see #NOMBRE_BRANCHES_PAR_DEFAUT
      * @see #ANGLE_PREMIERE_BRANCHE_PAR_DEFAUT
@@ -571,17 +571,17 @@ public class Etoile extends Forme implements Remplissable {
         boolean contient = false;
 
         for (int i = 0; i < this.nombreBranches; i++) {
-            final Coordonnees[] tab_coordonneesTriangle = new Coordonnees[3];
-            tab_coordonneesTriangle[1] = this.getCoordonnees().get(i);
-            tab_coordonneesTriangle[0] = this.getCoordonneesPolygone().get(i);
+            final Coordonnees[] tabCoordonneesTriangle = new Coordonnees[3];
+            tabCoordonneesTriangle[1] = this.getCoordonnees().get(i);
+            tabCoordonneesTriangle[0] = this.getCoordonneesPolygone().get(i);
             if (i + 1 > this.getNombreBranches() - 1) {
-                tab_coordonneesTriangle[2] = this.getCoordonneesPolygone().get(0);
+                tabCoordonneesTriangle[2] = this.getCoordonneesPolygone().get(0);
             } else {
-                tab_coordonneesTriangle[2] = this.getCoordonneesPolygone().get(i + 1);
+                tabCoordonneesTriangle[2] = this.getCoordonneesPolygone().get(i + 1);
             }
-            final Coordonnees sommetBranche = tab_coordonneesTriangle[1];
+            final Coordonnees sommetBranche = tabCoordonneesTriangle[1];
             for (int j = 0; j < 3; j += 2) {
-                final Coordonnees sommetPolygone = tab_coordonneesTriangle[j];
+                final Coordonnees sommetPolygone = tabCoordonneesTriangle[j];
                 // The test point must be in the ordinate range of the segment.
                 if ((sommetBranche.getOrdonnee() > point.getOrdonnee()) != (sommetPolygone.getOrdonnee() > point
                         .getOrdonnee())) {
