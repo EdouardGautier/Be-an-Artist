@@ -275,7 +275,7 @@ public class Ellipse extends Forme implements Remplissable {
 	 * <p>
 	 * the point (x, y) must verify :
 	 * <p>
-	 * {@code ( (x - X)/A )² + ( (x - X)/B )² <= 1} *
+	 * {@code ( (x - X)/A )² + ( (y - Y)/B )² <= 1}
 	 * 
 	 * @param p_point the point to evaluate
 	 * 

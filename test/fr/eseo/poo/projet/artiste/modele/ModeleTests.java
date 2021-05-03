@@ -8,6 +8,7 @@ import fr.eseo.poo.projet.artiste.modele.formes.CercleTestAll;
 import fr.eseo.poo.projet.artiste.modele.formes.EllipseTestAll;
 import fr.eseo.poo.projet.artiste.modele.formes.EtoileTestAll;
 import fr.eseo.poo.projet.artiste.modele.formes.LigneTestAll;
+import fr.eseo.poo.projet.artiste.modele.formes.RectangleTestAll;
 
 /**
  * Test suite allowing to launch all the tests of the model package.
@@ -17,16 +18,17 @@ import fr.eseo.poo.projet.artiste.modele.formes.LigneTestAll;
  * @see EllipseTestAll
  * @see CercleTestAll
  * @see EtoileTestAll
+ * @see RectangleTestAll
  * 
  * @author EdouardGautier
  * 
  * @since 0.3.2.2
  * 
- * @version 0.3.2.8
+ * @version 1.3.1
  */
 @RunWith(Suite.class)
 @SuiteClasses({ CoordonneesTestAll.class, LigneTestAll.class, EllipseTestAll.class, CercleTestAll.class,
-        EtoileTestAll.class })
+        EtoileTestAll.class, RectangleTestAll.class })
 public class ModeleTests {
 
 }
