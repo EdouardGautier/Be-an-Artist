@@ -13,3 +13,23 @@
 The objective of the project is to develop a graphic editor offering similar functionalities to those provided by well known software (eg Dia, Inkscape or MSPaint).
 The editor that is designed in this work will allow to draw geometric shapes such as lines, ellipses, circles and stars.
 To program this application, we will follow the software architectural pattern Model-View-Controller (MVC). This architecture specifies a methodology to facilitate the development of an interactive graphic application.
+
+## Launching
+
+To launch the application, you just have to execute the command `java -jar Be-An-Artist.jar` at the root of the project.
+An interface is launched in order to use all the tools proposed
+
+[![launch window]()]
+
+You can, by pressing the appropriate button, then draw :
+
+- Lines
+- Circles
+- Ellipses
+- Stars (choice of the length and the number of possible branches)
+- Rectangle
+- Squares
+
+You can also choose the color of the outline of your figures as well as to fill them or not.
+
+It is possible to access information about the figure by choosing `Sélectionner` and clicking on the desired figure. 
