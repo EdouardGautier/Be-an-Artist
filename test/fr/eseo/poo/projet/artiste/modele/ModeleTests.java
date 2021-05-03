@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import fr.eseo.poo.projet.artiste.modele.formes.CarreTestAll;
 import fr.eseo.poo.projet.artiste.modele.formes.CercleTestAll;
 import fr.eseo.poo.projet.artiste.modele.formes.EllipseTestAll;
 import fr.eseo.poo.projet.artiste.modele.formes.EtoileTestAll;
@@ -19,6 +20,7 @@ import fr.eseo.poo.projet.artiste.modele.formes.RectangleTestAll;
  * @see CercleTestAll
  * @see EtoileTestAll
  * @see RectangleTestAll
+ * @see CarreTestAll
  * 
  * @author EdouardGautier
  * 
@@ -28,7 +30,7 @@ import fr.eseo.poo.projet.artiste.modele.formes.RectangleTestAll;
  */
 @RunWith(Suite.class)
 @SuiteClasses({ CoordonneesTestAll.class, LigneTestAll.class, EllipseTestAll.class, CercleTestAll.class,
-        EtoileTestAll.class, RectangleTestAll.class })
+        EtoileTestAll.class, RectangleTestAll.class, CarreTestAll.class })
 public class ModeleTests {
 
 }

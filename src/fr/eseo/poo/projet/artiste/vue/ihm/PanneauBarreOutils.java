@@ -197,6 +197,11 @@ public class PanneauBarreOutils extends JPanel {
                                 ActionChoisirForme.NOM_ACTION_RECTANGLE));
                 etoile.setName(ActionChoisirForme.NOM_ACTION_RECTANGLE);
 
+                // Creation of the toggle square button
+                final JToggleButton carre = new JToggleButton(new ActionChoisirForme(this.panneauDessin, this,
+                                ActionChoisirForme.NOM_ACTION_CARRE));
+                etoile.setName(ActionChoisirForme.NOM_ACTION_CARRE);
+
                 // Creation of the checkBox for the choice of the filling of the shapes
                 final JCheckBox checkBox = new JCheckBox(new ActionChoisirRemplissage(this.panneauDessin));
                 checkBox.setName(ActionChoisirRemplissage.NOM_ACTION);
@@ -209,8 +214,9 @@ public class PanneauBarreOutils extends JPanel {
                 toolBar.add(ligne);
                 toolBar.add(cercle);
                 toolBar.add(ellipse);
-                toolBar.add(etoile);
                 toolBar.add(rectangle);
+                toolBar.add(carre);
+                toolBar.add(etoile);
                 toolBar.add(checkBox);
 
                 // Creation of the tool button group.
@@ -222,6 +228,7 @@ public class PanneauBarreOutils extends JPanel {
                 groupe.add(cercle);
                 groupe.add(etoile);
                 groupe.add(rectangle);
+                groupe.add(carre);
                 groupe.add(ellipse);
 
                 // Creation of the star container

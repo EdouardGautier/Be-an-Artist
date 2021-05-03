@@ -133,7 +133,7 @@ public class OutilRectangleTest {
         this.outil.mouseReleased(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_RELEASED, 0,
                 MouseEvent.BUTTON1_DOWN_MASK, 100 + largeur, 100 + hauteur, 1, false, MouseEvent.BUTTON1));
 
-        Rectangle RectangleActual = (Rectangle) this.panneau.getVueFormes().get(0).getForme();
-        assertEquals("Test du clic glissé", this.rectangleReferenceDrag, RectangleActual);
+        Rectangle rectangleActual = (Rectangle) this.panneau.getVueFormes().get(0).getForme();
+        assertEquals("Test du clic glissé", this.rectangleReferenceDrag, rectangleActual);
     }
 }
