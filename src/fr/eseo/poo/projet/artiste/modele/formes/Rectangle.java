@@ -1,7 +1,6 @@
 package fr.eseo.poo.projet.artiste.modele.formes;
 
 import java.text.DecimalFormat;
-import java.util.List;
 
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 import fr.eseo.poo.projet.artiste.modele.Remplissable;
@@ -40,16 +39,11 @@ import fr.eseo.poo.projet.artiste.modele.Remplissable;
 public class Rectangle extends Forme implements Remplissable {
 
 	/**
-	 * Attribute allowing to save the filling state of the {@code Ellipse}.
+	 * Attribute allowing to save the filling state of the {@code rectangle}.
 	 * 
 	 * @since 1.3.1
 	 */
 	private boolean estRempli;
-
-	/**
-     * List of vertices of the polynomial.
-     */
-	private List<Coordonnees> coordonnees;//TODO
 
 	/*************************************************************************/
 	/****************************** Constructs *******************************/
@@ -116,7 +110,7 @@ public class Rectangle extends Forme implements Remplissable {
 	}
 
 	/**
-	 * Default constructor of the class {@linkplain Rectangle}, initiates the
+	 * Default constructor of the class {@linkplain RectangleTest}, initiates the
 	 * attributes of the class from the default values.
 	 * 
 	 * @see Forme#Forme()
@@ -136,23 +130,56 @@ public class Rectangle extends Forme implements Remplissable {
 
 	/**
 	 * {@inheritDoc}
+	 * <p>
+	 * 
+	 * @param p_largeur width must be greater than 0.
+	 * 
+	 * @throws IllegalArgumentException Si la largeur est inférieur ou égale à 0.
+	 * 
+	 * @see #setHauteur(double)
+	 * @see Forme#getLargeur()
+	 * 
+	 * @since 1.3.1
+	 */
+	@Override
+	public void setLargeur(final double p_largeur) {
+		if (p_largeur > 0) {
+			super.setLargeur(p_largeur);
+		} else {
+			throw new IllegalArgumentException("La largeur de " + getClass().getSimpleName() + " doit être positive");
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * 
+	 * @param p_hauteur heigt must be greater than 0.
+	 * 
+	 * @throws IllegalArgumentException Si la largeur est inférieur ou égale à 0.
+	 * 
+	 * @see #setLargeur(double)
+	 * @see Forme#getHauteur()
+	 * 
+	 * @since 1.3.1
+	 */
+	@Override
+	public void setHauteur(final double p_hauteur) {
+		if (p_hauteur > 0) {
+			super.setHauteur(p_hauteur);
+		} else {
+			throw new IllegalArgumentException("La hauteur de " + getClass().getSimpleName() + " doit être positive");
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * 
 	 * @since 1.3.1
 	 */
 	@Override
 	public void setRempli(final boolean p_estRempli) {
 		this.estRempli = p_estRempli;
-	}
-
-	/**
-	 * Accessor to the list of vertices of the star.
-	 * 
-	 * @return A {@code List<Coordonnees} corresponding to the vertices of the star.
-	 * 
-	 * @since 0.3.7.1
-	 */
-	public List<Coordonnees> getCoordonnees() {
-		return this.coordonnees;
 	}
 
 	/*************************************************************************/
@@ -179,55 +206,14 @@ public class Rectangle extends Forme implements Remplissable {
 		return getLargeur() * getHauteur();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * The method used here is that of ray-casting.
-	 * 
-	 * @param point The{@code Coordonnees} which we want to know if it is in the
-	 *              star.
-	 * 
-	 * @return {@code true} if the point is in the star {@code false} otherwise
-	 * 
-	 * 
-	 * @since 0.3.7.1
-	 */
 	@Override
-	public boolean contient(final Coordonnees point) {//TODO	
-		// If the point is one of the vertices
-		if (this.getCoordonnees().contains(point)) {
-			return true;
-		}
-		// If <dedans> is true, then the ray intersects the star an odd number of times,
-		// so the point is inside
-		boolean contient = false;
+	public boolean contient(final Coordonnees p_point) {
+		final double A = super.getHauteur() / 2;
+		final double B = super.getLargeur() / 2;
+		final double X = super.getPosition().getAbscisse() + B;
+		final double Y = super.getPosition().getOrdonnee() + A;
 
-		for (int i = 0; i < 4; i++) {
-			final Coordonnees[] tabCoordonneesTriangle = new Coordonnees[3];
-			tabCoordonneesTriangle[1] = this.getCoordonnees().get(i);
-			final Coordonnees sommetBranche = tabCoordonneesTriangle[1];
-			for (int j = 0; j < 3; j += 2) {
-				final Coordonnees sommetPolygone = tabCoordonneesTriangle[j];
-				// The test point must be in the ordinate range of the segment.
-				if ((sommetBranche.getOrdonnee() > point.getOrdonnee()) != (sommetPolygone.getOrdonnee() > point
-						.getOrdonnee())) {
-					// Equation of the line in the form y = ax + b.
-					final double a = (sommetPolygone.getOrdonnee() - sommetBranche.getOrdonnee())
-							/ (sommetPolygone.getAbscisse() - sommetBranche.getAbscisse());
-					final double b = sommetPolygone.getOrdonnee() - a * sommetPolygone.getAbscisse();
-
-					final double c = -(b - point.getOrdonnee()) / a;
-					// We test the points on the right.
-					if (c >= point.getAbscisse() - Forme.EPSILON) {
-						if (new Coordonnees(c, point.getOrdonnee()).equals(point)) {
-							return true;
-						}
-						contient = !contient;
-					}
-				}
-			}
-		}
-		return contient;
+		return Math.pow(((p_point.getAbscisse() - X)) / B, 2) + Math.pow(((p_point.getOrdonnee() - Y)) / A, 2) <= 1;
 	}
 
 	/**
@@ -272,8 +258,8 @@ public class Rectangle extends Forme implements Remplissable {
 	public String toString() {
 		final DecimalFormat formater = new DecimalFormat("0.0#");
 		return "[" + this.getClass().getSimpleName() + this.descriptionRemplissage() + "] : pos "
-				+ this.getPosition().toString() + " dim : " + this.getLargeur() + " x " + this.getHauteur()
-				+ " périmètre : " + formater.format(this.perimetre()) + " aire : " + formater.format(this.aire())
-				+ this.descriptionCouleur();
+				+ this.getPosition().toString() + " dim " + formater.format(this.getLargeur()) + " x "
+				+ formater.format(this.getHauteur()) + " périmètre : " + formater.format(this.perimetre()) + " aire : "
+				+ formater.format(this.aire()) + this.descriptionCouleur();
 	}
 }

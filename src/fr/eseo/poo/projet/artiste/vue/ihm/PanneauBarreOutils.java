@@ -38,7 +38,7 @@ import fr.eseo.poo.projet.artiste.modele.formes.Etoile;
  * 
  * @since 0.3.4.5
  * 
- * @version 0.3.7.3
+ * @version 1.3.1
  */
 public class PanneauBarreOutils extends JPanel {
         /**
@@ -152,11 +152,11 @@ public class PanneauBarreOutils extends JPanel {
          *
          * @since 0.3.4.5
          * 
-         * @version 0.3.7.3
+         * @version 1.3.1
          */
         public void initComponents() {
                 final JToolBar toolBar = new JToolBar();
-                toolBar.setLayout(new GridLayout(9, 1));
+                toolBar.setLayout(new GridLayout(10, 1));
                 toolBar.setName("toolBar");
                 this.add(toolBar);
 
@@ -192,6 +192,11 @@ public class PanneauBarreOutils extends JPanel {
                                 new ActionChoisirForme(this.panneauDessin, this, ActionChoisirForme.NOM_ACTION_ETOILE));
                 etoile.setName(ActionChoisirForme.NOM_ACTION_ETOILE);
 
+                // Creation of the toggle rectangle button
+                final JToggleButton rectangle = new JToggleButton(new ActionChoisirForme(this.panneauDessin, this,
+                                ActionChoisirForme.NOM_ACTION_RECTANGLE));
+                etoile.setName(ActionChoisirForme.NOM_ACTION_RECTANGLE);
+
                 // Creation of the checkBox for the choice of the filling of the shapes
                 final JCheckBox checkBox = new JCheckBox(new ActionChoisirRemplissage(this.panneauDessin));
                 checkBox.setName(ActionChoisirRemplissage.NOM_ACTION);
@@ -205,6 +210,7 @@ public class PanneauBarreOutils extends JPanel {
                 toolBar.add(cercle);
                 toolBar.add(ellipse);
                 toolBar.add(etoile);
+                toolBar.add(rectangle);
                 toolBar.add(checkBox);
 
                 // Creation of the tool button group.
@@ -215,6 +221,7 @@ public class PanneauBarreOutils extends JPanel {
                 groupe.add(ligne);
                 groupe.add(cercle);
                 groupe.add(etoile);
+                groupe.add(rectangle);
                 groupe.add(ellipse);
 
                 // Creation of the star container
