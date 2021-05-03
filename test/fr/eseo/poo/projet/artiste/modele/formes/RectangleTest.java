@@ -22,12 +22,12 @@ public class RectangleTest {
      */
     @Test
     public void testConstructeurVide() {
-        final Rectangle Rectangle = new Rectangle();
+        final Rectangle rectangle = new Rectangle();
 
-        assertEquals("Test de la position du rectangle", new Coordonnees(), Rectangle.getPosition());
-        assertEquals("Test de la hauteur du rectangle", Forme.HAUTEUR_PAR_DEFAUT, Rectangle.getHauteur(),
+        assertEquals("Test de la position du rectangle", new Coordonnees(), rectangle.getPosition());
+        assertEquals("Test de la hauteur du rectangle", Forme.HAUTEUR_PAR_DEFAUT, rectangle.getHauteur(),
                 Forme.EPSILON);
-        assertEquals("Test de la largeur du rectangle", Forme.LARGEUR_PAR_DEFAUT, Rectangle.getLargeur(),
+        assertEquals("Test de la largeur du rectangle", Forme.LARGEUR_PAR_DEFAUT, rectangle.getLargeur(),
                 Forme.EPSILON);
     }
 
