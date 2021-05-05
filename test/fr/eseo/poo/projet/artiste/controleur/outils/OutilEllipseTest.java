@@ -60,18 +60,18 @@ public class OutilEllipseTest {
         /**
          * Builder for each test for OutilLigne.
          * 
-         * @param p_ellipseReferenceDouble ellipse for double click
-         * @param p_ellipseReferenceDrag   ellipse for the click and drag
-         * @param p_nbPie                  number of π for drag
+         * @param ellipseReferenceDouble ellipse for double click
+         * @param ellipseReferenceDrag   ellipse for the click and drag
+         * @param nbPie                  number of π for drag
          */
-        public OutilEllipseTest(Ellipse p_ellipseReferenceDouble, Ellipse p_ellipseReferenceDrag, int p_nbPie) {
+        public OutilEllipseTest(Ellipse ellipseReferenceDouble, Ellipse ellipseReferenceDrag, int nbPie) {
                 this.frame = new JFrame();
                 this.panneau = new PanneauDessin();
                 this.outil = new OutilEllipse();
                 this.panneau.associerOutil(this.outil);
-                this.ellipseReferenceDouble = p_ellipseReferenceDouble;
-                this.ellipseReferenceDrag = p_ellipseReferenceDrag;
-                this.nbPie = p_nbPie;
+                this.ellipseReferenceDouble = ellipseReferenceDouble;
+                this.ellipseReferenceDrag = ellipseReferenceDrag;
+                this.nbPie = nbPie;
 
                 this.frame.getContentPane().add(panneau);
                 this.frame.setTitle("OutilEllipseTest");

@@ -58,9 +58,9 @@ public class ActionChoisirCouleurTest {
     /**
      * Builder for each test for ActionChoisirCouleur.
      * 
-     * @param p_ellipse ellipses to be drawn
+     * @param ellipse ellipses to be drawn
      */
-    public ActionChoisirCouleurTest(Ellipse p_ellipse) {
+    public ActionChoisirCouleurTest(Ellipse ellipse) {
         this.frame = new JFrame();
         this.panneau = new PanneauDessin();
         this.outil = new OutilEllipse();
@@ -74,7 +74,7 @@ public class ActionChoisirCouleurTest {
         this.frame.setVisible(true);
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.ellipse = p_ellipse;
+        this.ellipse = ellipse;
     }
 
     /**

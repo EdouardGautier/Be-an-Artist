@@ -99,17 +99,17 @@ public class ActionChoisirForme extends AbstractAction {
     /**
      * Builder of a new {@code ActionChoisirForme}.
      * 
-     * @param p_panneauDessin {@code PanneauDessin} that we want to use
-     * @param p_panneauOutils {@code PanneauBarreOutils} that we want to use
-     * @param p_nomAction     The name used to identify the action
+     * @param panneauDessin {@code PanneauDessin} that we want to use
+     * @param panneauOutils {@code PanneauBarreOutils} that we want to use
+     * @param nomAction     The name used to identify the action
      * 
      * @since 0.3.4.9
      */
-    public ActionChoisirForme(final PanneauDessin p_panneauDessin, final PanneauBarreOutils p_panneauOutils,
-            final String p_nomAction) {
-        super(p_nomAction);
-        this.panneauDessin = p_panneauDessin;
-        this.panneauOutils = p_panneauOutils;
+    public ActionChoisirForme(final PanneauDessin panneauDessin, final PanneauBarreOutils panneauOutils,
+            final String nomAction) {
+        super(nomAction);
+        this.panneauDessin = panneauDessin;
+        this.panneauOutils = panneauOutils;
     }
 
     /*************************************************************************/

@@ -34,12 +34,12 @@ public class LigneTestParameterizedPerimetre {
     /**
      * Builder for each test for Ligne.
      * 
-     * @param p_ligne             the tested line.
-     * @param p_longueurReference reference length.
+     * @param ligne             the tested line.
+     * @param longueurReference reference length.
      */
-    public LigneTestParameterizedPerimetre(final Ligne p_ligne, final double p_longueurReference) {
-        this.ligne = p_ligne;
-        this.longueurReference = p_longueurReference;
+    public LigneTestParameterizedPerimetre(final Ligne ligne, final double longueurReference) {
+        this.ligne = ligne;
+        this.longueurReference = longueurReference;
     }
 
     /**

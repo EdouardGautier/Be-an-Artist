@@ -50,14 +50,14 @@ public class OutilSelectionner extends Outil {
     /**
      * Mutator of the selected {@code VueForme}.
      * 
-     * @param p_formeSelectionner The {@code VueForme} select
+     * @param formeSelectionner The {@code VueForme} select
      * 
      * @see #getVueFormeSelectionner()
      * 
      * @since 0.3.4.10
      */
-    public void setVueFormeSelectionner(VueForme p_formeSelectionner) {
-        this.vueFormeSelectionner = p_formeSelectionner;
+    public void setVueFormeSelectionner(VueForme formeSelectionner) {
+        this.vueFormeSelectionner = formeSelectionner;
     }
 
     /*************************************************************************/

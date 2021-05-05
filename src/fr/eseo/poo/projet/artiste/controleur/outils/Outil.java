@@ -61,15 +61,15 @@ public abstract class Outil implements MouseInputListener {
     /**
      * Muttator of {@dode PanneauDessin}, our design area.
      * 
-     * @param p_panneau The {@code PanneauDessin} that will be our new drawing area.
-     *                  drawing area.
+     * @param panneau The {@code PanneauDessin} that will be our new drawing area.
+     *                drawing area.
      * 
      * @see #getPanneauDessin()
      * 
      * @since 0.3.4.1
      */
-    public void setPanneauDessin(final PanneauDessin p_panneau) {
-        this.panneauDessin = p_panneau;
+    public void setPanneauDessin(final PanneauDessin panneau) {
+        this.panneauDessin = panneau;
     }
 
     /**
@@ -92,16 +92,16 @@ public abstract class Outil implements MouseInputListener {
      * Mutator of the {@code Coordonnes} of the beginning of the tracing of our
      * {@code Forme}.
      * 
-     * @param p_debut The {@code Coordonnees} of the beginning of the trace of the
-     *                {@code Forme}.
+     * @param debut The {@code Coordonnees} of the beginning of the trace of the
+     *              {@code Forme}.
      * 
      * @see #getDebut()
      * @see #setFin(Coordonnees)
      * 
      * @since 0.3.4.1
      */
-    public void setDebut(final Coordonnees p_debut) {
-        this.debut = p_debut;
+    public void setDebut(final Coordonnees debut) {
+        this.debut = debut;
     }
 
     /**
@@ -123,16 +123,16 @@ public abstract class Outil implements MouseInputListener {
      * Mutator of the {@code Coordonnes} of the end of the tracing of the
      * {@code Forme}.
      * 
-     * @param p_fin The {@code Coordonnees} of the end of the tracing of the
-     *              {@code Forme}.
+     * @param fin The {@code Coordonnees} of the end of the tracing of the
+     *            {@code Forme}.
      * 
      * @see #getFin()
      * @see #setDebut(Coordonnees)
      * 
      * @since 0.3.4.1
      */
-    public void setFin(final Coordonnees p_fin) {
-        this.fin = p_fin;
+    public void setFin(final Coordonnees fin) {
+        this.fin = fin;
     }
 
     /*************************************************************************/

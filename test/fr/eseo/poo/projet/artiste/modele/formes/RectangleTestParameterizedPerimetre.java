@@ -33,12 +33,12 @@ public class RectangleTestParameterizedPerimetre {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_rectangle          the tested rectangle.
-     * @param p_perimetreReference reference perimetre.
+     * @param rectangle          the tested rectangle.
+     * @param perimetreReference reference perimetre.
      */
-    public RectangleTestParameterizedPerimetre(final Rectangle p_rectangle, final double p_perimetreReference) {
-        this.rectangle = p_rectangle;
-        this.perimetreReference = p_perimetreReference;
+    public RectangleTestParameterizedPerimetre(final Rectangle rectangle, final double perimetreReference) {
+        this.rectangle = rectangle;
+        this.perimetreReference = perimetreReference;
     }
 
     /**

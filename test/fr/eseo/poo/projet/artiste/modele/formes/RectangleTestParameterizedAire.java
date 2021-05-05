@@ -32,12 +32,12 @@ public class RectangleTestParameterizedAire {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_rectangle   the tested rectangle.
+     * @param rectangle     the tested rectangle.
      * @param aireReference reference aire.
      */
-    public RectangleTestParameterizedAire(final Rectangle p_rectangle, final double p_aireAttendue) {
-        this.rectangle = p_rectangle;
-        this.aireReference = p_aireAttendue;
+    public RectangleTestParameterizedAire(final Rectangle rectangle, final double aireReference) {
+        this.rectangle = rectangle;
+        this.aireReference = aireReference;
     }
 
     /**

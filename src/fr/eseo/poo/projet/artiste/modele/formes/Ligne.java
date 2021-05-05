@@ -64,12 +64,12 @@ public class Ligne extends Forme {
      * Construct a new {@code Ligne} from a position, a height and a width. height
      * and width.
      * 
-     * @param p_position A {@code Coordinates} corresponding to the upper corner of
-     *                   the rectangle enclosing the line.
-     * @param p_largeur  A {@code double} corresponding to the width of the
-     *                   rectangle rectangle enclosing the line.
-     * @param p_hauteur  The {@code double} corresponding to the height of the
-     *                   rectangle encompassing the line.
+     * @param position A {@code Coordinates} corresponding to the upper corner of
+     *                 the rectangle enclosing the line.
+     * @param largeur  A {@code double} corresponding to the width of the rectangle
+     *                 rectangle enclosing the line.
+     * @param hauteur  The {@code double} corresponding to the height of the
+     *                 rectangle encompassing the line.
      * 
      * @see Forme#Forme(Coordonnees, double, double)
      * @see #Ligne()
@@ -78,18 +78,18 @@ public class Ligne extends Forme {
      * 
      * @since 0.3.2.4
      */
-    public Ligne(Coordonnees p_position, double p_largeur, double p_hauteur) {
-        super(p_position, p_largeur, p_hauteur);
+    public Ligne(Coordonnees position, double largeur, double hauteur) {
+        super(position, largeur, hauteur);
     }
 
     /**
      * Construct a new {@code Ligne} from a width and a height, the position being
      * height, the position being initialized from the default values.
      * 
-     * @param p_largeur The {@code double} corresponding to the width of the
-     *                  rectangle rectangle enclosing the line.
-     * @param p_hauteur The {@code double} corresponding to the height of the
-     *                  rectangle encompassing the line.
+     * @param largeur The {@code double} corresponding to the width of the rectangle
+     *                rectangle enclosing the line.
+     * @param hauteur The {@code double} corresponding to the height of the
+     *                rectangle encompassing the line.
      * 
      * @see Forme#Forme(double, double)
      * @see #Ligne()
@@ -98,16 +98,16 @@ public class Ligne extends Forme {
      * 
      * @since 0.3.2.4
      */
-    public Ligne(double p_largeur, double p_hauteur) {
-        super(p_largeur, p_hauteur);
+    public Ligne(double largeur, double hauteur) {
+        super(largeur, hauteur);
     }
 
     /**
      * Construct a new {@code Ligne} from a point, the other attributes being
      * attributes being initialized from the default values.
      * 
-     * @param p_position A {@code Coordonnees} corresponding to the top left corner
-     *                   of the of the rectangle enclosing the line.
+     * @param position A {@code Coordonnees} corresponding to the top left corner of
+     *                 the of the rectangle enclosing the line.
      * 
      * @see Forme#Forme(Coordonnees)
      * @see #Ligne()
@@ -116,8 +116,8 @@ public class Ligne extends Forme {
      * 
      * @since 0.3.2.4
      */
-    public Ligne(Coordonnees p_position) {
-        super(p_position);
+    public Ligne(Coordonnees position) {
+        super(position);
     }
 
     /**
@@ -159,8 +159,8 @@ public class Ligne extends Forme {
      * Mutator of the first end of the line, resulting in a change of the line's
      * dimensions.
      * 
-     * @param p_position A {@code Coordonnees} corresponding to the new first
-     *                   extremity of the line.
+     * @param position A {@code Coordonnees} corresponding to the new first
+     *                 extremity of the line.
      * 
      * @see #getC1()
      * @see #setC2(Coordonnees)
@@ -169,10 +169,10 @@ public class Ligne extends Forme {
      * 
      * @since 0.3.2.4
      */
-    public void setC1(Coordonnees p_position) {
-        this.setLargeur(this.getC2().getAbscisse() - p_position.getAbscisse());
-        this.setHauteur(this.getC2().getOrdonnee() - p_position.getOrdonnee());
-        this.setPosition(p_position);
+    public void setC1(Coordonnees position) {
+        this.setLargeur(this.getC2().getAbscisse() - position.getAbscisse());
+        this.setHauteur(this.getC2().getOrdonnee() - position.getOrdonnee());
+        this.setPosition(position);
     }
 
     /**
@@ -204,9 +204,9 @@ public class Ligne extends Forme {
      * 
      * @since 0.3.2.4
      */
-    public void setC2(Coordonnees p_coordonnees) {
-        this.setLargeur(p_coordonnees.getAbscisse() - this.getC1().getAbscisse());
-        this.setHauteur(p_coordonnees.getOrdonnee() - this.getC1().getOrdonnee());
+    public void setC2(Coordonnees coordonnees) {
+        this.setLargeur(coordonnees.getAbscisse() - this.getC1().getAbscisse());
+        this.setHauteur(coordonnees.getOrdonnee() - this.getC1().getOrdonnee());
     }
 
     /*************************************************************************/
@@ -252,8 +252,8 @@ public class Ligne extends Forme {
      * @since 0.3.2.8
      */
     @Override
-    public boolean contient(final Coordonnees p_point) {
-        return (p_point.distanceVers(this.getC1()) + p_point.distanceVers(this.getC2()))
+    public boolean contient(final Coordonnees point) {
+        return (point.distanceVers(this.getC1()) + point.distanceVers(this.getC2()))
                 - (this.perimetre()) <= Ligne.EPSILON;
     }
 

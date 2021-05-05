@@ -33,12 +33,12 @@ public class CercleTestParameterizedPerimetre {
 	/**
 	 * Builder for each test for Coordinates.
 	 * 
-	 * @param p_cercle             the tested circle.
-	 * @param p_perimetreReference reference perimetre
+	 * @param cercle             the tested circle.
+	 * @param perimetreReference reference perimetre
 	 */
-	public CercleTestParameterizedPerimetre(final Cercle p_cercle, final double p_perimetreReference) {
-		this.cercle = p_cercle;
-		this.perimetreReference = p_perimetreReference;
+	public CercleTestParameterizedPerimetre(final Cercle cercle, final double perimetreReference) {
+		this.cercle = cercle;
+		this.perimetreReference = perimetreReference;
 	}
 
 	/**

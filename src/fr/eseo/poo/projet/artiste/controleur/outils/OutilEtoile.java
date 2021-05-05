@@ -28,13 +28,13 @@ public class OutilEtoile extends OutilForme {
 	/**
 	 * Builder of a new {@code OutilEtoile}
 	 * 
-	 * @param p_paPanneauBarreOutils {@code PanneauBarreOutils} where we get the
-	 *                               information about the star to be drawn
+	 * @param panneauBarreOutils {@code PanneauBarreOutils} where we get the
+	 *                           information about the star to be drawn
 	 * 
 	 * @see PanneauBarreOutils
 	 */
-	public OutilEtoile(PanneauBarreOutils p_paPanneauBarreOutils) {
-		this.panneauBarreOutils = p_paPanneauBarreOutils;
+	public OutilEtoile(PanneauBarreOutils panneauBarreOutils) {
+		this.panneauBarreOutils = panneauBarreOutils;
 	}
 
 	/**

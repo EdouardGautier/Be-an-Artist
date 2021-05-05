@@ -32,12 +32,12 @@ public class EllipseTestParameterizedAire {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_ellipse     the tested ellipse.
+     * @param ellipse       the tested ellipse.
      * @param aireReference reference aire.
      */
-    public EllipseTestParameterizedAire(final Ellipse p_ellipse, final double p_aireAttendue) {
-        this.ellipse = p_ellipse;
-        this.aireReference = p_aireAttendue;
+    public EllipseTestParameterizedAire(final Ellipse ellipse, final double aireReference) {
+        this.ellipse = ellipse;
+        this.aireReference = aireReference;
     }
 
     /**

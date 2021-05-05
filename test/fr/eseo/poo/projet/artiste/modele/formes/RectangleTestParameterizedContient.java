@@ -41,15 +41,14 @@ public class RectangleTestParameterizedContient {
     /**
      * Builder for each test for Ligne.
      * 
-     * @param p_rectangle   the tested Rectangle.
-     * @param p_point       the point to test.
-     * @param p_estContenue if the point is on the Rectangle
+     * @param rectangle   the tested Rectangle.
+     * @param point       the point to test.
+     * @param estContenue if the point is on the Rectangle
      */
-    public RectangleTestParameterizedContient(final Rectangle p_rectangle, final Coordonnees p_point,
-            boolean p_estContenue) {
-        this.rectangle = p_rectangle;
-        this.point = p_point;
-        this.estContenue = p_estContenue;
+    public RectangleTestParameterizedContient(final Rectangle rectangle, final Coordonnees point, boolean estContenue) {
+        this.rectangle = rectangle;
+        this.point = point;
+        this.estContenue = estContenue;
     }
 
     /**

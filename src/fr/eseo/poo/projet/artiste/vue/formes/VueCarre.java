@@ -23,11 +23,11 @@ public class VueCarre extends VueRectangle {
      * Constructor of a new {@code VueCarre}. The instance of the class is
      * initialized with the shape given in parameter.
      * 
-     * @param p_carre The {@code Carre} that you wish to display.
+     * @param carre The {@code Carre} that you wish to display.
      * 
      * @since 1.3.2
      */
-    public VueCarre(Carre p_carre) {
-        super(p_carre);
+    public VueCarre(Carre carre) {
+        super(carre);
     }
 }
