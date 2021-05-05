@@ -60,7 +60,7 @@ public class Etoile extends Forme implements Remplissable {
      * <p>
      * By default the percentage is {@value}.
      */
-    public static final double LONGUEUR_BRANCHE_PAR_DEFAUT = 1;
+    public static final double LONGUEUR_BRANCHE_PAR_DEFAUT = 0.5;
 
     /**
      * Number of branches of the star
