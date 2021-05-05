@@ -14,19 +14,18 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
-import fr.eseo.poo.projet.artiste.modele.formes.Cercle;
+import fr.eseo.poo.projet.artiste.modele.formes.Rectangle;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
-//TODO : Revoir la tabulation 
 /**
- * Base test class parameterized of the {@link OutilCercle}
+ * Base test class parameterized of the {@link OutilRectangle}
  * 
  * @author EdouardGautier
  * 
  * @since 0.3.4.8
  */
 @RunWith(Parameterized.class)
-public class OutilCercleTest {
+public class OutilRectangleTest {
         /**
          * Frame where the drawing area will be placed.
          */
@@ -40,17 +39,17 @@ public class OutilCercleTest {
         /**
          * Tool tested.
          */
-        private final OutilCercle outil;
+        private final OutilRectangle outil;
 
         /**
-         * Reference circle for double click
+         * Reference rectangle for double click
          */
-        private final Cercle cercleReferenceDouble;
+        private final Rectangle rectangleReferenceDouble;
 
         /**
-         * Reference circle for the click and drag
+         * Reference rectangle for the click and drag
          */
-        private final Cercle cercleReferenceDrag;
+        private final Rectangle rectangleReferenceDrag;
 
         /**
          * Number of π for drag
@@ -60,21 +59,21 @@ public class OutilCercleTest {
         /**
          * Builder for each test for OutilLigne.
          * 
-         * @param cercleReferenceDouble circle for double click
-         * @param cercleReferenceDrag   circle for the click and drag
-         * @param nbPie                 number of π for drag
+         * @param rectangleReferenceDouble rectangle for double click
+         * @param rectangleReferenceDrag   rectangle for the click and drag
+         * @param nbPie                    number of π for drag
          */
-        public OutilCercleTest(Cercle cercleReferenceDouble, Cercle cercleReferenceDrag, int nbPie) {
+        public OutilRectangleTest(Rectangle rectangleReferenceDouble, Rectangle rectangleReferenceDrag, int nbPie) {
                 this.frame = new JFrame();
                 this.panneau = new PanneauDessin();
-                this.outil = new OutilCercle();
+                this.outil = new OutilRectangle();
                 this.panneau.associerOutil(this.outil);
-                this.cercleReferenceDouble = cercleReferenceDouble;
-                this.cercleReferenceDrag = cercleReferenceDrag;
+                this.rectangleReferenceDouble = rectangleReferenceDouble;
+                this.rectangleReferenceDrag = rectangleReferenceDrag;
                 this.nbPie = nbPie;
 
                 this.frame.getContentPane().add(panneau);
-                this.frame.setTitle("OutilCercleTest");
+                this.frame.setTitle("OutilRectangleTest");
                 this.frame.setSize(this.panneau.getPreferredSize());
                 this.frame.setLocationRelativeTo(null);
                 this.frame.setVisible(true);
@@ -84,8 +83,8 @@ public class OutilCercleTest {
         /**
          * Creation of the test list.
          * 
-         * {0} the first circle for double click. {1} the second circle for the click
-         * and drag. {2} the number of π
+         * {0} the first rectangle for double click. {1} the second Rectangle for the
+         * click and drag. {2} the number of π
          * 
          * @return all the tests.
          */
@@ -93,23 +92,27 @@ public class OutilCercleTest {
         public static Collection<Object[]> dt() {
                 final Object[][] data = new Object[][] {
                                 // Test 0
-                                { new Cercle(new Coordonnees(0, 30)), new Cercle(new Coordonnees(100, 90), 81), 1 },
+                                { new Rectangle(new Coordonnees(0, 30)),
+                                                new Rectangle(new Coordonnees(100, 90), 71, 81), 1 },
                                 // Test 1
-                                { new Cercle(new Coordonnees(60, 30)), new Cercle(new Coordonnees(100, 90), 81), 3 },
+                                { new Rectangle(new Coordonnees(60, 30)),
+                                                new Rectangle(new Coordonnees(100, 90), 71, 81), 3 },
                                 // Test 2
-                                { new Cercle(new Coordonnees(90, 30)), new Cercle(new Coordonnees(100, 90), 100), 4 },
+                                { new Rectangle(new Coordonnees(90, 30)),
+                                                new Rectangle(new Coordonnees(100, 90), 100, 10), 4 },
                                 // Test 3
-                                { new Cercle(new Coordonnees(120, 30)), new Cercle(new Coordonnees(100, 90), 81), 5 } };
+                                { new Rectangle(new Coordonnees(120, 30)),
+                                                new Rectangle(new Coordonnees(100, 90), 71, 81), 5 } };
                 return Arrays.asList(data);
         }
 
         /**
-         * Test of {@link OutilCercle#creerVueForme()}
+         * Test of {@link OutilRectangle#creerVueForme()}
          */
         @Test
-        public void testOutilCercleDoubleClick() {
-                int x = (int) this.cercleReferenceDouble.getPosition().getAbscisse();
-                int y = (int) this.cercleReferenceDouble.getPosition().getOrdonnee();
+        public void testOutilRectangleDoubleClick() {
+                int x = (int) this.rectangleReferenceDouble.getPosition().getAbscisse();
+                int y = (int) this.rectangleReferenceDouble.getPosition().getOrdonnee();
                 // We simulate the double click
                 this.outil.mousePressed(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_PRESSED, 0,
                                 MouseEvent.BUTTON1_DOWN_MASK, x, y, 1, false, MouseEvent.BUTTON1));
@@ -118,15 +121,15 @@ public class OutilCercleTest {
                 this.outil.mouseClicked(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_CLICKED, 0,
                                 MouseEvent.BUTTON1_DOWN_MASK, x, y, 2, false, MouseEvent.BUTTON1));
 
-                Cercle cercleActual = (Cercle) this.panneau.getVueFormes().get(0).getForme();
-                assertEquals("Test du double clic", this.cercleReferenceDouble, cercleActual);
+                Rectangle rectangleActual = (Rectangle) this.panneau.getVueFormes().get(0).getForme();
+                assertEquals("Test du double clic", this.rectangleReferenceDouble, rectangleActual);
         }
 
         /**
-         * Test of {@link OutilCercle#creerVueForme()}
+         * Test of {@link OutilRectangle#creerVueForme()}
          */
         @Test
-        public void testOutilCercleGlisseClick() {
+        public void testOutilRectangleGlisseClick() {
                 final int largeur = (int) Math.abs(Math.round((100 * Math.cos(this.nbPie * Math.PI / 4))));
                 final int hauteur = (int) Math.abs(Math.round((100 * Math.sin(this.nbPie * Math.PI / 4))));
                 this.outil.mousePressed(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_PRESSED, 0,
@@ -135,7 +138,7 @@ public class OutilCercleTest {
                                 MouseEvent.BUTTON1_DOWN_MASK, 100 + largeur, 100 + hauteur, 1, false,
                                 MouseEvent.BUTTON1));
 
-                Cercle cercleActual = (Cercle) this.panneau.getVueFormes().get(0).getForme();
-                assertEquals("Test du clic glissé", this.cercleReferenceDrag, cercleActual);
+                Rectangle rectangleActual = (Rectangle) this.panneau.getVueFormes().get(0).getForme();
+                assertEquals("Test du clic glissé", this.rectangleReferenceDrag, rectangleActual);
         }
 }

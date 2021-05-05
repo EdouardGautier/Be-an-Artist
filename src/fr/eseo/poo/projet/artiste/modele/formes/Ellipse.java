@@ -273,29 +273,18 @@ public class Ellipse extends Forme implements Remplissable {
 	 * In the case of an ellipse, we consider that the shape contains the point if
 	 * the point is inside or on the contour of the shape.
 	 * <p>
-	 * 
-	 * If the ellipse is defined by the coordinates of the two points A and B of the
-	 * rectangle enclosing the ellipse, knowing that:
-	 * <ul>
-	 * <li><i>A</i> is the radius of the ellipse parallel to the height.</li>
-	 * <li><i>B</i> is the radius of the ellipse parallel to the height.</li>
-	 * <li><i>(X, Y)</i> is the center of the ellipse.</li>
-	 * </ul>
-	 * <p>
 	 * the point (x, y) must verify :
 	 * <p>
-	 * {@code ( (x - X)/A )² + ( (x - X)/B )² <= 1}
-	 * <p>
-	 * If:
-	 * <ul>
-	 * <li>the result is less than 1, then the point is in the ellipse.</li>
-	 * <li>the result is equal to 1, then the point is on the contour of the
-	 * ellipse.</li>
-	 * <li>the result is greater than 1, then the point is outside the the
-	 * ellipse.</li>
-	 * </ul>
+	 * {@code ( (x - X)/A )² + ( (y - Y)/B )² <= 1}
 	 * 
 	 * @param point the point to evaluate
+	 * 
+	 * @return
+	 *         <li>the result is less than 1, then the point is in the ellipse.</li>
+	 *         <li>the result is equal to 1, then the point is on the contour of the
+	 *         ellipse.</li>
+	 *         <li>the result is greater than 1, then the point is outside the the
+	 *         ellipse.</li>
 	 * 
 	 * @since 0.3.2.8
 	 */

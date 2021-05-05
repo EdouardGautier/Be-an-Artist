@@ -4,11 +4,13 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import fr.eseo.poo.projet.artiste.controleur.outils.OutilCarre;
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilCercle;
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilEllipse;
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilEtoile;
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilForme;
 import fr.eseo.poo.projet.artiste.controleur.outils.OutilLigne;
+import fr.eseo.poo.projet.artiste.controleur.outils.OutilRectangle;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauBarreOutils;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
@@ -27,6 +29,8 @@ import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
  * @author EdouardGautier
  * 
  * @since 0.3.4.9
+ * 
+ * @version 1.3.2
  */
 public class ActionChoisirForme extends AbstractAction {
     /**
@@ -60,6 +64,22 @@ public class ActionChoisirForme extends AbstractAction {
      * Here it is the {@value} action.
      */
     public static final String NOM_ACTION_ETOILE = "Etoile";
+
+    /**
+     * Identifies the {@code actionCommand} of the form and will be used as a label
+     * for the associated {@code JButton}
+     * <p>
+     * Here it is the {@value} action.
+     */
+    public static final String NOM_ACTION_RECTANGLE = "Rectangle";
+
+    /**
+     * Identifies the {@code actionCommand} of the form and will be used as a label
+     * for the associated {@code JButton}
+     * <p>
+     * Here it is the {@value} action.
+     */
+    public static final String NOM_ACTION_CARRE = "Carre";
 
     /**
      * Allows you to memorize the {@code PanneauDessin} you are using.
@@ -104,23 +124,31 @@ public class ActionChoisirForme extends AbstractAction {
      * @param event {@code ActionEvent} associated with the click on the button.
      * 
      * @since 0.3.4.9
+     * 
+     * @version 1.3.2
      */
     @Override
     public void actionPerformed(final ActionEvent event) {
         switch (event.getActionCommand()) {
-        case ActionChoisirForme.NOM_ACTION_CERCLE:
-            this.panneauDessin.associerOutil(new OutilCercle());
-            break;
-        case ActionChoisirForme.NOM_ACTION_ELLIPSE:
-            this.panneauDessin.associerOutil(new OutilEllipse());
-            break;
-        case ActionChoisirForme.NOM_ACTION_LIGNE:
-            this.panneauDessin.associerOutil(new OutilLigne());
-            break;
-        case ActionChoisirForme.NOM_ACTION_ETOILE:
-            this.panneauDessin.associerOutil(new OutilEtoile(this.panneauOutils));
-            break;
-        default:
+            case ActionChoisirForme.NOM_ACTION_CERCLE:
+                this.panneauDessin.associerOutil(new OutilCercle());
+                break;
+            case ActionChoisirForme.NOM_ACTION_ELLIPSE:
+                this.panneauDessin.associerOutil(new OutilEllipse());
+                break;
+            case ActionChoisirForme.NOM_ACTION_LIGNE:
+                this.panneauDessin.associerOutil(new OutilLigne());
+                break;
+            case ActionChoisirForme.NOM_ACTION_ETOILE:
+                this.panneauDessin.associerOutil(new OutilEtoile(this.panneauOutils));
+                break;
+            case ActionChoisirForme.NOM_ACTION_RECTANGLE:
+                this.panneauDessin.associerOutil(new OutilRectangle());
+                break;
+            case ActionChoisirForme.NOM_ACTION_CARRE:
+                this.panneauDessin.associerOutil(new OutilCarre());
+                break;
+            default:
         }
     }
 }
