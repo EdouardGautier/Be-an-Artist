@@ -41,14 +41,14 @@ public class EllipseTestParameterizedContient {
     /**
      * Builder for each test for Ligne.
      * 
-     * @param p_ellipse     the tested ellipse.
-     * @param p_point       the point to test.
-     * @param p_estContenue if the point is on the ellipse
+     * @param ellipse     the tested ellipse.
+     * @param point       the point to test.
+     * @param estContenue if the point is on the ellipse
      */
-    public EllipseTestParameterizedContient(final Ellipse p_ellipse, final Coordonnees p_point, boolean p_estContenue) {
-        this.ellipse = p_ellipse;
-        this.point = p_point;
-        this.estContenue = p_estContenue;
+    public EllipseTestParameterizedContient(final Ellipse ellipse, final Coordonnees point, boolean estContenue) {
+        this.ellipse = ellipse;
+        this.point = point;
+        this.estContenue = estContenue;
     }
 
     /**
@@ -76,17 +76,16 @@ public class EllipseTestParameterizedContient {
                 // It is on the ellipse.
                 // The point is in the ellipse
                 // Test 5
-                { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(41.17, 32.52), true},
+                { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(41.17, 32.52), true },
                 // Test 6
-                { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(20, 20), true},
+                { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(20, 20), true },
                 // Test 7
-                { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(65.16, 13.38), true},
+                { new Ellipse(new Coordonnees(10.03, 1.58), 73.27, 41.1), new Coordonnees(65.16, 13.38), true },
                 // The point is on the outline of the ellipse
                 // Test 8
-                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(42.84, 46.29), true},
+                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(42.84, 46.29), true },
                 // Test 9
-                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(50.12, 27.06), true}
-            };
+                { new Ellipse(new Coordonnees(10.03, 1.58), 40.1, 50.5), new Coordonnees(50.12, 27.06), true } };
         return Arrays.asList(data);
     }
 

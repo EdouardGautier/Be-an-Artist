@@ -21,15 +21,14 @@ public interface Remplissable {
     /**
      * Mutator of the filling indication of the {@code Forme}
      * 
-     * @param p_estRempli a {@code boolean}
-     *                    <ul>
-     *                    <li>{@code true} if we want to fill the
-     *                    {@code Forme}.</li>
-     *                    <li>{@code false} if we don't want to fill the
-     *                    {@code Forme}.</li>
-     *                    </ul>
+     * @param rempli a {@code boolean}
+     *               <ul>
+     *               <li>{@code true} if we want to fill the {@code Forme}.</li>
+     *               <li>{@code false} if we don't want to fill the
+     *               {@code Forme}.</li>
+     *               </ul>
      */
-    public void setRempli(boolean p_estRempli);
+    public void setRempli(boolean rempli);
 
     /**
      * Function that describes the filling of the {@code Forme} .

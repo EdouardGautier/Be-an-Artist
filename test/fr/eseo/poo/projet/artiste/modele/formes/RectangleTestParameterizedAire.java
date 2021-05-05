@@ -10,21 +10,19 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import fr.eseo.poo.projet.artiste.modele.Coordonnees;
-
 /**
- * Parameterized test class of {@link Etoile#aire()}.
+ * Parameterized test class of {@link Rectangle#aire()}.
  * 
  * @author EdouardGautier
  * 
- * @since 0.3.7.1
+ * @since 1.3.1
  */
 @RunWith(Parameterized.class)
-public class EtoileTestParameterizedAire {
+public class RectangleTestParameterizedAire {
     /**
-     * The tested Etoile.
+     * The tested rectangle.
      */
-    private final Etoile etoile;
+    private final Rectangle rectangle;
 
     /**
      * Reference aire.
@@ -34,18 +32,18 @@ public class EtoileTestParameterizedAire {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param etoile        the tested Etoile.
+     * @param rectangle     the tested rectangle.
      * @param aireReference reference aire.
      */
-    public EtoileTestParameterizedAire(final Etoile etoile, final double aireAttendue) {
-        this.etoile = etoile;
-        this.aireReference = aireAttendue;
+    public RectangleTestParameterizedAire(final Rectangle rectangle, final double aireReference) {
+        this.rectangle = rectangle;
+        this.aireReference = aireReference;
     }
 
     /**
      * Creation of the test list.
      * 
-     * {0} the tested Etoile. {1} reference aire.
+     * {0} the tested rectangle. {1} reference aire.
      * 
      * @return all the tests.
      */
@@ -53,21 +51,21 @@ public class EtoileTestParameterizedAire {
     public static Collection<Object[]> dt() {
         final Object[][] data = new Object[][] {
                 // Test 0
-                { new Etoile(), 0 },
+                { new Rectangle(1, 1), 1 },
                 // Test 1
-                { new Etoile(new Coordonnees(), 215.42, 5, 2.29, 0.75), 8523.94 },
+                { new Rectangle(1, 2), 2 },
                 // Test 2
-                { new Etoile(new Coordonnees(), 100, 13, 2.29, 0.5), 3888.87 },
+                { new Rectangle(15.0, 15.0), 225 },
                 // Test 3
-                { new Etoile(new Coordonnees(), 50, 3, 2.29, 0.25), 1217.84 } };
+                { new Rectangle(28.0, 15.0), 420 } };
         return Arrays.asList(data);
     }
 
     /**
-     * Test of {@link Etoile#aire()}
+     * Test of {@link Rectangle#aire()}
      */
     @Test
-    public void testAireEtoile() {
-        assertEquals("Test de aire(): ", this.aireReference, this.etoile.aire(), Forme.EPSILON);
+    public void testAireRectangle() {
+        assertEquals("Test de aire(): ", this.aireReference, this.rectangle.aire(), Forme.EPSILON);
     }
 }

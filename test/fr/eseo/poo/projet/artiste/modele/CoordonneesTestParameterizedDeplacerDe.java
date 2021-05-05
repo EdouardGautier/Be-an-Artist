@@ -43,17 +43,16 @@ public class CoordonneesTestParameterizedDeplacerDe {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_x1 initial abscissa
-     * @param p_y1 initial order
-     * @param p_x2 abscissa final
-     * @param p_y2 order final
+     * @param x1 initial abscissa
+     * @param y1 initial order
+     * @param x2 abscissa final
+     * @param y2 order final
      */
-    public CoordonneesTestParameterizedDeplacerDe(final double p_x1, final double p_y1, final double p_x2,
-            final double p_y2) {
-        this.x1 = p_x1;
-        this.y1 = p_y1;
-        this.x2 = p_x2;
-        this.y2 = p_y2;
+    public CoordonneesTestParameterizedDeplacerDe(final double x1, final double y1, final double x2, final double y2) {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
     }
 
     /**
