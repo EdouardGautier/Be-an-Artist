@@ -28,12 +28,12 @@ public class VueEllipse extends VueForme {
      * Constructor of a new {@code VueEllipse}. The instance of the class is
      * initialized with the shape given in parameter.
      * 
-     * @param p_ellipse The {@code Ellipse} that you wish to display.
+     * @param ellipse The {@code Ellipse} that you wish to display.
      * 
      * @since 0.3.3.7
      */
-    public VueEllipse(final Ellipse p_ellipse) {
-        super(p_ellipse);
+    public VueEllipse(final Ellipse ellipse) {
+        super(ellipse);
     }
 
     /*************************************************************************/
@@ -55,8 +55,8 @@ public class VueEllipse extends VueForme {
         g2d.setColor(ellipse.getCouleur()); // Use of the VueForme cast
 
         if (ellipse.estRempli()) {
-            g2d.fillOval((int) ellipse.getPosition().getAbscisse(), (int) ellipse.getPosition().getOrdonnee(), (int) ellipse.getLargeur(),
-                    (int) ellipse.getHauteur());
+            g2d.fillOval((int) ellipse.getPosition().getAbscisse(), (int) ellipse.getPosition().getOrdonnee(),
+                    (int) ellipse.getLargeur(), (int) ellipse.getHauteur());
         }
         g2d.drawOval((int) ellipse.getCadreMinX(), (int) ellipse.getCadreMinY(), (int) ellipse.getLargeur(),
                 (int) ellipse.getHauteur());

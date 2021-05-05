@@ -59,18 +59,18 @@ public class OutilCarreTest {
         /**
          * Builder for each test for OutilLigne.
          * 
-         * @param p_carreReferenceDouble square for double click
-         * @param p_carreReferenceDrag   square for the click and drag
-         * @param p_nbPie                number of π for drag
+         * @param carreReferenceDouble square for double click
+         * @param carreReferenceDrag   square for the click and drag
+         * @param nbPie                number of π for drag
          */
-        public OutilCarreTest(Carre p_carreReferenceDouble, Carre p_carreReferenceDrag, int p_nbPie) {
+        public OutilCarreTest(Carre carreReferenceDouble, Carre carreReferenceDrag, int nbPie) {
                 this.frame = new JFrame();
                 this.panneau = new PanneauDessin();
                 this.outil = new OutilCarre();
                 this.panneau.associerOutil(this.outil);
-                this.carreReferenceDouble = p_carreReferenceDouble;
-                this.carreReferenceDrag = p_carreReferenceDrag;
-                this.nbPie = p_nbPie;
+                this.carreReferenceDouble = carreReferenceDouble;
+                this.carreReferenceDrag = carreReferenceDrag;
+                this.nbPie = nbPie;
 
                 this.frame.getContentPane().add(panneau);
                 this.frame.setTitle("OutilCarreTest");
@@ -117,8 +117,8 @@ public class OutilCarreTest {
                 this.outil.mouseClicked(new MouseEvent(this.frame.getComponent(0), MouseEvent.MOUSE_CLICKED, 0,
                                 MouseEvent.BUTTON1_DOWN_MASK, x, y, 2, false, MouseEvent.BUTTON1));
 
-                Carre CarreActual = (Carre) this.panneau.getVueFormes().get(0).getForme();
-                assertEquals("Test du double clic", this.carreReferenceDouble, CarreActual);
+                Carre carreActual = (Carre) this.panneau.getVueFormes().get(0).getForme();
+                assertEquals("Test du double clic", this.carreReferenceDouble, carreActual);
         }
 
         /**
@@ -134,7 +134,7 @@ public class OutilCarreTest {
                                 MouseEvent.BUTTON1_DOWN_MASK, 100 + largeur, 100 + hauteur, 1, false,
                                 MouseEvent.BUTTON1));
 
-                Carre CarreActual = (Carre) this.panneau.getVueFormes().get(0).getForme();
-                assertEquals("Test du clic glissé", this.carreReferenceDrag, CarreActual);
+                Carre carreActual = (Carre) this.panneau.getVueFormes().get(0).getForme();
+                assertEquals("Test du clic glissé", this.carreReferenceDrag, carreActual);
         }
 }

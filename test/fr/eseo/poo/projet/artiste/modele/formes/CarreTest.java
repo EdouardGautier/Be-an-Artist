@@ -109,14 +109,14 @@ public class CarreTest {
      */
     @Test
     public void testToString() {
-        Carre Carre = new Carre(new Coordonnees(10, 10), 5);
+        Carre carre = new Carre(new Coordonnees(10, 10), 5);
 
         String description = "[Carre] : pos (10,0 , 10,0) dim 5,0 x 5,0 périmètre : 15,71 aire : 25,0 couleur = R51,V51,B51";
-        assertEquals("Test de la representation de la ligne", description, Carre.toString());
+        assertEquals("Test de la representation de la ligne", description, carre.toString());
 
-        Carre.setRempli(true);
+        carre.setRempli(true);
 
         description = "[Carre-Rempli] : pos (10,0 , 10,0) dim 5,0 x 5,0 périmètre : 15,71 aire : 25,0 couleur = R51,V51,B51";
-        assertEquals("Test de la representation du carré", description, Carre.toString());
+        assertEquals("Test de la representation du carré", description, carre.toString());
     }
 }

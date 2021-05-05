@@ -59,9 +59,9 @@ public class ActionEffacerTest {
     /**
      * Builder for each test for ActionEffacer.
      * 
-     * @param p_listLine List of lines to be drawn 
+     * @param listLine List of lines to be drawn
      */
-    public ActionEffacerTest(Ligne[] p_listLine) {
+    public ActionEffacerTest(Ligne[] listLine) {
         this.frame = new JFrame();
         this.panneau = new PanneauDessin();
         this.outil = new OutilLigne();
@@ -75,13 +75,13 @@ public class ActionEffacerTest {
         this.frame.setVisible(true);
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.listLine = p_listLine;
+        this.listLine = listLine;
     }
 
     /**
      * Creation of the test list.
      * 
-     * {0} List of lines to be drawn 
+     * {0} List of lines to be drawn
      * 
      * @return all the tests.
      */

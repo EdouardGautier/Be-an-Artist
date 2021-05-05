@@ -33,12 +33,12 @@ public class CarreTestParameterizedPerimetre {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_carre              the tested square.
-     * @param p_perimetreReference reference perimetre
+     * @param carre              the tested square.
+     * @param perimetreReference reference perimetre
      */
-    public CarreTestParameterizedPerimetre(final Carre p_carre, final double p_perimetreReference) {
-        this.carre = p_carre;
-        this.perimetreReference = p_perimetreReference;
+    public CarreTestParameterizedPerimetre(final Carre carre, final double perimetreReference) {
+        this.carre = carre;
+        this.perimetreReference = perimetreReference;
     }
 
     /**

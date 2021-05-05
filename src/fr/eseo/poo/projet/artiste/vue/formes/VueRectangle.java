@@ -26,12 +26,12 @@ public class VueRectangle extends VueForme {
      * Constructor of a new {@code VueRectangle}. The instance of the class is
      * initialized with the shape given in parameter.
      * 
-     * @param p_rectangle The {@code rectangle} that you wish to display.
+     * @param rectangle The {@code rectangle} that you wish to display.
      * 
      * @since 1.3.1
      */
-    public VueRectangle(final Rectangle p_rectangle) {
-        super(p_rectangle);
+    public VueRectangle(final Rectangle rectangle) {
+        super(rectangle);
     }
 
     /*************************************************************************/

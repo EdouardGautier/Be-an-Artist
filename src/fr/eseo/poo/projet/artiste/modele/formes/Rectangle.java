@@ -53,12 +53,12 @@ public class Rectangle extends Forme implements Remplissable {
 	 * Construct a new {@code Rectangle} from a position, a height and a width.
 	 * height and width.
 	 * 
-	 * @param p_position A {@code Coordinates} corresponding to the upper corner of
-	 *                   the rectangle
-	 * @param p_largeur  A {@code double} corresponding to the width of the
-	 *                   rectangle rectangle
-	 * @param p_hauteur  The {@code double} corresponding to the height of the
-	 *                   rectangle
+	 * @param position A {@code Coordinates} corresponding to the upper corner of
+	 *                 the rectangle
+	 * @param largeur  A {@code double} corresponding to the width of the rectangle
+	 *                 rectangle
+	 * @param hauteur  The {@code double} corresponding to the height of the
+	 *                 rectangle
 	 * 
 	 * @see Forme#Forme(Coordonnees, double, double)
 	 * @see #Rectangle()
@@ -67,18 +67,18 @@ public class Rectangle extends Forme implements Remplissable {
 	 * 
 	 * @since 1.3.1
 	 */
-	public Rectangle(Coordonnees p_position, double p_largeur, double p_hauteur) {
-		super(p_position, p_largeur, p_hauteur);
+	public Rectangle(Coordonnees position, double largeur, double hauteur) {
+		super(position, largeur, hauteur);
 	}
 
 	/**
 	 * Construct a new {@code Rectangle} from a width and a height, the position
 	 * being height, the position being initialized from the default values.
 	 * 
-	 * @param p_largeur The {@code double} corresponding to the width of the
-	 *                  rectangle rectangle
-	 * @param p_hauteur The {@double code} corresponding to the height of the
-	 *                  rectangle
+	 * @param largeur The {@code double} corresponding to the width of the rectangle
+	 *                rectangle
+	 * @param hauteur The {@double code} corresponding to the height of the
+	 *                rectangle
 	 * 
 	 * @see Forme#Forme(double, double)
 	 * @see #Rectangle()
@@ -87,16 +87,16 @@ public class Rectangle extends Forme implements Remplissable {
 	 * 
 	 * @since 1.3.1
 	 */
-	public Rectangle(double p_largeur, double p_hauteur) {
-		super(p_largeur, p_hauteur);
+	public Rectangle(double largeur, double hauteur) {
+		super(largeur, hauteur);
 	}
 
 	/**
 	 * Construct a new {@code Rectangle} from a point, the other attributes being
 	 * attributes being initialized from the default values.
 	 * 
-	 * @param p_position A {@code Coordonnees} corresponding to the top left corner
-	 *                   of the of the rectangle
+	 * @param position A {@code Coordonnees} corresponding to the top left corner of
+	 *                 the of the rectangle
 	 * 
 	 * @see Forme#Forme(Coordonnees)
 	 * @see #Rectangle()
@@ -105,8 +105,8 @@ public class Rectangle extends Forme implements Remplissable {
 	 * 
 	 * @since 1.3.1
 	 */
-	public Rectangle(Coordonnees p_position) {
-		super(p_position, LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
+	public Rectangle(Coordonnees position) {
+		super(position, LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class Rectangle extends Forme implements Remplissable {
 	 * {@inheritDoc}
 	 * <p>
 	 * 
-	 * @param p_largeur width must be greater than 0.
+	 * @param largeur width must be greater than 0.
 	 * 
 	 * @throws IllegalArgumentException Si la largeur est inférieur ou égale à 0.
 	 * 
@@ -142,9 +142,9 @@ public class Rectangle extends Forme implements Remplissable {
 	 * @since 1.3.1
 	 */
 	@Override
-	public void setLargeur(final double p_largeur) {
-		if (p_largeur > 0) {
-			super.setLargeur(p_largeur);
+	public void setLargeur(final double largeur) {
+		if (largeur > 0) {
+			super.setLargeur(largeur);
 		} else {
 			throw new IllegalArgumentException("La largeur de " + getClass().getSimpleName() + " doit être positive");
 		}
@@ -154,7 +154,7 @@ public class Rectangle extends Forme implements Remplissable {
 	 * {@inheritDoc}
 	 * <p>
 	 * 
-	 * @param p_hauteur heigt must be greater than 0.
+	 * @param hauteur heigt must be greater than 0.
 	 * 
 	 * @throws IllegalArgumentException Si la largeur est inférieur ou égale à 0.
 	 * 
@@ -164,9 +164,9 @@ public class Rectangle extends Forme implements Remplissable {
 	 * @since 1.3.1
 	 */
 	@Override
-	public void setHauteur(final double p_hauteur) {
-		if (p_hauteur > 0) {
-			super.setHauteur(p_hauteur);
+	public void setHauteur(final double hauteur) {
+		if (hauteur > 0) {
+			super.setHauteur(hauteur);
 		} else {
 			throw new IllegalArgumentException("La hauteur de " + getClass().getSimpleName() + " doit être positive");
 		}
@@ -178,8 +178,8 @@ public class Rectangle extends Forme implements Remplissable {
 	 * @since 1.3.1
 	 */
 	@Override
-	public void setRempli(final boolean p_estRempli) {
-		this.estRempli = p_estRempli;
+	public void setRempli(final boolean rempli) {
+		this.estRempli = rempli;
 	}
 
 	/*************************************************************************/
@@ -207,13 +207,13 @@ public class Rectangle extends Forme implements Remplissable {
 	}
 
 	@Override
-	public boolean contient(final Coordonnees p_point) {
-		final double A = super.getHauteur() / 2;
-		final double B = super.getLargeur() / 2;
-		final double X = super.getPosition().getAbscisse() + B;
-		final double Y = super.getPosition().getOrdonnee() + A;
+	public boolean contient(final Coordonnees point) {
+		final double a = super.getHauteur() / 2;
+		final double b = super.getLargeur() / 2;
+		final double x = super.getPosition().getAbscisse() + b;
+		final double y = super.getPosition().getOrdonnee() + a;
 
-		return Math.pow(((p_point.getAbscisse() - X)) / B, 2) + Math.pow(((p_point.getOrdonnee() - Y)) / A, 2) <= 1;
+		return Math.pow(((point.getAbscisse() - x)) / b, 2) + Math.pow(((point.getOrdonnee() - y)) / a, 2) <= 1;
 	}
 
 	/**

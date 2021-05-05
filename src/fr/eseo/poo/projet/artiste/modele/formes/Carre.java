@@ -22,9 +22,9 @@ public class Carre extends Rectangle {
      * <p>
      * The height and width must be greater than 0.
      * 
-     * @param p_position The {@code Coordonnees} corresponding to the position of
+     * @param position The {@code Coordonnees} corresponding to the position of
      *                   the of the rectangle enclosing the square.
-     * @param p_largeur  A {@code double} corresponding to the width of the
+     * @param largeur  A {@code double} corresponding to the width of the
      *                   rectangle encompassing the square.
      * 
      * @throws IllegalArgumentException If the width or height is less than or equal
@@ -37,13 +37,13 @@ public class Carre extends Rectangle {
      * 
      * @since 1.3.2
      */
-    public Carre(Coordonnees p_position, double p_largeur) {
-        if (p_largeur <= 0) {
+    public Carre(Coordonnees position, double largeur) {
+        if (largeur <= 0) {
             throw new IllegalArgumentException("La largeur " + getClass().getSimpleName() + " doit être positive");
         } else {
-            this.largeur = p_largeur;
-            this.hauteur = p_largeur;
-            super.setPosition(p_position);
+            this.largeur = largeur;
+            this.hauteur = largeur;
+            super.setPosition(position);
         }
     }
 
@@ -53,7 +53,7 @@ public class Carre extends Rectangle {
      * <p>
      * The height and width must be greater than 0.
      * 
-     * @param p_largeur A {@doublecode} corresponding to the width of the rectangle
+     * @param largeur A {@doublecode} corresponding to the width of the rectangle
      *                  encompassing the square.
      * 
      * @throws IllegalArgumentException If the width or height is less than or equal
@@ -65,13 +65,13 @@ public class Carre extends Rectangle {
      * 
      * @since 1.3.2
      */
-    public Carre(double p_largeur) {
-        if (p_largeur <= 0) {
+    public Carre(double largeur) {
+        if (largeur <= 0) {
             throw new IllegalArgumentException(
                     "La largeur et la hauteur de " + getClass().getSimpleName() + " doivent être positive");
         } else {
-            this.largeur = p_largeur;
-            this.hauteur = p_largeur;
+            this.largeur = largeur;
+            this.hauteur = largeur;
             super.setPosition(new Coordonnees());
         }
     }
@@ -80,7 +80,7 @@ public class Carre extends Rectangle {
      * Constructor of a new {@code Carre} from a point, the other attribute being
      * initialized from the default values.
      * 
-     * @param p_position The {@code Coordinates} corresponding to the position of
+     * @param position The {@code Coordinates} corresponding to the position of
      *                   the of the rectangle enclosing the square.
      * 
      * @see Forme#Forme(Coordonnees)
@@ -90,8 +90,8 @@ public class Carre extends Rectangle {
      * 
      * @since 1.3.2
      */
-    public Carre(Coordonnees p_position) {
-        super(p_position);
+    public Carre(Coordonnees position) {
+        super(position);
     }
 
     /**
@@ -117,7 +117,7 @@ public class Carre extends Rectangle {
      * {@inheritDoc}
      * <p>
      * 
-     * @param p_largeur In the case of the square, the height of the rectangle is
+     * @param largeur In the case of the square, the height of the rectangle is
      *                  also modified so that its two dimensions remain equal.
      * 
      * @throws IllegalArgumentException If the width is less than or equal to 0.
@@ -128,12 +128,12 @@ public class Carre extends Rectangle {
      * @since 1.3.2
      */
     @Override
-    public void setLargeur(double p_largeur) {
-        if (p_largeur <= 0) {
+    public void setLargeur(double largeur) {
+        if (largeur <= 0) {
             throw new IllegalArgumentException("La largeur de " + getClass().getSimpleName() + " doit être positive");
         } else {
-            super.setLargeur(p_largeur);
-            super.setHauteur(p_largeur);
+            super.setLargeur(largeur);
+            super.setHauteur(largeur);
         }
     }
 
@@ -141,7 +141,7 @@ public class Carre extends Rectangle {
      * {@inheritDoc}
      * <p>
      * 
-     * @param p_hauteur In the case of the square, the height of the rectangle is
+     * @param hauteur In the case of the square, the height of the rectangle is
      *                  also modified so that its two dimensions remain equal.
      * 
      * @throws IllegalArgumentException If the width is less than or equal to 0.
@@ -152,11 +152,11 @@ public class Carre extends Rectangle {
      * @since 1.3.2
      */
     @Override
-    public void setHauteur(double p_hauteur) {
-        if (p_hauteur <= 0) {
+    public void setHauteur(double hauteur) {
+        if (hauteur <= 0) {
             throw new IllegalArgumentException("La largeur de " + getClass().getSimpleName() + " doit être positive");
         } else {
-            this.setLargeur(p_hauteur);
+            this.setLargeur(hauteur);
         }
     }
 

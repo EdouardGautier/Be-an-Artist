@@ -35,12 +35,12 @@ public class EtoileTestParameterizedPerimetre {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_etoile             the tested Etoile.
-     * @param p_perimetreReference reference perimetre.
+     * @param etoile             the tested Etoile.
+     * @param perimetreReference reference perimetre.
      */
-    public EtoileTestParameterizedPerimetre(final Etoile p_etoile, final double p_perimetreReference) {
-        this.etoile = p_etoile;
-        this.perimetreReference = p_perimetreReference;
+    public EtoileTestParameterizedPerimetre(final Etoile etoile, final double perimetreReference) {
+        this.etoile = etoile;
+        this.perimetreReference = perimetreReference;
     }
 
     /**
