@@ -87,12 +87,12 @@ public class PanneauDessin extends JPanel {
      * Construct a new {@code DesignPanel} from a width, a height, and a background
      * color.
      * 
-     * @param p_largeur   A {@double code} corresponding to the width of the drawing
-     *                    area.
-     * @param p_hauteur   A {@code double} corresponding to the height of the
-     *                    drawing area.
-     * @param p_fondColor A {@code Color} corresponding to the background color of
-     *                    the drawing area.
+     * @param largeur   A {@double code} corresponding to the width of the drawing
+     *                  area.
+     * @param hauteur   A {@code double} corresponding to the height of the drawing
+     *                  area.
+     * @param fondColor A {@code Color} corresponding to the background color of the
+     *                  drawing area.
      * 
      * @see #PanneauDessin()
      * 
@@ -100,9 +100,9 @@ public class PanneauDessin extends JPanel {
      * 
      * @version 0.3.5.2
      */
-    public PanneauDessin(int p_largeur, int p_hauteur, Color p_fondColor) {
-        super.setBackground(p_fondColor);
-        super.setPreferredSize(new Dimension(p_largeur, p_hauteur));
+    public PanneauDessin(int largeur, int hauteur, Color fondColor) {
+        super.setBackground(fondColor);
+        super.setPreferredSize(new Dimension(largeur, hauteur));
     }
 
     /**
@@ -148,14 +148,14 @@ public class PanneauDessin extends JPanel {
     /**
      * Mutator of {@code outil}.
      * 
-     * @param p_outil The new {@code Outil} that you want to associate as a tool.
+     * @param outil The new {@code Outil} that you want to associate as a tool.
      * 
      * @see #getOutilCourant()
      * 
      * @since 0.3.4.1
      */
-    private void setOutilCourant(final Outil p_outil) {
-        this.outilCourant = p_outil;
+    private void setOutilCourant(final Outil outil) {
+        this.outilCourant = outil;
     }
 
     /**
@@ -174,14 +174,14 @@ public class PanneauDessin extends JPanel {
     /**
      * Common {@code Color} mutator used to draw shapes.
      * 
-     * @param p_couleurCourante {@code Color} to be used to draw the
+     * @param couleurCourante {@code Color} to be used to draw the
      * 
      * @see #getCouleurCourante()
      * 
      * @since 0.3.5.2
      */
-    public void setCouleurCourante(final Color p_couleurCourante) {
-        this.couleurCourante = p_couleurCourante;
+    public void setCouleurCourante(final Color couleurCourante) {
+        this.couleurCourante = couleurCourante;
     }
 
     /**
@@ -201,15 +201,15 @@ public class PanneauDessin extends JPanel {
     /**
      * Mutator of the filling or not the forms.
      * 
-     * @param p_estRempli {@code boolean} indicating whether or not you want to fill
-     *                    in the shapes you draw
+     * @param rempli {@code boolean} indicating whether or not you want to fill in
+     *               the shapes you draw
      * 
      * @see #getModeRemplissage()
      * 
      * @since 0.3.6.2
      */
-    public void setModeRemplissage(final boolean p_estRempli) {
-        this.estRempli = p_estRempli;
+    public void setModeRemplissage(final boolean rempli) {
+        this.estRempli = rempli;
     }
 
     /*************************************************************************/
@@ -221,13 +221,13 @@ public class PanneauDessin extends JPanel {
      * <p>
      * Allows you to add the representation of the shape passed as a parameter.
      * 
-     * @param p_vueForme The {@code vueForme} corresponding to the representation of
-     *                   the shape that you want to display.
+     * @param vueForme The {@code vueForme} corresponding to the representation of
+     *                 the shape that you want to display.
      * 
      * @since 0.3.3.5
      */
-    public void ajouterVueForme(final VueForme p_vueForme) {
-        this.vueFormes.add(p_vueForme);
+    public void ajouterVueForme(final VueForme vueForme) {
+        this.vueFormes.add(vueForme);
     }
 
     /**
@@ -272,16 +272,16 @@ public class PanneauDessin extends JPanel {
      * Only one tool can be associated at a time. Associating a new {@code Outil}
      * deletes the old one.
      * 
-     * @param p_outil {@code Outil} that we want to associate.
+     * @param outil {@code Outil} that we want to associate.
      * 
      * @see #dissocierOutil()
      * 
      * @since 0.3.4.1
      */
-    public void associerOutil(final Outil p_outil) {
-        if (p_outil != null) {
+    public void associerOutil(final Outil outil) {
+        if (outil != null) {
             this.dissocierOutil();
-            this.setOutilCourant(p_outil);
+            this.setOutilCourant(outil);
             // We listen to this new tool.
             addMouseListener(this.getOutilCourant());
             addMouseMotionListener(this.getOutilCourant());

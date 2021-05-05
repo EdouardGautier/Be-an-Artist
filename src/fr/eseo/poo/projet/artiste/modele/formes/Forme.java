@@ -131,12 +131,12 @@ public abstract class Forme implements Coloriable {
     /**
      * Construct a new {@code Forme} from a point, a height and a width.
      * 
-     * @param p_largeur A {@code double} corresponding to the width of the rectangle
-     *                  enclosing the shape.
-     * @param p_hauteur A {@code double} corresponding to the height of the
-     *                  rectangle enclosing the shape.
-     * @param p_point   A {@code Coordonnees} corresponding to the position of the
-     *                  upper left corner of the rectangle enclosing the shape.
+     * @param largeur A {@code double} corresponding to the width of the rectangle
+     *                enclosing the shape.
+     * @param hauteur A {@code double} corresponding to the height of the rectangle
+     *                enclosing the shape.
+     * @param point   A {@code Coordonnees} corresponding to the position of the
+     *                upper left corner of the rectangle enclosing the shape.
      * 
      * @see #Forme()
      * @see #Forme(Coordonnees)
@@ -144,10 +144,10 @@ public abstract class Forme implements Coloriable {
      * 
      * @since 0.3.2.3
      */
-    public Forme(Coordonnees p_point, double p_largeur, double p_hauteur) {
-        this.largeur = p_largeur;
-        this.hauteur = p_hauteur;
-        this.position = p_point;
+    public Forme(Coordonnees point, double largeur, double hauteur) {
+        this.largeur = largeur;
+        this.hauteur = hauteur;
+        this.position = point;
         this.couleur = COULEUR_PAR_DEFAUT;
     }
 
@@ -157,10 +157,10 @@ public abstract class Forme implements Coloriable {
      * The other attributes being initialized from the default values.
      * </p>
      * 
-     * @param p_largeur A {@code double} corresponding to the width of the rectangle
-     *                  rectangle enclosing the shape.
-     * @param p_hauteur A {@doublecode} corresponding to the height of the rectangle
-     *                  encompassing the shape.
+     * @param largeur A {@code double} corresponding to the width of the rectangle
+     *                rectangle enclosing the shape.
+     * @param hauteur A {@doublecode} corresponding to the height of the rectangle
+     *                encompassing the shape.
      * 
      * @see #Forme()
      * @see #Forme(Coordonnees)
@@ -168,8 +168,8 @@ public abstract class Forme implements Coloriable {
      * 
      * @since 0.3.2.3
      */
-    public Forme(double p_largeur, double p_hauteur) {
-        this(new Coordonnees(0, 0), p_largeur, p_hauteur);
+    public Forme(double largeur, double hauteur) {
+        this(new Coordonnees(0, 0), largeur, hauteur);
     }
 
     /**
@@ -178,8 +178,8 @@ public abstract class Forme implements Coloriable {
      * The other attributes being initialized from the default values.
      * </p>
      * 
-     * @param p_point The {@code Coordonnees} corresponding to the position of the
-     *                upper left corner of the rectangle enclosing the shape.
+     * @param point The {@code Coordonnees} corresponding to the position of the
+     *              upper left corner of the rectangle enclosing the shape.
      * 
      * @see #Forme()
      * @see #Forme(double, double)
@@ -188,8 +188,8 @@ public abstract class Forme implements Coloriable {
      * 
      * @since 0.3.2.3
      */
-    public Forme(Coordonnees p_point) {
-        this(p_point, LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
+    public Forme(Coordonnees point) {
+        this(point, LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
     }
 
     /**
@@ -228,15 +228,14 @@ public abstract class Forme implements Coloriable {
     /**
      * Mutator of the {@code largeur} of the rectangle enclosing the shape.
      * 
-     * @param p_largeur A {@code double} corresponding to the new width of the
-     *                  shape.
+     * @param largeur A {@code double} corresponding to the new width of the shape.
      * 
      * @see #getLargeur()
      * 
      * @since 0.3.2.3
      */
-    public void setLargeur(double p_largeur) {
-        this.largeur = p_largeur;
+    public void setLargeur(double largeur) {
+        this.largeur = largeur;
     }
 
     /**
@@ -255,15 +254,14 @@ public abstract class Forme implements Coloriable {
     /**
      * Mutator of the {@code HAUTEUR} of the rectangle enclosing the shape.
      * 
-     * @param p_hauteur A {@code double} corresponding to the new length of the
-     *                  shape.
+     * @param hauteur A {@code double} corresponding to the new length of the shape.
      * 
      * @see #getHauteur()
      * 
      * @since 0.3.2.3
      */
-    public void setHauteur(double p_hauteur) {
-        this.hauteur = p_hauteur;
+    public void setHauteur(double hauteur) {
+        this.hauteur = hauteur;
     }
 
     /**
@@ -283,16 +281,16 @@ public abstract class Forme implements Coloriable {
     /**
      * Mutator of the {@code point} of the rectangle enclosing the shape.
      * 
-     * @param p_point A {@code double} corresponding to the new coordinates of the
-     *                shape.
+     * @param point A {@code double} corresponding to the new coordinates of the
+     *              shape.
      * 
      * @see Coordonnees
      * @see #getPosition()
      * 
      * @since 0.3.2.3
      */
-    public void setPosition(Coordonnees p_point) {
-        this.position = p_point;
+    public void setPosition(Coordonnees point) {
+        this.position = point;
     }
 
     /**
@@ -372,13 +370,13 @@ public abstract class Forme implements Coloriable {
     /**
      * Mutator of the color of the shape.
      * 
-     * @param p_couleur {@code Color} corresponding to the new color of the shape
+     * @param couleur {@code Color} corresponding to the new color of the shape
      * 
      * @since 0.3.5.1
      */
     @Override
-    public void setCouleur(final Color p_couleur) {
-        this.couleur = p_couleur;
+    public void setCouleur(final Color couleur) {
+        this.couleur = couleur;
     }
 
     /*************************************************************************/
@@ -410,47 +408,47 @@ public abstract class Forme implements Coloriable {
     /**
      * Function to know if a point is inside the shape.
      *
-     * @param p_point A {@code Coordonnees} corresponding to the point of which we
-     *                want to know to know if it is in the shape.
+     * @param point A {@code Coordonnees} corresponding to the point of which we
+     *              want to know to know if it is in the shape.
      * 
      * @return {@code true} if the point is in the form, {@code false} otherwise.
      * 
      * @since 0.3.2.8
      */
-    public abstract boolean contient(Coordonnees p_point);
+    public abstract boolean contient(Coordonnees point);
 
     /**
      * Mutator of the 2 coordinates of the point from a new abscissa and a new
      * ordinate.
      * 
-     * @param p_x A {@code Coordonnees} corresponding to the new abscissa of the
-     *            point.
-     * @param p   A {@code Coordonnees} corresponding to the new ordinate of the
-     *            point.
+     * @param absisse A {@code Coordonnees} corresponding to the new abscissa of the
+     *                point.
+     * @param p       A {@code Coordonnees} corresponding to the new ordinate of the
+     *                point.
      * 
      * @see #deplacerDe(Coordonnees)
      * 
      * @since 0.3.2.3
      */
-    public void deplacerVers(double p_x, double p_y) {
-        position.deplacerVers(p_x, p_y);
+    public void deplacerVers(double absisse, double ordonnee) {
+        position.deplacerVers(absisse, ordonnee);
     }
 
     /**
      * Mutators of the 2 coordinates of the point from a displacement vector. A
      * shift of the point is performed.
      * 
-     * @param p_x A {@code Coordonnees} corresponding to the new abscissa of the
-     *            point.
-     * @param p   A {@code Coordonnees} corresponding to the new ordinate of the
-     *            point.
+     * @param absisse A {@code Coordonnees} corresponding to the new abscissa of the
+     *                point.
+     * @param p       A {@code Coordonnees} corresponding to the new ordinate of the
+     *                point.
      * 
      * @see #deplacerDe(Coordonnees)
      * 
      * @since 0.3.2.3
      */
-    public void deplacerDe(double p_x, double p_y) {
-        position.deplacerDe(p_x, p_y);
+    public void deplacerDe(double absisse, double ordonnee) {
+        position.deplacerDe(absisse, ordonnee);
     }
 
     /**

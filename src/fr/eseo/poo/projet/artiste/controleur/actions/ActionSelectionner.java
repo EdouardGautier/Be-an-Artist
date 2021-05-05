@@ -41,13 +41,13 @@ public class ActionSelectionner extends AbstractAction {
     /**
      * Builder of a new {@code ActionSeletionner}.
      *
-     * @param p_panneauDessin {@code PanneauDessin} that we want to use
+     * @param panneauDessin {@code PanneauDessin} that we want to use
      *
      * @since 0.3.4.10
      */
-    public ActionSelectionner(final PanneauDessin p_panneauDessin) {
+    public ActionSelectionner(final PanneauDessin panneauDessin) {
         super(NOM_ACTION);
-        this.panneauDessin = p_panneauDessin;
+        this.panneauDessin = panneauDessin;
     }
 
     /*************************************************************************/

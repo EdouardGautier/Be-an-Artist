@@ -60,18 +60,18 @@ public class OutilLigneTest {
         /**
          * Builder for each test for OutilLigne.
          * 
-         * @param p_ligneReferenceDouble line for double click
-         * @param p_ligneReferenceDrag   line for the click and drag
-         * @param p_nbPie                number of π for drag
+         * @param ligneReferenceDouble line for double click
+         * @param ligneReferenceDrag   line for the click and drag
+         * @param nbPie                number of π for drag
          */
-        public OutilLigneTest(Ligne p_ligneReferenceDouble, Ligne p_ligneReferenceDrag, int p_nbPie) {
+        public OutilLigneTest(Ligne ligneReferenceDouble, Ligne ligneReferenceDrag, int nbPie) {
                 this.frame = new JFrame();
                 this.panneau = new PanneauDessin();
                 this.outil = new OutilLigne();
                 this.panneau.associerOutil(this.outil);
-                this.ligneReferenceDouble = p_ligneReferenceDouble;
-                this.ligneReferenceDrag = p_ligneReferenceDrag;
-                this.nbPie = p_nbPie;
+                this.ligneReferenceDouble = ligneReferenceDouble;
+                this.ligneReferenceDrag = ligneReferenceDrag;
+                this.nbPie = nbPie;
 
                 this.frame.getContentPane().add(panneau);
                 this.frame.setTitle("OutilLigneTest");
@@ -97,8 +97,7 @@ public class OutilLigneTest {
                                 // Test 1
                                 { new Ligne(new Coordonnees(30, 30)), new Ligne(new Coordonnees(100, 90), 0, 110), 2 },
                                 // Test 2
-                                { new Ligne(new Coordonnees(60, 30)), new Ligne(new Coordonnees(100, 90), -71, 81),
-                                                3 },
+                                { new Ligne(new Coordonnees(60, 30)), new Ligne(new Coordonnees(100, 90), -71, 81), 3 },
                                 // Test 3
                                 { new Ligne(new Coordonnees(90, 30)), new Ligne(new Coordonnees(100, 90), -100, 10),
                                                 4 },

@@ -41,14 +41,14 @@ public class LigneTestParameterizedContient {
     /**
      * Builder for each test for Ligne.
      * 
-     * @param ligne         the tested line.
-     * @param p_point       the point to test.
-     * @param p_estContenue if the point is on the line
+     * @param ligne       the tested line.
+     * @param point       the point to test.
+     * @param estContenue if the point is on the line
      */
-    public LigneTestParameterizedContient(final Ligne ligne, final Coordonnees p_point, boolean p_estContenue) {
+    public LigneTestParameterizedContient(final Ligne ligne, final Coordonnees point, boolean estContenue) {
         this.ligne = ligne;
-        this.point = p_point;
-        this.estContenue = p_estContenue;
+        this.point = point;
+        this.estContenue = estContenue;
     }
 
     /**

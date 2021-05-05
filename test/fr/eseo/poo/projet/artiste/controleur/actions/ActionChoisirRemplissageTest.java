@@ -60,9 +60,9 @@ public class ActionChoisirRemplissageTest {
     /**
      * Builder for each test for ActionChoisirCouleur.
      * 
-     * @param p_ellipse ellipses to be drawn
+     * @param ellipse ellipses to be drawn
      */
-    public ActionChoisirRemplissageTest(Ellipse p_ellipse) {
+    public ActionChoisirRemplissageTest(Ellipse ellipse) {
         this.frame = new JFrame();
         this.panneau = new PanneauDessin();
         this.outil = new OutilEllipse();
@@ -76,7 +76,7 @@ public class ActionChoisirRemplissageTest {
         this.frame.setVisible(true);
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.ellipse = p_ellipse;
+        this.ellipse = ellipse;
 
         this.checkBox = new JCheckBox(new ActionChoisirRemplissage(panneau)) {
             @Override

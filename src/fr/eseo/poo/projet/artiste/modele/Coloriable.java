@@ -28,11 +28,11 @@ public interface Coloriable {
 	/**
 	 * Mutator of the color of the shape.
 	 * 
-	 * @param p_couleur {@code Color} corresponding to the new color of the shape
+	 * @param couleur {@code Color} corresponding to the new color of the shape
 	 * 
 	 * @since 0.3.5.1
 	 */
-	public abstract void setCouleur(Color p_couleur);
+	public abstract void setCouleur(Color couleur);
 
 	/**
 	 * Gives the description of the color of the shape

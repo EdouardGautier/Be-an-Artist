@@ -21,12 +21,12 @@ public class VueEtoile extends VueForme {
      * Constructor of a new {@code VueEtoile}. The instance of the class is
      * initialized with the shape given in parameter.
      * 
-     * @param p_etoile {@code Etoile} that you wish to display.
+     * @param etoile {@code Etoile} that you wish to display.
      * 
      * @since 0.3.7.2
      */
-    public VueEtoile(final Etoile p_etoile) {
-        super(p_etoile);
+    public VueEtoile(final Etoile etoile) {
+        super(etoile);
     }
 
     /**
@@ -40,7 +40,7 @@ public class VueEtoile extends VueForme {
         final Color colorOld = g2d.getColor();
         final int[] tabX = new int[2 * etoile.getNombreBranches()];
         final int[] tabY = new int[2 * etoile.getNombreBranches()];
-        g2d.setColor(etoile.getCouleur());        
+        g2d.setColor(etoile.getCouleur());
         // We calculate the position of the points
         for (int i = 0; i < 2 * etoile.getNombreBranches(); i += 2) {
             tabX[i] = (int) Math.round(etoile.getCoordonneesPolygone().get(i / 2).getAbscisse());

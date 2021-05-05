@@ -33,12 +33,12 @@ public class EllipseTestParameterizedPerimetre {
 	/**
 	 * Builder for each test for Coordinates.
 	 * 
-	 * @param p_ellipse            the tested ellipse.
-	 * @param p_perimetreReference reference perimetre.
+	 * @param ellipse            the tested ellipse.
+	 * @param perimetreReference reference perimetre.
 	 */
-	public EllipseTestParameterizedPerimetre(final Ellipse p_ellipse, final double p_perimetreReference) {
-		this.ellipse = p_ellipse;
-		this.perimetreReference = p_perimetreReference;
+	public EllipseTestParameterizedPerimetre(final Ellipse ellipse, final double perimetreReference) {
+		this.ellipse = ellipse;
+		this.perimetreReference = perimetreReference;
 	}
 
 	/**
