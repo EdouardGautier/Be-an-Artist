@@ -18,7 +18,6 @@ import fr.eseo.poo.projet.artiste.modele.formes.Etoile;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauBarreOutils;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
-//TODO : Revoir la tabulation 
 /**
  * Base test class parameterized of the {@link OutilEtoileTest}
  * 

@@ -21,7 +21,6 @@ import fr.eseo.poo.projet.artiste.controleur.actions.ActionEffacer;
 import fr.eseo.poo.projet.artiste.controleur.actions.ActionSelectionner;
 import fr.eseo.poo.projet.artiste.modele.formes.Etoile;
 
-//TODO : Revoir la tabulation 
 /**
  * Class {@code PanneauBarreOutils} to represent the side toolbar.
  * <p>
