@@ -60,7 +60,7 @@ public class Etoile extends Forme implements Remplissable {
      * <p>
      * By default the percentage is {@value}.
      */
-    public static final double LONGUEUR_BRANCHE_PAR_DEFAUT = 1;
+    public static final double LONGUEUR_BRANCHE_PAR_DEFAUT = 0.5;
 
     /**
      * Number of branches of the star
@@ -561,10 +561,6 @@ public class Etoile extends Forme implements Remplissable {
      */
     @Override
     public boolean contient(final Coordonnees point) {
-        // If the point is one of the vertices
-        if (this.getCoordonnees().contains(point) || this.getCoordonneesPolygone().contains(point)) {
-            return true;
-        }
         // If <dedans> is true, then the ray intersects the star an odd number of times,
         // so the point is inside
         boolean contient = false;

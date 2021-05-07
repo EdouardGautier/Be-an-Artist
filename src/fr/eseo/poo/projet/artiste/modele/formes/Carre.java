@@ -3,7 +3,8 @@ package fr.eseo.poo.projet.artiste.modele.formes;
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 /**
- * Class {@code Carre}, a square is an Rectangle whose width and height are equal.
+ * Class {@code Carre}, a square is an Rectangle whose width and height are
+ * equal.
  * <p>
  * 
  * @see Rectangle
@@ -17,15 +18,14 @@ public class Carre extends Rectangle {
     /****************************** Constructs *******************************/
     /*************************************************************************/
     /**
-     * Constructor of the class {@code Carre} from a position, a height and
-     * width.
+     * Constructor of the class {@code Carre} from a position, a height and width.
      * <p>
      * The height and width must be greater than 0.
      * 
-     * @param position The {@code Coordonnees} corresponding to the position of
-     *                   the of the rectangle enclosing the square.
-     * @param largeur  A {@code double} corresponding to the width of the
-     *                   rectangle encompassing the square.
+     * @param position The {@code Coordonnees} corresponding to the position of the
+     *                 of the rectangle enclosing the square.
+     * @param largeur  A {@code double} corresponding to the width of the rectangle
+     *                 encompassing the square.
      * 
      * @throws IllegalArgumentException If the width or height is less than or equal
      *                                  to 0.
@@ -38,13 +38,9 @@ public class Carre extends Rectangle {
      * @since 1.3.2
      */
     public Carre(Coordonnees position, double largeur) {
-        if (largeur <= 0) {
-            throw new IllegalArgumentException("La largeur " + getClass().getSimpleName() + " doit être positive");
-        } else {
-            this.largeur = largeur;
-            this.hauteur = largeur;
-            super.setPosition(position);
-        }
+        this.setLargeur(largeur);
+        this.setHauteur(hauteur);
+        super.setPosition(position);
     }
 
     /**
@@ -54,7 +50,7 @@ public class Carre extends Rectangle {
      * The height and width must be greater than 0.
      * 
      * @param largeur A {@doublecode} corresponding to the width of the rectangle
-     *                  encompassing the square.
+     *                encompassing the square.
      * 
      * @throws IllegalArgumentException If the width or height is less than or equal
      *                                  to 0.
@@ -66,22 +62,17 @@ public class Carre extends Rectangle {
      * @since 1.3.2
      */
     public Carre(double largeur) {
-        if (largeur <= 0) {
-            throw new IllegalArgumentException(
-                    "La largeur et la hauteur de " + getClass().getSimpleName() + " doivent être positive");
-        } else {
-            this.largeur = largeur;
-            this.hauteur = largeur;
-            super.setPosition(new Coordonnees());
-        }
+        this.setLargeur(largeur);
+        this.setHauteur(hauteur);
+        super.setPosition(new Coordonnees());
     }
 
     /**
      * Constructor of a new {@code Carre} from a point, the other attribute being
      * initialized from the default values.
      * 
-     * @param position The {@code Coordinates} corresponding to the position of
-     *                   the of the rectangle enclosing the square.
+     * @param position The {@code Coordinates} corresponding to the position of the
+     *                 of the rectangle enclosing the square.
      * 
      * @see Forme#Forme(Coordonnees)
      * @see #Carre()
@@ -117,8 +108,8 @@ public class Carre extends Rectangle {
      * {@inheritDoc}
      * <p>
      * 
-     * @param largeur In the case of the square, the height of the rectangle is
-     *                  also modified so that its two dimensions remain equal.
+     * @param largeur In the case of the square, the height of the rectangle is also
+     *                modified so that its two dimensions remain equal.
      * 
      * @throws IllegalArgumentException If the width is less than or equal to 0.
      * 
@@ -141,8 +132,8 @@ public class Carre extends Rectangle {
      * {@inheritDoc}
      * <p>
      * 
-     * @param hauteur In the case of the square, the height of the rectangle is
-     *                  also modified so that its two dimensions remain equal.
+     * @param hauteur In the case of the square, the height of the rectangle is also
+     *                modified so that its two dimensions remain equal.
      * 
      * @throws IllegalArgumentException If the width is less than or equal to 0.
      * 
@@ -158,23 +149,5 @@ public class Carre extends Rectangle {
         } else {
             this.setLargeur(hauteur);
         }
-    }
-
-    /*************************************************************************/
-    /******************************* Functions *******************************/
-    /*************************************************************************/
-
-    /**
-     * Calculation of the square perimeter.
-     * <p>
-     * The formula is: {@code D x π}.
-     * <p>
-     * where <i>D</i> is the diameter of the square.
-     * 
-     * @since 1.3.2
-     */
-    @Override
-    public double perimetre() {
-        return Math.PI * super.getLargeur();
     }
 }
