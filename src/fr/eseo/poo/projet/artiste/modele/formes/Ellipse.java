@@ -84,14 +84,9 @@ public class Ellipse extends Forme implements Remplissable {
 	 * @since 0.3.2.6
 	 */
 	public Ellipse(Coordonnees position, double largeur, double hauteur) {
-		if (largeur <= 0 || hauteur <= 0) {
-			throw new IllegalArgumentException(
-					"La largeur et la hauteur de " + getClass().getSimpleName() + " doit être positive");
-		} else {
-			this.largeur = largeur;
-			this.hauteur = hauteur;
-			super.setPosition(position);
-		}
+		this.setLargeur(largeur);
+		this.setHauteur(hauteur);
+		super.setPosition(position);
 	}
 
 	/**
@@ -115,14 +110,9 @@ public class Ellipse extends Forme implements Remplissable {
 	 * @since 0.3.2.6
 	 */
 	public Ellipse(double largeur, double hauteur) {
-		if (largeur <= 0 || hauteur <= 0) {
-			throw new IllegalArgumentException(
-					"La largeur et la hauteur de " + getClass().getSimpleName() + " doit être positive");
-		} else {
-			this.largeur = largeur;
-			this.hauteur = hauteur;
-			super.setPosition(new Coordonnees());
-		}
+		this.setLargeur(largeur);
+		this.setHauteur(hauteur);
+		super.setPosition(new Coordonnees());
 	}
 
 	/**
