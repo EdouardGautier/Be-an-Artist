@@ -37,7 +37,7 @@ import fr.eseo.poo.projet.artiste.modele.formes.Etoile;
  * 
  * @since 0.3.4.5
  * 
- * @version 1.3.1
+ * @version 1.3.2.2
  */
 public class PanneauBarreOutils extends JPanel {
         /**
@@ -230,6 +230,15 @@ public class PanneauBarreOutils extends JPanel {
                 groupe.add(carre);
                 groupe.add(ellipse);
 
+                this.conteneurEtoile();
+        }
+
+        /**
+         * Function to create the container with spinners to set the star
+         * 
+         * @since 1.3.2.2
+         */
+        public void conteneurEtoile() {
                 // Creation of the star container
                 final JPanel conteneurEtoile = new JPanel();
                 conteneurEtoile.setLayout(new GridLayout(4, 1));

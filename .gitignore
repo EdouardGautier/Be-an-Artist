@@ -8,6 +8,7 @@ bin/
 /coverage
 *.acsm
 checksytle.xml
+gautieedo*
 
 # Compiled class file
 *.class
