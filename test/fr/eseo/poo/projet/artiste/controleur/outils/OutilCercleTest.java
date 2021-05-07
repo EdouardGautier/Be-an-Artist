@@ -17,7 +17,6 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 import fr.eseo.poo.projet.artiste.modele.formes.Cercle;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
-//TODO : Revoir la tabulation 
 /**
  * Base test class parameterized of the {@link OutilCercle}
  * 

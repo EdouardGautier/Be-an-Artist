@@ -52,13 +52,13 @@ public class CarreTestParameterizedPerimetre {
     public static Collection<Object[]> dt() {
         final Object[][] data = new Object[][] {
                 // Test 0
-                { new Carre(), 10 * Math.PI },
+                { new Carre(), 40 },
                 // Test 1
-                { new Carre(1), Math.PI },
+                { new Carre(1), 4 },
                 // Test 2
-                { new Carre(2), 2 * Math.PI },
+                { new Carre(2), 8 },
                 // Test 3
-                { new Carre(750.15), 750.15 * Math.PI } };
+                { new Carre(750.15), 3000.6 } };
         return Arrays.asList(data);
     }
 

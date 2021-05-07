@@ -81,10 +81,7 @@ public class EtoileTestParameterizedContient {
                 { new Etoile(new Coordonnees(), 100, 13, 2.29, 0.5), new Coordonnees(29.51, 35.68), true },
                 // Test 7
                 { new Etoile(new Coordonnees(), 50, 3, 2.29, 0.25), new Coordonnees(35, 30), true },
-                // The point is on the outline of the Etoile
                 // Test 8
-                { new Etoile(), new Coordonnees(2.06, 9.05), true },
-                // Test 9
                 { new Etoile(), new Coordonnees(5, 5), true } };
         return Arrays.asList(data);
     }

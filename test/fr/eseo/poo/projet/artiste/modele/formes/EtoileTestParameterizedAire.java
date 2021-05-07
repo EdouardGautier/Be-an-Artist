@@ -53,7 +53,7 @@ public class EtoileTestParameterizedAire {
     public static Collection<Object[]> dt() {
         final Object[][] data = new Object[][] {
                 // Test 0
-                { new Etoile(), 0 },
+                { new Etoile(), 36.73 },
                 // Test 1
                 { new Etoile(new Coordonnees(), 215.42, 5, 2.29, 0.75), 8523.94 },
                 // Test 2
