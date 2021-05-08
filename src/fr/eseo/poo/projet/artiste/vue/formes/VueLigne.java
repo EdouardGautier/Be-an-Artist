@@ -27,14 +27,14 @@ public class VueLigne extends VueForme {
     /**
      * Constructor of a new {@code VueLigne}.
      * 
-     * @param p_ligne La {@code Ligne} que l'on souhaite afficher.
+     * @param ligne La {@code Ligne} que l'on souhaite afficher.
      * 
      * @see VueForme#VueForme(Forme)
      * 
      * @since 0.3.3.5
      */
-    public VueLigne(final Ligne p_ligne) {
-        super(p_ligne);
+    public VueLigne(final Ligne ligne) {
+        super(ligne);
     }
 
     /*************************************************************************/

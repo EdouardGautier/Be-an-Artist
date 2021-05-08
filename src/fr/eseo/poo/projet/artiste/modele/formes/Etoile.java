@@ -60,7 +60,7 @@ public class Etoile extends Forme implements Remplissable {
      * <p>
      * By default the percentage is {@value}.
      */
-    public static final double LONGUEUR_BRANCHE_PAR_DEFAUT = 1;
+    public static final double LONGUEUR_BRANCHE_PAR_DEFAUT = 0.5;
 
     /**
      * Number of branches of the star
@@ -114,19 +114,18 @@ public class Etoile extends Forme implements Remplissable {
      * <i>1</i>.</li>
      * </ul>
      * 
-     * @param p_coordonnees          A {@code Coordonnees} corresponding to the
-     *                               position of the top of the first branch of the
-     *                               star
-     * @param p_taille               A {@code double} corresponding to the diameter
-     *                               of the circle enclosing the star
-     * @param p_nombreBranches       A {@code int} corresponding to the number of
-     *                               branches of the star
-     * @param p_anglePremiereBranche A {@code double} corresponding to the angle in
-     *                               radiating angle formed by the first branch
-     * @param p_longueurBranche      A {@code double} corresponding to the ratio of
-     *                               the length of the hollow between the branches
-     *                               and the radius of the circle enclosing the
-     *                               star.
+     * @param coordonnees          A {@code Coordonnees} corresponding to the
+     *                             position of the top of the first branch of the
+     *                             star
+     * @param taille               A {@code double} corresponding to the diameter of
+     *                             the circle enclosing the star
+     * @param nombreBranches       A {@code int} corresponding to the number of
+     *                             branches of the star
+     * @param anglePremiereBranche A {@code double} corresponding to the angle in
+     *                             radiating angle formed by the first branch
+     * @param longueurBranche      A {@code double} corresponding to the ratio of
+     *                             the length of the hollow between the branches and
+     *                             the radius of the circle enclosing the star.
      * 
      * @throws IllegalArgumentException if the given dimensions do not meet all the
      *                                  conditions.
@@ -138,23 +137,23 @@ public class Etoile extends Forme implements Remplissable {
      * 
      * @since 0.3.7.1
      */
-    public Etoile(Coordonnees p_coordonnees, double p_taille, int p_nombreBranches, double p_anglePremiereBranche,
-            double p_longueurBranche) {
-        super(p_coordonnees);
+    public Etoile(Coordonnees coordonnees, double taille, int nombreBranches, double anglePremiereBranche,
+            double longueurBranche) {
+        super(coordonnees);
         this.estRempli = false;
-        this.setLongueurBranche(p_longueurBranche);
-        this.setHauteur(p_taille);
-        this.setAnglePremiereBranche(p_anglePremiereBranche);
-        this.setNombreBranches(p_nombreBranches);
+        this.setLongueurBranche(longueurBranche);
+        this.setHauteur(taille);
+        this.setAnglePremiereBranche(anglePremiereBranche);
+        this.setNombreBranches(nombreBranches);
     }
 
     /**
      * Builder of a new {@code Etoile}.
      * 
-     * @param p_coordonnees A {@code Coordonnees} corresponding to the position of
-     *                      the top of the first branch of the star.
-     * @param p_taille      A {@code double} corresponding to the diameter of the
-     *                      circle enclosing the star.
+     * @param coordonnees A {@code Coordonnees} corresponding to the position of the
+     *                    top of the first branch of the star.
+     * @param taille      A {@code double} corresponding to the diameter of the
+     *                    circle enclosing the star.
      * 
      * @throws IllegalArgumentException if the size is less than or equal to 0.
      * 
@@ -168,16 +167,16 @@ public class Etoile extends Forme implements Remplissable {
      * 
      * @since 0.3.7.1
      */
-    public Etoile(Coordonnees p_coordonnees, double p_taille) {
-        this(p_coordonnees, p_taille, Etoile.NOMBRE_BRANCHES_PAR_DEFAUT, Etoile.ANGLE_PREMIERE_BRANCHE_PAR_DEFAUT,
+    public Etoile(Coordonnees coordonnees, double taille) {
+        this(coordonnees, taille, Etoile.NOMBRE_BRANCHES_PAR_DEFAUT, Etoile.ANGLE_PREMIERE_BRANCHE_PAR_DEFAUT,
                 Etoile.LONGUEUR_BRANCHE_PAR_DEFAUT);
     }
 
     /**
      * Builder of a new {@code Etoile}.
      * 
-     * @param p_coordonnees A {@code Coordonnees} corresponding to the position of
-     *                      the top of the first branch of the star.
+     * @param coordonnees A {@code Coordonnees} corresponding to the position of the
+     *                    top of the first branch of the star.
      * 
      * @see #NOMBRE_BRANCHES_PAR_DEFAUT
      * @see #ANGLE_PREMIERE_BRANCHE_PAR_DEFAUT
@@ -189,15 +188,15 @@ public class Etoile extends Forme implements Remplissable {
      * 
      * @since 0.3.7.1
      */
-    public Etoile(Coordonnees p_coordonnees) {
-        this(p_coordonnees, Forme.LARGEUR_PAR_DEFAUT);
+    public Etoile(Coordonnees coordonnees) {
+        this(coordonnees, Forme.LARGEUR_PAR_DEFAUT);
     }
 
     /**
      * Builder of a new {@code Etoile}.
      * 
-     * @param p_taille A {@code double} corresponding to the diameter of the circle
-     *                 enclosing the star.
+     * @param taille A {@code double} corresponding to the diameter of the circle
+     *               enclosing the star.
      * 
      * @throws IllegalArgumentException Si la taille est inférieurs ou égales à
      *                                  <i>0</i>.
@@ -211,8 +210,8 @@ public class Etoile extends Forme implements Remplissable {
      * 
      * @since 0.3.7.1
      */
-    public Etoile(double p_taille) {
-        this(new Coordonnees(), p_taille);
+    public Etoile(double taille) {
+        this(new Coordonnees(), taille);
     }
 
     /**
@@ -243,8 +242,8 @@ public class Etoile extends Forme implements Remplissable {
      * {@inheritDoc}
      * <p>
      * 
-     * @param p_largeur In the case of the start, the height of the rectangle is
-     *                  also modified so that its two dimensions remain equal.
+     * @param largeur In the case of the start, the height of the rectangle is also
+     *                modified so that its two dimensions remain equal.
      * 
      * @throws IllegalArgumentException If the width is less than or equal to 0.
      * 
@@ -254,12 +253,12 @@ public class Etoile extends Forme implements Remplissable {
      * @since 0.3.7.1
      */
     @Override
-    public void setLargeur(double p_largeur) {
-        if (p_largeur <= 0) {
+    public void setLargeur(double largeur) {
+        if (largeur <= 0) {
             throw new IllegalArgumentException("La largeur de " + getClass().getSimpleName() + " doit être positive");
         } else {
-            super.setLargeur(p_largeur);
-            super.setHauteur(p_largeur);
+            super.setLargeur(largeur);
+            super.setHauteur(largeur);
             this.calculSommet();
         }
     }
@@ -268,8 +267,8 @@ public class Etoile extends Forme implements Remplissable {
      * {@inheritDoc}
      * <p>
      * 
-     * @param p_hauteur In the case of the start, the height of the rectangle is
-     *                  also modified so that its two dimensions remain equal.
+     * @param hauteur In the case of the start, the height of the rectangle is also
+     *                modified so that its two dimensions remain equal.
      * 
      * @throws IllegalArgumentException If the width is less than or equal to 0.
      * 
@@ -279,11 +278,11 @@ public class Etoile extends Forme implements Remplissable {
      * @since 0.3.7.1
      */
     @Override
-    public void setHauteur(double p_hauteur) {
-        if (p_hauteur <= 0) {
+    public void setHauteur(double hauteur) {
+        if (hauteur <= 0) {
             throw new IllegalArgumentException("La hauteur de " + getClass().getSimpleName() + " doit être positive");
         } else {
-            this.setLargeur(p_hauteur);
+            this.setLargeur(hauteur);
         }
     }
 
@@ -299,17 +298,17 @@ public class Etoile extends Forme implements Remplissable {
     /**
      * Mutator of the number of branches of a star.
      * 
-     * @param p_nombreBranches A {@code int} corresponding to the new number of
-     *                         branches of the star.
+     * @param nombreBranches A {@code int} corresponding to the new number of
+     *                       branches of the star.
      * 
      * @throws IllegalArgumentException If the number of branches is greater than 15
      *                                  or less than 3.
      * 
      * @since 0.3.7.1
      */
-    public void setNombreBranches(int p_nombreBranches) {
-        if (p_nombreBranches >= 3 && p_nombreBranches <= 15) {
-            this.nombreBranches = p_nombreBranches;
+    public void setNombreBranches(int nombreBranches) {
+        if (nombreBranches >= 3 && nombreBranches <= 15) {
+            this.nombreBranches = nombreBranches;
             this.coordonnees = new ArrayList<Coordonnees>(Arrays.asList(new Coordonnees[this.nombreBranches]));
             this.coordonneesPolygone = new ArrayList<Coordonnees>(Arrays.asList(new Coordonnees[this.nombreBranches]));
             this.calculSommet();
@@ -339,9 +338,9 @@ public class Etoile extends Forme implements Remplissable {
      * <p>
      * The value given is in radiant.
      * 
-     * @param p_anglePremiereBranche A {@code double} corresponding to the new angle
-     *                               formed between the horizontal and the first
-     *                               branch of the star.
+     * @param anglePremiereBranche A {@code double} corresponding to the new angle
+     *                             formed between the horizontal and the first
+     *                             branch of the star.
      * 
      * @throws IllegalArgumentException If the angle is less than <i>-π</i> or
      *                                  greater than <i>π</i>.
@@ -350,9 +349,9 @@ public class Etoile extends Forme implements Remplissable {
      * 
      * @since 0.3.7.1
      */
-    public void setAnglePremiereBranche(final double p_anglePremiereBranche) {
-        if (p_anglePremiereBranche >= -Math.PI && p_anglePremiereBranche <= Math.PI) {
-            this.anglePremiereBranche = p_anglePremiereBranche;
+    public void setAnglePremiereBranche(final double anglePremiereBranche) {
+        if (anglePremiereBranche >= -Math.PI && anglePremiereBranche <= Math.PI) {
+            this.anglePremiereBranche = anglePremiereBranche;
             this.calculSommet();
         } else {
             throw new IllegalArgumentException("L'angle de la première branche doit être compris entre -π et π");
@@ -378,7 +377,7 @@ public class Etoile extends Forme implements Remplissable {
      * Mutator between <i>0</i> and <i>1</i> corresponding to the ratio of the
      * length of the star's branches to the radius of the circle enclosing the star.
      * 
-     * @param p_longueur A {@double code} corresponding to the new report.
+     * @param longueur A {@double code} corresponding to the new report.
      * 
      * @throws IllegalArgumentException if the length is less than <i>0</i> or
      *                                  greater than <i>1</i>.
@@ -387,9 +386,9 @@ public class Etoile extends Forme implements Remplissable {
      * 
      * @since 0.3.7.1
      */
-    public void setLongueurBranche(final double p_longueur) {
-        if (p_longueur >= 0 && p_longueur <= 1) {
-            this.longueurBranche = p_longueur;
+    public void setLongueurBranche(final double longueur) {
+        if (longueur >= 0 && longueur <= 1) {
+            this.longueurBranche = longueur;
             this.calculPolynome();
         } else {
             throw new IllegalArgumentException("Le rapport des longueurs des branches doit être compris entre 0 et 1.");
@@ -422,8 +421,8 @@ public class Etoile extends Forme implements Remplissable {
     /**
      * {@inheritDoc} The position of the vertices must be recalculated.
      * 
-     * @param p_position A {@code double} corresponding to the new coordinates of
-     *                   the shape.
+     * @param position A {@code double} corresponding to the new coordinates of the
+     *                 shape.
      * 
      * @see #deplacerDe(double, double)
      * @see #deplacerVers(double, double)
@@ -431,8 +430,8 @@ public class Etoile extends Forme implements Remplissable {
      * @since 0.3.7.1
      */
     @Override
-    public void setPosition(final Coordonnees p_position) {
-        super.setPosition(p_position);
+    public void setPosition(final Coordonnees position) {
+        super.setPosition(position);
         this.calculSommet();
     }
 
@@ -452,8 +451,8 @@ public class Etoile extends Forme implements Remplissable {
      * @since 0.3.7.1
      */
     @Override
-    public void setRempli(final boolean p_rempli) {
-        this.estRempli = p_rempli;
+    public void setRempli(final boolean rempli) {
+        this.estRempli = rempli;
     }
 
     /*************************************************************************/
@@ -562,10 +561,6 @@ public class Etoile extends Forme implements Remplissable {
      */
     @Override
     public boolean contient(final Coordonnees point) {
-        // If the point is one of the vertices
-        if (this.getCoordonnees().contains(point) || this.getCoordonneesPolygone().contains(point)) {
-            return true;
-        }
         // If <dedans> is true, then the ray intersects the star an odd number of times,
         // so the point is inside
         boolean contient = false;

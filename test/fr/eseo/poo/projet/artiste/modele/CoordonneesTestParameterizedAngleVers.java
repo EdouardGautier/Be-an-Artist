@@ -39,15 +39,15 @@ public class CoordonneesTestParameterizedAngleVers {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_c1             the first point.
-     * @param p_c2             the second point.
-     * @param p_angleReference the reference angle
+     * @param c1             the first point.
+     * @param c2             the second point.
+     * @param angleReference the reference angle
      */
-    public CoordonneesTestParameterizedAngleVers(final Coordonnees p_c1, final Coordonnees p_c2,
-            final double p_angleReference) {
-        this.c1 = p_c1;
-        this.c2 = p_c2;
-        this.angleReference = p_angleReference;
+    public CoordonneesTestParameterizedAngleVers(final Coordonnees c1, final Coordonnees c2,
+            final double angleReference) {
+        this.c1 = c1;
+        this.c2 = c2;
+        this.angleReference = angleReference;
     }
 
     /**

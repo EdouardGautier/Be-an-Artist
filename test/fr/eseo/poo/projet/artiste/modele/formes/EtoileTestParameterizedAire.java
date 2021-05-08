@@ -34,12 +34,12 @@ public class EtoileTestParameterizedAire {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_etoile     the tested Etoile.
+     * @param etoile        the tested Etoile.
      * @param aireReference reference aire.
      */
-    public EtoileTestParameterizedAire(final Etoile p_etoile, final double p_aireAttendue) {
-        this.etoile = p_etoile;
-        this.aireReference = p_aireAttendue;
+    public EtoileTestParameterizedAire(final Etoile etoile, final double aireAttendue) {
+        this.etoile = etoile;
+        this.aireReference = aireAttendue;
     }
 
     /**
@@ -53,7 +53,7 @@ public class EtoileTestParameterizedAire {
     public static Collection<Object[]> dt() {
         final Object[][] data = new Object[][] {
                 // Test 0
-                { new Etoile(), 0 },
+                { new Etoile(), 36.73 },
                 // Test 1
                 { new Etoile(new Coordonnees(), 215.42, 5, 2.29, 0.75), 8523.94 },
                 // Test 2

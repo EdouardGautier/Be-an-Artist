@@ -17,9 +17,8 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 import fr.eseo.poo.projet.artiste.modele.formes.Cercle;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
-//TODO : Revoir la tabulation 
 /**
- * Base test class parameterized of the {@link OutilEllipse}
+ * Base test class parameterized of the {@link OutilCercle}
  * 
  * @author EdouardGautier
  * 
@@ -60,18 +59,18 @@ public class OutilCercleTest {
         /**
          * Builder for each test for OutilLigne.
          * 
-         * @param p_cercleReferenceDouble circle for double click
-         * @param p_cercleReferenceDrag   circle for the click and drag
-         * @param p_nbPie                 number of π for drag
+         * @param cercleReferenceDouble circle for double click
+         * @param cercleReferenceDrag   circle for the click and drag
+         * @param nbPie                 number of π for drag
          */
-        public OutilCercleTest(Cercle p_cercleReferenceDouble, Cercle p_cercleReferenceDrag, int p_nbPie) {
+        public OutilCercleTest(Cercle cercleReferenceDouble, Cercle cercleReferenceDrag, int nbPie) {
                 this.frame = new JFrame();
                 this.panneau = new PanneauDessin();
                 this.outil = new OutilCercle();
                 this.panneau.associerOutil(this.outil);
-                this.cercleReferenceDouble = p_cercleReferenceDouble;
-                this.cercleReferenceDrag = p_cercleReferenceDrag;
-                this.nbPie = p_nbPie;
+                this.cercleReferenceDouble = cercleReferenceDouble;
+                this.cercleReferenceDrag = cercleReferenceDrag;
+                this.nbPie = nbPie;
 
                 this.frame.getContentPane().add(panneau);
                 this.frame.setTitle("OutilCercleTest");

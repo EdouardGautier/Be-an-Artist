@@ -41,14 +41,14 @@ public class ActionChoisirCouleur extends AbstractAction {
     /**
      * Constructor of a new {@code ActionChoisirCouleur}.
      * 
-     * @param p_panneauDessin {@code PanneauDessin} on which the action will have an
-     *                        effect.
+     * @param panneauDessin {@code PanneauDessin} on which the action will have an
+     *                      effect.
      * 
      * @since 0.3.5.3
      */
-    public ActionChoisirCouleur(final PanneauDessin p_panneauDessin) {
+    public ActionChoisirCouleur(final PanneauDessin panneauDessin) {
         super(ActionChoisirCouleur.NOM_ACTION);
-        this.panneauDessin = p_panneauDessin;
+        this.panneauDessin = panneauDessin;
     }
 
     /**

@@ -23,11 +23,11 @@ public class VueCercle extends VueEllipse {
      * Constructor of a new {@code VueCercle}. The instance of the class is
      * initialized with the shape given in parameter.
      * 
-     * @param p_cercle The {@code Cercle} that you wish to display.
+     * @param cercle The {@code Cercle} that you wish to display.
      * 
      * @since 0.3.3.7
      */
-    public VueCercle(Cercle p_cercle) {
-        super(p_cercle);
+    public VueCercle(Cercle cercle) {
+        super(cercle);
     }
 }

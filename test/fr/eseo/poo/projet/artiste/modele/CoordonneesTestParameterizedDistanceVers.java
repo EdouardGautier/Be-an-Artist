@@ -39,15 +39,15 @@ public class CoordonneesTestParameterizedDistanceVers {
 	/**
 	 * Constructeur pour chaque donne de test.
 	 * 
-	 * @param p_c1                frist point.
-	 * @param p_c2                second point.
-	 * @param p_distanceReference reference distance between the two points.
+	 * @param c1                frist point.
+	 * @param c2                second point.
+	 * @param distanceReference reference distance between the two points.
 	 */
-	public CoordonneesTestParameterizedDistanceVers(final Coordonnees p_c1, final Coordonnees p_c2,
-			final double p_distanceReference) {
-		this.c1 = p_c1;
-		this.c2 = p_c2;
-		this.distanceReference = p_distanceReference;
+	public CoordonneesTestParameterizedDistanceVers(final Coordonnees c1, final Coordonnees c2,
+			final double distanceReference) {
+		this.c1 = c1;
+		this.c2 = c2;
+		this.distanceReference = distanceReference;
 	}
 
 	/**

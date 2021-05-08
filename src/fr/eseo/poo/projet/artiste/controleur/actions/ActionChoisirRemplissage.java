@@ -30,12 +30,12 @@ public class ActionChoisirRemplissage extends AbstractAction {
     /**
      * Builder of a new {@code ActionChoisirRemplissage}.
      * 
-     * @param p_panneauDessin {@code PanneauDessin} on whom the action will have an
-     *                        effect.
+     * @param panneauDessin {@code PanneauDessin} on whom the action will have an
+     *                      effect.
      */
-    public ActionChoisirRemplissage(final PanneauDessin p_panneauDessin) {
+    public ActionChoisirRemplissage(final PanneauDessin panneauDessin) {
         super(ActionChoisirRemplissage.NOM_ACTION);
-        this.panneauDessin = p_panneauDessin;
+        this.panneauDessin = panneauDessin;
     }
 
     /**

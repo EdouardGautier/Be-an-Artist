@@ -46,8 +46,10 @@ public class VueEtoileTest {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         final VueEtoile etoile1 = new VueEtoile(new Etoile());
-        final VueEtoile etoile2 = new VueEtoile(new Etoile(new Coordonnees(20, 0), 170, 10, Etoile.ANGLE_PREMIERE_BRANCHE_PAR_DEFAUT, Etoile.LONGUEUR_BRANCHE_PAR_DEFAUT));
-        final VueEtoile etoile3 = new VueEtoile(new Etoile(new Coordonnees(200, 0), 170, Etoile.NOMBRE_BRANCHES_PAR_DEFAUT, Math.PI / 3, 0.5));
+        final VueEtoile etoile2 = new VueEtoile(new Etoile(new Coordonnees(20, 0), 170, 10,
+                Etoile.ANGLE_PREMIERE_BRANCHE_PAR_DEFAUT, Etoile.LONGUEUR_BRANCHE_PAR_DEFAUT));
+        final VueEtoile etoile3 = new VueEtoile(
+                new Etoile(new Coordonnees(200, 0), 170, Etoile.NOMBRE_BRANCHES_PAR_DEFAUT, Math.PI / 3, 0.5));
 
         panneau.ajouterVueForme(etoile1);
         panneau.ajouterVueForme(etoile2);

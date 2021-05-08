@@ -41,14 +41,14 @@ public class EtoileTestParameterizedContient {
     /**
      * Builder for each test for Ligne.
      * 
-     * @param p_etoile      the tested Etoile.
-     * @param p_point       the point to test.
-     * @param p_estContenue if the point is on the Etoile
+     * @param etoile      the tested Etoile.
+     * @param point       the point to test.
+     * @param estContenue if the point is on the Etoile
      */
-    public EtoileTestParameterizedContient(final Etoile p_etoile, final Coordonnees p_point, boolean p_estContenue) {
-        this.etoile = p_etoile;
-        this.point = p_point;
-        this.estContenue = p_estContenue;
+    public EtoileTestParameterizedContient(final Etoile etoile, final Coordonnees point, boolean estContenue) {
+        this.etoile = etoile;
+        this.point = point;
+        this.estContenue = estContenue;
     }
 
     /**
@@ -81,10 +81,7 @@ public class EtoileTestParameterizedContient {
                 { new Etoile(new Coordonnees(), 100, 13, 2.29, 0.5), new Coordonnees(29.51, 35.68), true },
                 // Test 7
                 { new Etoile(new Coordonnees(), 50, 3, 2.29, 0.25), new Coordonnees(35, 30), true },
-                // The point is on the outline of the Etoile
                 // Test 8
-                { new Etoile(), new Coordonnees(2.06, 9.05), true },
-                // Test 9
                 { new Etoile(), new Coordonnees(5, 5), true } };
         return Arrays.asList(data);
     }
