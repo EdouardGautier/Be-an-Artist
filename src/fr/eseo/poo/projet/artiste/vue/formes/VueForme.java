@@ -29,12 +29,12 @@ public abstract class VueForme {
      * Constructor of a new {@code VueForme}. The instance of the class is
      * initialized with the shape given in parameter.
      * 
-     * @param p_forme The {@code Forme} that you wish to display.
+     * @param forme The {@code Forme} that you wish to display.
      * 
      * @since 0.3.3.3
      */
-    public VueForme(final Forme p_forme) {
-        this.forme = p_forme;
+    public VueForme(final Forme forme) {
+        this.forme = forme;
     }
 
     /*************************************************************************/

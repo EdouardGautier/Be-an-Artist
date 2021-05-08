@@ -19,7 +19,7 @@ To program this application, we will follow the software architectural pattern M
 To launch the application, you just have to execute the command `java -jar Be-An-Artist.jar` at the root of the project.
 An interface is launched in order to use all the tools proposed
 
-[![launch window]()]
+![launch window](ReadMe/Interface.png)
 
 You can, by pressing the appropriate button, then draw :
 
@@ -30,6 +30,21 @@ You can, by pressing the appropriate button, then draw :
 - Rectangle
 - Squares
 
-You can also choose the color of the outline of your figures as well as to fill them or not.
+## Usage
 
-It is possible to access information about the figure by choosing `Sélectionner` and clicking on the desired figure. 
+You can easily draw any shape, after choosing it with a button, by a simple mouse click in the drawing area.
+With the button `Choisir une couleur` you can change the color of your shapes.
+
+![Color](ReadMe/Couleurs.png)
+
+And by checking the `Remplissage de la Forme` box the shapes you draw take the selected color.
+
+![Drawings](ReadMe/Dessins.png)
+
+By clicking on the `Sélectionner` button and choosing a shape that has already been drawn you can retrieve the informations about it.
+
+![Info](ReadMe/Info.png)
+
+## Limits ⚠️
+
+The code is in French.

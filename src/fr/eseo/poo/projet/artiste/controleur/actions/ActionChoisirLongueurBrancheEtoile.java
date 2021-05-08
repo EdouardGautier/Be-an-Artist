@@ -33,11 +33,10 @@ public class ActionChoisirLongueurBrancheEtoile implements ChangeListener {
     /**
      * Builder of new {@code ActionChoisirLongueurBrancheEtoile}.
      * 
-     * @param p_panneauOutil {@code PanneauBarreOutils} where the information is
-     *                       sent
+     * @param panneauOutil {@code PanneauBarreOutils} where the information is sent
      */
-    public ActionChoisirLongueurBrancheEtoile(final PanneauBarreOutils p_panneauOutil) {
-        this.panneauOutil = p_panneauOutil;
+    public ActionChoisirLongueurBrancheEtoile(final PanneauBarreOutils panneauOutil) {
+        this.panneauOutil = panneauOutil;
     }
 
     /**

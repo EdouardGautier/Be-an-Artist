@@ -187,9 +187,7 @@ public class EtoileTest {
     @Test
     public void testSeNombreBrancheError() throws IllegalArgumentException {
         Etoile etoile = new Etoile();
-
         assertThrows(IllegalArgumentException.class, () -> etoile.setNombreBranches(2));
-
         assertThrows(IllegalArgumentException.class, () -> etoile.setNombreBranches(16));
     }
 }

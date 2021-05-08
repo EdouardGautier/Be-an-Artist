@@ -35,12 +35,12 @@ public class EtoileTestParameterizedPerimetre {
     /**
      * Builder for each test for Coordinates.
      * 
-     * @param p_etoile             the tested Etoile.
-     * @param p_perimetreReference reference perimetre.
+     * @param etoile             the tested Etoile.
+     * @param perimetreReference reference perimetre.
      */
-    public EtoileTestParameterizedPerimetre(final Etoile p_etoile, final double p_perimetreReference) {
-        this.etoile = p_etoile;
-        this.perimetreReference = p_perimetreReference;
+    public EtoileTestParameterizedPerimetre(final Etoile etoile, final double perimetreReference) {
+        this.etoile = etoile;
+        this.perimetreReference = perimetreReference;
     }
 
     /**
@@ -54,16 +54,16 @@ public class EtoileTestParameterizedPerimetre {
     public static Collection<Object[]> dt() {
         final Object[][] data = new Object[][] {
                 // Test 0
-                { new Etoile(), 50 },
+                { new Etoile(), 33.20 },
                 // Test 1
                 { new Etoile(new Coordonnees(), Etoile.LARGEUR_PAR_DEFAUT, Etoile.NOMBRE_BRANCHES_PAR_DEFAUT,
                         Etoile.ANGLE_PREMIERE_BRANCHE_PAR_DEFAUT, 0.9), 46.04 },
                 // Test 2
                 { new Etoile(new Coordonnees(), Etoile.LARGEUR_PAR_DEFAUT, 15, Etoile.ANGLE_PREMIERE_BRANCHE_PAR_DEFAUT,
-                        Etoile.LONGUEUR_BRANCHE_PAR_DEFAUT), 150 },
+                        Etoile.LONGUEUR_BRANCHE_PAR_DEFAUT), 78.20 },
                 // Test 3
                 { new Etoile(new Coordonnees(), Etoile.LARGEUR_PAR_DEFAUT, Etoile.NOMBRE_BRANCHES_PAR_DEFAUT, -0.5137,
-                        Etoile.LONGUEUR_BRANCHE_PAR_DEFAUT), 50 } };
+                        Etoile.LONGUEUR_BRANCHE_PAR_DEFAUT), 33.20 } };
         return Arrays.asList(data);
     }
 

@@ -8,8 +8,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 /**
- * Class {@code ActionChoisirNombreBrancheEtoile} allows you to choose the number
- * of the branches of a star.
+ * Class {@code ActionChoisirNombreBrancheEtoile} allows you to choose the
+ * number of the branches of a star.
  * 
  * @see PanneauBarreOutils
  * @see ChangeListener
@@ -34,11 +34,10 @@ public class ActionChoisirNombreBrancheEtoile implements ChangeListener {
     /**
      * Builder of new {@code ActionChoisirNombreBrancheEtoile}.
      * 
-     * @param p_panneauOutil {@code PanneauBarreOutils} where the information is
-     *                       sent
+     * @param panneauOutil {@code PanneauBarreOutils} where the information is sent
      */
-    public ActionChoisirNombreBrancheEtoile(final PanneauBarreOutils p_panneauOutil) {
-        this.panneauOutil = p_panneauOutil;
+    public ActionChoisirNombreBrancheEtoile(final PanneauBarreOutils panneauOutil) {
+        this.panneauOutil = panneauOutil;
     }
 
     /**

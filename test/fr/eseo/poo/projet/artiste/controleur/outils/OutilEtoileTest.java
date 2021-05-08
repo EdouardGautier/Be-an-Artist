@@ -18,7 +18,6 @@ import fr.eseo.poo.projet.artiste.modele.formes.Etoile;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauBarreOutils;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
-//TODO : Revoir la tabulation 
 /**
  * Base test class parameterized of the {@link OutilEtoileTest}
  * 
@@ -61,19 +60,19 @@ public class OutilEtoileTest {
         /**
          * Builder for each test for OutilLigne.
          * 
-         * @param p_etoileReferenceDouble Etoile for double click
-         * @param p_etoileReferenceDrag   Etoile for the click and drag
-         * @param p_nbPie                 number of π for drag
+         * @param etoileReferenceDouble Etoile for double click
+         * @param etoileReferenceDrag   Etoile for the click and drag
+         * @param nbPie                 number of π for drag
          */
-        public OutilEtoileTest(Etoile p_etoileReferenceDouble, Etoile p_etoileReferenceDrag, int p_nbPie) {
+        public OutilEtoileTest(Etoile etoileReferenceDouble, Etoile etoileReferenceDrag, int nbPie) {
                 this.frame = new JFrame();
                 this.panneauDessin = new PanneauDessin();
                 final PanneauBarreOutils panneauOutils = new PanneauBarreOutils(panneauDessin);
                 this.outil = new OutilEtoile(panneauOutils);
                 this.panneauDessin.associerOutil(this.outil);
-                this.etoileReferenceDouble = p_etoileReferenceDouble;
-                this.etoileReferenceDrag = p_etoileReferenceDrag;
-                this.nbPie = p_nbPie;
+                this.etoileReferenceDouble = etoileReferenceDouble;
+                this.etoileReferenceDrag = etoileReferenceDrag;
+                this.nbPie = nbPie;
 
                 this.frame.getContentPane().add(panneauDessin);
                 this.frame.setTitle("OutilEtoileTest");

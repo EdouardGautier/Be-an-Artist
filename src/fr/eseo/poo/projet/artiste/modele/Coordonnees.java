@@ -88,16 +88,16 @@ public class Coordonnees {
 	 * Construct a new {@code Coordonnees} from an abscissa and an ordinate passed
 	 * as parameters.
 	 * 
-	 * @param p_x A {@code double} corresponding to the abscissa of the point.
-	 * @param p_y A {@code double} corresponding to the ordinate of the point.
+	 * @param absisse A {@code double} corresponding to the abscissa of the point.
+	 * @param odonnee A {@code double} corresponding to the ordinate of the point.
 	 * 
 	 * @see #Coordonnees()
 	 * 
 	 * @since 0.3.2.1
 	 */
-	public Coordonnees(double p_x, double p_y) {
-		this.x = p_x;
-		this.y = p_y;
+	public Coordonnees(double absisse, double odonnee) {
+		this.x = absisse;
+		this.y = odonnee;
 	}
 
 	/**
@@ -132,14 +132,15 @@ public class Coordonnees {
 	/**
 	 * Mutator of the {@code X} of the rectangle enclosing the point.
 	 * 
-	 * @param p_x A {@code double} corresponding to the new abscissa of the point.
+	 * @param absisse A {@code double} corresponding to the new abscissa of the
+	 *                point.
 	 * 
 	 * @see #getAbscisse(double)
 	 * 
 	 * @since 0.3.2.1
 	 */
-	public void setAbscisse(double p_x) {
-		this.x = p_x;
+	public void setAbscisse(double absisse) {
+		this.x = absisse;
 	}
 
 	/**
@@ -158,14 +159,15 @@ public class Coordonnees {
 	/**
 	 * Mutator of the {@code Y} of the rectangle enclosing the point.
 	 * 
-	 * @param p_y A {@code double} corresponding to the new ordinate of the point.
+	 * @param odonnee A {@code double} corresponding to the new ordinate of the
+	 *                point.
 	 * 
 	 * @see #getOrdonnee()
 	 * 
 	 * @since 0.3.2.1
 	 */
-	public void setOrdonnee(double p_y) {
-		this.y = p_y;
+	public void setOrdonnee(double odonnee) {
+		this.y = odonnee;
 	}
 
 	/*************************************************************************/
@@ -176,39 +178,43 @@ public class Coordonnees {
 	 * Mutator of the 2 coordinates of the point from a new abscissa and a new
 	 * ordinate.
 	 * 
-	 * @param p_x A {@code double} corresponding to the new abscissa of the point.
-	 * @param p_y A {@code double} corresponding to the new ordinate of the point.
+	 * @param absisse A {@code double} corresponding to the new abscissa of the
+	 *                point.
+	 * @param odonnee A {@code double} corresponding to the new ordinate of the
+	 *                point.
 	 * 
 	 * @see #deplacerDe(double, double)
 	 * 
 	 * @since 0.3.2.1
 	 */
-	public void deplacerVers(double p_x, double p_y) {
-		this.x = p_x;
-		this.y = p_y;
+	public void deplacerVers(double absisse, double odonnee) {
+		this.x = absisse;
+		this.y = odonnee;
 	}
 
 	/**
 	 * Mutators of the 2 coordinates of the point from a displacement vector. A
 	 * shift of the point is performed.
 	 * 
-	 * @param p_x A {@code double} corresponding to the new abscissa of the point.
-	 * @param p_y A {@code double} corresponding to the new ordinate of the point.
+	 * @param absisse A {@code double} corresponding to the new abscissa of the
+	 *                point.
+	 * @param odonnee A {@code double} corresponding to the new ordinate of the
+	 *                point.
 	 * 
 	 * @see #deplacerDe(double, double)
 	 * 
 	 * @since 0.3.2.1
 	 */
-	public void deplacerDe(double p_x, double p_y) {
-		this.x += p_x;
-		this.y += p_y;
+	public void deplacerDe(double absisse, double odonnee) {
+		this.x += absisse;
+		this.y += odonnee;
 	}
 
 	/**
 	 * Method to know the distance between two points.
 	 * 
-	 * @param p_point A {@code Coordinates} corresponding to the other point with
-	 *                which we want to know the distance.
+	 * @param point A {@code Coordinates} corresponding to the other point with
+	 *              which we want to know the distance.
 	 * 
 	 * @return A {@code double} corresponding to the distance between the two
 	 *         points.
@@ -218,8 +224,8 @@ public class Coordonnees {
 	 * @since 0.3.2.1
 	 * 
 	 */
-	public double distanceVers(Coordonnees p_point) {
-		return Math.sqrt(Math.pow(p_point.x - this.x, 2) + Math.pow(p_point.y - this.y, 2));
+	public double distanceVers(Coordonnees point) {
+		return Math.sqrt(Math.pow(point.x - this.x, 2) + Math.pow(point.y - this.y, 2));
 	}
 
 	/**
@@ -228,8 +234,8 @@ public class Coordonnees {
 	 * The value returned is in <i>radian</i>.
 	 * </p>
 	 * 
-	 * @param p_coord A {@code Coordonnees} corresponding to the other point with
-	 *                which we want to know the angle.
+	 * @param coordonnees A {@code Coordonnees} corresponding to the other point
+	 *                    with which we want to know the angle.
 	 * 
 	 * @return A {@code double} corresponding to the angle between the two points
 	 *         (in <i>radian</i>).
@@ -238,8 +244,9 @@ public class Coordonnees {
 	 * 
 	 * @since 0.3.2.1
 	 */
-	public double angleVers(Coordonnees p_coord) {
-		return Math.atan2(p_coord.getOrdonnee() - this.getOrdonnee(), p_coord.getAbscisse() - this.getAbscisse());
+	public double angleVers(Coordonnees coordonnees) {
+		return Math.atan2(coordonnees.getOrdonnee() - this.getOrdonnee(),
+				coordonnees.getAbscisse() - this.getAbscisse());
 	}
 
 	/**
@@ -267,15 +274,15 @@ public class Coordonnees {
 	 * <li>if the two points have the same {@code abscissa} and the same
 	 * {@code ordinate}.</li>
 	 * 
-	 * @param p_other The instance with which the point is compared
+	 * @param coordonnee The instance with which the point is compared
 	 * 
 	 * @return {@code true} if two points are equal, {@code false} otherwise.
 	 * 
 	 * @since 0.3.3.4
 	 */
 	@Override
-	public boolean equals(final Object p_other) {
-		final Coordonnees point = (Coordonnees) p_other;
+	public boolean equals(final Object coordonnee) {
+		final Coordonnees point = (Coordonnees) coordonnee;
 		return Math.abs(this.getAbscisse() - point.getAbscisse()) <= Coordonnees.EPSILON
 				&& Math.abs(this.getOrdonnee() - point.getOrdonnee()) <= Coordonnees.EPSILON;
 	}

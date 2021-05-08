@@ -66,12 +66,12 @@ public class Ellipse extends Forme implements Remplissable {
 	 * <p>
 	 * The height and width must be greater than 0.
 	 * 
-	 * @param p_position The {@code Coordonnees} corresponding to the position of
-	 *                   the of the rectangle enclosing the ellipse.
-	 * @param p_largeur  A {@code double} corresponding to the width of the
-	 *                   rectangle encompassing the ellipse.
-	 * @param p_hauteur  A {@code double} corresponding to the height of the
-	 *                   rectangle encompassing the ellipse.
+	 * @param position The {@code Coordonnees} corresponding to the position of the
+	 *                 of the rectangle enclosing the ellipse.
+	 * @param largeur  A {@code double} corresponding to the width of the rectangle
+	 *                 encompassing the ellipse.
+	 * @param hauteur  A {@code double} corresponding to the height of the rectangle
+	 *                 encompassing the ellipse.
 	 * 
 	 * @throws IllegalArgumentException If the width or height is less than or equal
 	 *                                  to 0.
@@ -83,15 +83,10 @@ public class Ellipse extends Forme implements Remplissable {
 	 * 
 	 * @since 0.3.2.6
 	 */
-	public Ellipse(Coordonnees p_position, double p_largeur, double p_hauteur) {
-		if (p_largeur <= 0 || p_hauteur <= 0) {
-			throw new IllegalArgumentException(
-					"La largeur et la hauteur de " + getClass().getSimpleName() + " doit être positive");
-		} else {
-			this.largeur = p_largeur;
-			this.hauteur = p_hauteur;
-			super.setPosition(p_position);
-		}
+	public Ellipse(Coordonnees position, double largeur, double hauteur) {
+		this.setLargeur(largeur);
+		this.setHauteur(hauteur);
+		super.setPosition(position);
 	}
 
 	/**
@@ -100,10 +95,10 @@ public class Ellipse extends Forme implements Remplissable {
 	 * <p>
 	 * The height and width must be greater than 0.
 	 * 
-	 * @param p_largeur A {@doublecode} corresponding to the width of the rectangle
-	 *                  encompassing the ellipse.
-	 * @param p_hauteur A {@code double} corresponding to the height of the
-	 *                  rectangle encompassing the ellipse.
+	 * @param largeur A {@doublecode} corresponding to the width of the rectangle
+	 *                encompassing the ellipse.
+	 * @param hauteur A {@code double} corresponding to the height of the rectangle
+	 *                encompassing the ellipse.
 	 * 
 	 * @throws IllegalArgumentException If the width or height is less than or equal
 	 *                                  to 0.
@@ -114,23 +109,18 @@ public class Ellipse extends Forme implements Remplissable {
 	 * 
 	 * @since 0.3.2.6
 	 */
-	public Ellipse(double p_largeur, double p_hauteur) {
-		if (p_largeur <= 0 || p_hauteur <= 0) {
-			throw new IllegalArgumentException(
-					"La largeur et la hauteur de " + getClass().getSimpleName() + " doit être positive");
-		} else {
-			this.largeur = p_largeur;
-			this.hauteur = p_hauteur;
-			super.setPosition(new Coordonnees());
-		}
+	public Ellipse(double largeur, double hauteur) {
+		this.setLargeur(largeur);
+		this.setHauteur(hauteur);
+		super.setPosition(new Coordonnees());
 	}
 
 	/**
 	 * Constructor of a new {@code Ellipse} from a point, the other attribute being
 	 * initialized from the default values.
 	 * 
-	 * @param p_position The {@code Coordinates} corresponding to the position of
-	 *                   the of the rectangle enclosing the ellipse.
+	 * @param position The {@code Coordinates} corresponding to the position of the
+	 *                 of the rectangle enclosing the ellipse.
 	 * 
 	 * @see Forme#Forme(Coordonnees)
 	 * @see #Ellipse()
@@ -139,8 +129,8 @@ public class Ellipse extends Forme implements Remplissable {
 	 * 
 	 * @since 0.3.2.6
 	 */
-	public Ellipse(Coordonnees p_position) {
-		super(p_position);
+	public Ellipse(Coordonnees position) {
+		super(position);
 	}
 
 	/**
@@ -166,7 +156,7 @@ public class Ellipse extends Forme implements Remplissable {
 	 * {@inheritDoc}
 	 * <p>
 	 * 
-	 * @param p_largeur width must be greater than 0.
+	 * @param largeur width must be greater than 0.
 	 * 
 	 * @throws IllegalArgumentException Si la largeur est inférieur ou égale à 0.
 	 * 
@@ -176,9 +166,9 @@ public class Ellipse extends Forme implements Remplissable {
 	 * @since 0.3.2.6
 	 */
 	@Override
-	public void setLargeur(final double p_largeur) {
-		if (p_largeur > 0) {
-			super.setLargeur(p_largeur);
+	public void setLargeur(final double largeur) {
+		if (largeur > 0) {
+			super.setLargeur(largeur);
 		} else {
 			throw new IllegalArgumentException("La largeur de " + getClass().getSimpleName() + " doit être positive");
 		}
@@ -188,7 +178,7 @@ public class Ellipse extends Forme implements Remplissable {
 	 * {@inheritDoc}
 	 * <p>
 	 * 
-	 * @param p_hauteur heigt must be greater than 0.
+	 * @param hauteur heigt must be greater than 0.
 	 * 
 	 * @throws IllegalArgumentException Si la largeur est inférieur ou égale à 0.
 	 * 
@@ -198,9 +188,9 @@ public class Ellipse extends Forme implements Remplissable {
 	 * @since 0.3.2.6
 	 */
 	@Override
-	public void setHauteur(final double p_hauteur) {
-		if (p_hauteur > 0) {
-			super.setHauteur(p_hauteur);
+	public void setHauteur(final double hauteur) {
+		if (hauteur > 0) {
+			super.setHauteur(hauteur);
 		} else {
 			throw new IllegalArgumentException("La hauteur de " + getClass().getSimpleName() + " doit être positive");
 		}
@@ -212,8 +202,8 @@ public class Ellipse extends Forme implements Remplissable {
 	 * @since 0.3.6.1
 	 */
 	@Override
-	public void setRempli(final boolean p_estRempli) {
-		this.estRempli = p_estRempli;
+	public void setRempli(final boolean rempli) {
+		this.estRempli = rempli;
 	}
 
 	/*************************************************************************/
@@ -273,40 +263,29 @@ public class Ellipse extends Forme implements Remplissable {
 	 * In the case of an ellipse, we consider that the shape contains the point if
 	 * the point is inside or on the contour of the shape.
 	 * <p>
-	 * 
-	 * If the ellipse is defined by the coordinates of the two points A and B of the
-	 * rectangle enclosing the ellipse, knowing that:
-	 * <ul>
-	 * <li><i>A</i> is the radius of the ellipse parallel to the height.</li>
-	 * <li><i>B</i> is the radius of the ellipse parallel to the height.</li>
-	 * <li><i>(X, Y)</i> is the center of the ellipse.</li>
-	 * </ul>
-	 * <p>
 	 * the point (x, y) must verify :
 	 * <p>
-	 * {@code ( (x - X)/A )² + ( (x - X)/B )² <= 1}
-	 * <p>
-	 * If:
-	 * <ul>
-	 * <li>the result is less than 1, then the point is in the ellipse.</li>
-	 * <li>the result is equal to 1, then the point is on the contour of the
-	 * ellipse.</li>
-	 * <li>the result is greater than 1, then the point is outside the the
-	 * ellipse.</li>
-	 * </ul>
+	 * {@code ( (x - X)/A )² + ( (y - Y)/B )² <= 1}
 	 * 
-	 * @param p_point the point to evaluate
+	 * @param point the point to evaluate
+	 * 
+	 * @return
+	 *         <li>the result is less than 1, then the point is in the ellipse.</li>
+	 *         <li>the result is equal to 1, then the point is on the contour of the
+	 *         ellipse.</li>
+	 *         <li>the result is greater than 1, then the point is outside the the
+	 *         ellipse.</li>
 	 * 
 	 * @since 0.3.2.8
 	 */
 	@Override
-	public boolean contient(final Coordonnees p_point) {
-		final double A = super.getHauteur() / 2;
-		final double B = super.getLargeur() / 2;
-		final double X = super.getPosition().getAbscisse() + B;
-		final double Y = super.getPosition().getOrdonnee() + A;
+	public boolean contient(final Coordonnees point) {
+		final double a = super.getHauteur() / 2;
+		final double b = super.getLargeur() / 2;
+		final double x = super.getPosition().getAbscisse() + b;
+		final double y = super.getPosition().getOrdonnee() + a;
 
-		return Math.pow(((p_point.getAbscisse() - X)) / B, 2) + Math.pow(((p_point.getOrdonnee() - Y)) / A, 2) <= 1;
+		return Math.pow(((point.getAbscisse() - x)) / b, 2) + Math.pow(((point.getOrdonnee() - y)) / a, 2) <= 1;
 	}
 
 	/**

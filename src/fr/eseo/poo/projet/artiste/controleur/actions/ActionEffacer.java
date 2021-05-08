@@ -33,12 +33,12 @@ public class ActionEffacer extends AbstractAction {
     /**
      * Builder of {@code ActionEffacer}.
      *
-     * @param p_panneauDessin the {@code PanneauDessin} on which the action will
-     *                        have an effect.
+     * @param panneauDessin the {@code PanneauDessin} on which the action will have
+     *                      an effect.
      */
-    public ActionEffacer(final PanneauDessin p_panneauDessin) {
+    public ActionEffacer(final PanneauDessin panneauDessin) {
         super(ActionEffacer.NOM_ACTION);
-        this.panneauDessin = p_panneauDessin;
+        this.panneauDessin = panneauDessin;
     }
 
     /*************************************************************************/

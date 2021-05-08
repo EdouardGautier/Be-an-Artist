@@ -21,7 +21,6 @@ import fr.eseo.poo.projet.artiste.controleur.actions.ActionEffacer;
 import fr.eseo.poo.projet.artiste.controleur.actions.ActionSelectionner;
 import fr.eseo.poo.projet.artiste.modele.formes.Etoile;
 
-//TODO : Revoir la tabulation 
 /**
  * Class {@code PanneauBarreOutils} to represent the side toolbar.
  * <p>
@@ -38,7 +37,7 @@ import fr.eseo.poo.projet.artiste.modele.formes.Etoile;
  * 
  * @since 0.3.4.5
  * 
- * @version 0.3.7.3
+ * @version 1.3.2.2
  */
 public class PanneauBarreOutils extends JPanel {
         /**
@@ -85,8 +84,8 @@ public class PanneauBarreOutils extends JPanel {
          * <p>
          * The action area of the buttons is the one given in parameter.
          * 
-         * @param p_panneauDessin the {@code PanneauDessin} on which the buttons will
-         *                        have an action.
+         * @param panneauDessin the {@code PanneauDessin} on which the buttons will have
+         *                      an action.
          * 
          * @see PanneauDessin
          * 
@@ -94,8 +93,8 @@ public class PanneauBarreOutils extends JPanel {
          * 
          * @version 0.3.7.3
          */
-        public PanneauBarreOutils(final PanneauDessin p_panneauDessin) {
-                this.panneauDessin = p_panneauDessin;
+        public PanneauBarreOutils(final PanneauDessin panneauDessin) {
+                this.panneauDessin = panneauDessin;
                 this.initComponents();
                 this.nbBranches = Etoile.NOMBRE_BRANCHES_PAR_DEFAUT;
                 this.longueurBranche = Etoile.LONGUEUR_BRANCHE_PAR_DEFAUT;
@@ -118,10 +117,10 @@ public class PanneauBarreOutils extends JPanel {
         /**
          * Mutator f the number of branches of a {@code Etoile}
          * 
-         * @param p_nbBranches {@code int} the number of branches
+         * @param nbBranches {@code int} the number of branches
          */
-        public void setNbBranches(int p_nbBranches) {
-                this.nbBranches = p_nbBranches;
+        public void setNbBranches(int nbBranches) {
+                this.nbBranches = nbBranches;
         }
 
         /**
@@ -136,10 +135,10 @@ public class PanneauBarreOutils extends JPanel {
         /**
          * Mutator f the lenght of branches of a {@code Etoile}
          * 
-         * @param p_longueurBranche {@code double} the lenght of branches
+         * @param longueur {@code double} the lenght of branches
          */
-        public void setLongueurBranches(double p_longueurBranche) {
-                this.longueurBranche = p_longueurBranche;
+        public void setLongueurBranches(double longueur) {
+                this.longueurBranche = longueur;
         }
 
         /*************************************************************************/
@@ -152,11 +151,11 @@ public class PanneauBarreOutils extends JPanel {
          *
          * @since 0.3.4.5
          * 
-         * @version 0.3.7.3
+         * @version 1.3.1
          */
         public void initComponents() {
                 final JToolBar toolBar = new JToolBar();
-                toolBar.setLayout(new GridLayout(9, 1));
+                toolBar.setLayout(new GridLayout(10, 1));
                 toolBar.setName("toolBar");
                 this.add(toolBar);
 
@@ -192,6 +191,16 @@ public class PanneauBarreOutils extends JPanel {
                                 new ActionChoisirForme(this.panneauDessin, this, ActionChoisirForme.NOM_ACTION_ETOILE));
                 etoile.setName(ActionChoisirForme.NOM_ACTION_ETOILE);
 
+                // Creation of the toggle rectangle button
+                final JToggleButton rectangle = new JToggleButton(new ActionChoisirForme(this.panneauDessin, this,
+                                ActionChoisirForme.NOM_ACTION_RECTANGLE));
+                etoile.setName(ActionChoisirForme.NOM_ACTION_RECTANGLE);
+
+                // Creation of the toggle square button
+                final JToggleButton carre = new JToggleButton(
+                                new ActionChoisirForme(this.panneauDessin, this, ActionChoisirForme.NOM_ACTION_CARRE));
+                etoile.setName(ActionChoisirForme.NOM_ACTION_CARRE);
+
                 // Creation of the checkBox for the choice of the filling of the shapes
                 final JCheckBox checkBox = new JCheckBox(new ActionChoisirRemplissage(this.panneauDessin));
                 checkBox.setName(ActionChoisirRemplissage.NOM_ACTION);
@@ -204,6 +213,8 @@ public class PanneauBarreOutils extends JPanel {
                 toolBar.add(ligne);
                 toolBar.add(cercle);
                 toolBar.add(ellipse);
+                toolBar.add(rectangle);
+                toolBar.add(carre);
                 toolBar.add(etoile);
                 toolBar.add(checkBox);
 
@@ -215,8 +226,19 @@ public class PanneauBarreOutils extends JPanel {
                 groupe.add(ligne);
                 groupe.add(cercle);
                 groupe.add(etoile);
+                groupe.add(rectangle);
+                groupe.add(carre);
                 groupe.add(ellipse);
 
+                this.conteneurEtoile();
+        }
+
+        /**
+         * Function to create the container with spinners to set the star
+         * 
+         * @since 1.3.2.2
+         */
+        public void conteneurEtoile() {
                 // Creation of the star container
                 final JPanel conteneurEtoile = new JPanel();
                 conteneurEtoile.setLayout(new GridLayout(4, 1));

@@ -3,7 +3,8 @@ package fr.eseo.poo.projet.artiste.modele.formes;
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 /**
- * Class {@code Cercle}, a circle is an ellipse whose width and height are equal.
+ * Class {@code Cercle}, a circle is an ellipse whose width and height are
+ * equal.
  * <p>
  * 
  * @see Ellipse
@@ -24,10 +25,10 @@ public class Cercle extends Ellipse {
      * <p>
      * The height and width must be greater than 0.
      * 
-     * @param p_position The {@code Coordonnees} corresponding to the position of
-     *                   the of the rectangle enclosing the circle.
-     * @param p_largeur  A {@code double} corresponding to the width of the
-     *                   rectangle encompassing the circle.
+     * @param position The {@code Coordonnees} corresponding to the position of the
+     *                 of the rectangle enclosing the circle.
+     * @param largeur  A {@code double} corresponding to the width of the rectangle
+     *                 encompassing the circle.
      * 
      * @throws IllegalArgumentException If the width or height is less than or equal
      *                                  to 0.
@@ -39,14 +40,10 @@ public class Cercle extends Ellipse {
      * 
      * @since 0.3.2.6
      */
-    public Cercle(Coordonnees p_position, double p_largeur) {
-        if (p_largeur <= 0) {
-            throw new IllegalArgumentException("La largeur " + getClass().getSimpleName() + " doit être positive");
-        } else {
-            this.largeur = p_largeur;
-            this.hauteur = p_largeur;
-            super.setPosition(p_position);
-        }
+    public Cercle(Coordonnees position, double largeur) {
+        this.setLargeur(largeur);
+        this.setHauteur(hauteur);
+        super.setPosition(position);
     }
 
     /**
@@ -55,8 +52,8 @@ public class Cercle extends Ellipse {
      * <p>
      * The height and width must be greater than 0.
      * 
-     * @param p_largeur A {@doublecode} corresponding to the width of the rectangle
-     *                  encompassing the circle.
+     * @param largeur A {@doublecode} corresponding to the width of the rectangle
+     *                encompassing the circle.
      * 
      * @throws IllegalArgumentException If the width or height is less than or equal
      *                                  to 0.
@@ -67,23 +64,18 @@ public class Cercle extends Ellipse {
      * 
      * @since 0.3.2.6
      */
-    public Cercle(double p_largeur) {
-        if (p_largeur <= 0) {
-            throw new IllegalArgumentException(
-                    "La largeur et la hauteur de " + getClass().getSimpleName() + " doivent être positive");
-        } else {
-            this.largeur = p_largeur;
-            this.hauteur = p_largeur;
-            super.setPosition(new Coordonnees());
-        }
+    public Cercle(double largeur) {
+        this.setLargeur(largeur);
+        this.setHauteur(hauteur);
+        super.setPosition(new Coordonnees());
     }
 
     /**
      * Constructor of a new {@code Cercle} from a point, the other attribute being
      * initialized from the default values.
      * 
-     * @param p_position The {@code Coordinates} corresponding to the position of
-     *                   the of the rectangle enclosing the circle.
+     * @param position The {@code Coordinates} corresponding to the position of the
+     *                 of the rectangle enclosing the circle.
      * 
      * @see Forme#Forme(Coordonnees)
      * @see #Cercle()
@@ -92,8 +84,8 @@ public class Cercle extends Ellipse {
      * 
      * @since 0.3.2.6
      */
-    public Cercle(Coordonnees p_position) {
-        super(p_position);
+    public Cercle(Coordonnees position) {
+        super(position);
     }
 
     /**
@@ -119,8 +111,8 @@ public class Cercle extends Ellipse {
      * {@inheritDoc}
      * <p>
      * 
-     * @param p_largeur In the case of the circle, the height of the rectangle is
-     *                  also modified so that its two dimensions remain equal.
+     * @param largeur In the case of the circle, the height of the rectangle is also
+     *                modified so that its two dimensions remain equal.
      * 
      * @throws IllegalArgumentException If the width is less than or equal to 0.
      * 
@@ -130,12 +122,12 @@ public class Cercle extends Ellipse {
      * @since 0.3.2.6
      */
     @Override
-    public void setLargeur(double p_largeur) {
-        if (p_largeur <= 0) {
+    public void setLargeur(double largeur) {
+        if (largeur <= 0) {
             throw new IllegalArgumentException("La largeur de " + getClass().getSimpleName() + " doit être positive");
         } else {
-            super.setLargeur(p_largeur);
-            super.setHauteur(p_largeur);
+            super.setLargeur(largeur);
+            super.setHauteur(largeur);
         }
     }
 
@@ -143,8 +135,8 @@ public class Cercle extends Ellipse {
      * {@inheritDoc}
      * <p>
      * 
-     * @param p_hauteur In the case of the circle, the height of the rectangle is
-     *                  also modified so that its two dimensions remain equal.
+     * @param hauteur In the case of the circle, the height of the rectangle is also
+     *                modified so that its two dimensions remain equal.
      * 
      * @throws IllegalArgumentException If the width is less than or equal to 0.
      * 
@@ -154,11 +146,11 @@ public class Cercle extends Ellipse {
      * @since 0.3.2.6
      */
     @Override
-    public void setHauteur(double p_hauteur) {
-        if (p_hauteur <= 0) {
+    public void setHauteur(double hauteur) {
+        if (hauteur <= 0) {
             throw new IllegalArgumentException("La largeur de " + getClass().getSimpleName() + " doit être positive");
         } else {
-            this.setLargeur(p_hauteur);
+            this.setLargeur(hauteur);
         }
     }
 
