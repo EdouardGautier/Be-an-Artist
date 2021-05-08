@@ -23,12 +23,13 @@ An interface is launched in order to use all the tools proposed
 
 You can, by pressing the appropriate button, then draw :
 
-- Lines
-- Circles
-- Ellipses
-- Stars (choice of the length and the number of possible branches)
-- Rectangle
-- Squares
+- Shapes
+  - Lines
+  - Circles
+  - Ellipses
+  - Stars (choice of the length and the number of possible branches)
+  - Rectangle
+  - Squares
 
 ## Usage
 
